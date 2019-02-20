@@ -13,7 +13,6 @@ Require-Bundle: com.google.guava,
  org.palladiosimulator.mdsdprofiles.api;bundle-version="1.0.1";visibility:=reexport,
  org.modelversioning.emfprofile;bundle-version="1.1.0",
  org.eclipse.gmf.runtime.notation;bundle-version="1.8.0",
- org.jgrapht.core;bundle-version="1.0.1";visibility:=reexport,
  org.palladiosimulator.pcm.dataprocessing.profile;bundle-version="0.1.0",
  org.apache.commons.lang3;bundle-version="3.1.0";visibility:=reexport,
  org.palladiosimulator.pcm.dataprocessing.prolog;bundle-version="0.1.0";visibility:=reexport
@@ -30,4 +29,6 @@ Service-Component: OSGI-INF/org.palladiosimulator.pcm.dataprocessing.analysis.tr
  OSGI-INF/org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characteristics.impl.UserDefinedReturnValueAssignmentsGenerator.xml
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.palladiosimulator.pcm.dataprocessing.analysis.transformation.Activator
+Bundle-ClassPath: .,
+ lib/jgrapht-core-1.2.0.jar
 
