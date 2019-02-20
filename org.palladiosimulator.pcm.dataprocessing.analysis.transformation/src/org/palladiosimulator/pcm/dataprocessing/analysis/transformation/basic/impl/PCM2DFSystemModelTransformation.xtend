@@ -1,11 +1,5 @@
 package org.palladiosimulator.pcm.dataprocessing.analysis.transformation.basic.impl
 
-import edu.kit.ipd.sdq.dataflow.systemmodel.Caller
-import edu.kit.ipd.sdq.dataflow.systemmodel.LogicTerm
-import edu.kit.ipd.sdq.dataflow.systemmodel.Operation
-import edu.kit.ipd.sdq.dataflow.systemmodel.SystemModelFactory
-import edu.kit.ipd.sdq.dataflow.systemmodel.ValueSetType
-import edu.kit.ipd.sdq.dataflow.systemmodel.VariableAssignment
 import java.util.ArrayList
 import java.util.Collections
 import java.util.Map
@@ -34,6 +28,12 @@ import org.palladiosimulator.pcm.dataprocessing.dataprocessing.data.Data
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.DataOperation
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.ReturnDataOperation
 import org.palladiosimulator.pcm.dataprocessing.profile.api.ProfileConstants
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.Caller
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.LogicTerm
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.Operation
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.PrologmodelFactory
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.ValueSetType
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.VariableAssignment
 import org.palladiosimulator.pcm.repository.DataType
 import org.palladiosimulator.pcm.system.System
 import org.palladiosimulator.pcm.usagemodel.ScenarioBehaviour
@@ -43,7 +43,7 @@ import static org.palladiosimulator.pcm.dataprocessing.analysis.transformation.d
 
 class PCM2DFSystemModelTransformation implements ITransformator, TransformationFacilities {
 	
-	static val factory = SystemModelFactory.eINSTANCE
+	static val factory = PrologmodelFactory.eINSTANCE
 	val extension ICachingUniqueNameProvider uniqueNameProvider
 	val IReturnValueAssignmentGeneratorRegistry returnValueAssignmentGeneratorRegistry;
 	val IQueryExecutor queryExecutor = createQueryExecutor()

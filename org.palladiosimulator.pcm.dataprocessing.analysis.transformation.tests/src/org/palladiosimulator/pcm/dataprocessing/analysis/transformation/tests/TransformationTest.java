@@ -23,12 +23,12 @@ import org.junit.Test;
 import org.palladiosimulator.pcm.allocation.Allocation;
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characteristics.IReturnValueAssignmentGenerator;
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.tests.base.TransformationTestBase;
+import org.palladiosimulator.pcm.dataprocessing.dataprocessing.DataSpecification;
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.characteristics.CharacteristicTypeContainer;
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.Operation;
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.Variable;
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.VariableAssignment;
 import org.palladiosimulator.pcm.usagemodel.UsageModel;
-
-import edu.kit.ipd.sdq.dataflow.systemmodel.Operation;
-import edu.kit.ipd.sdq.dataflow.systemmodel.Variable;
-import edu.kit.ipd.sdq.dataflow.systemmodel.VariableAssignment;
 
 public class TransformationTest extends TransformationTestBase {
 
@@ -56,11 +56,16 @@ public class TransformationTest extends TransformationTestBase {
 		CharacteristicTypeContainer characteristicTypeContainer = (CharacteristicTypeContainer) rs
 				.getResource(createRelativeURI("models/minimalCallAndReturn/characteristicTypes.xmi"), true)
 				.getContents().get(0);
+		DataSpecification ds = (DataSpecification) rs
+				.getResource(createRelativeURI("models/minimalCallAndReturn/DataSpecification.xmi"), true)
+				.getContents().get(0);
 		EcoreUtil.resolveAll(rs);
 
-		edu.kit.ipd.sdq.dataflow.systemmodel.System dataFlowSystemModel = getSubject().transform(usageModel, system,
+		org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.System dataFlowSystemModel = getSubject().transform(usageModel, system,
 				allocationModel, characteristicTypeContainer);
 
+		Diagnostic validationResult2 = Diagnostician.INSTANCE.validate(ds);
+		assertThat(toString(validationResult2), validationResult2.getSeverity(), is(Diagnostic.OK));
 		Diagnostic validationResult = Diagnostician.INSTANCE.validate(dataFlowSystemModel);
 		assertThat(toString(validationResult), validationResult.getSeverity(), is(Diagnostic.OK));
 
@@ -137,7 +142,7 @@ public class TransformationTest extends TransformationTestBase {
 				.getContents().get(0);
 		EcoreUtil.resolveAll(rs);
 
-		edu.kit.ipd.sdq.dataflow.systemmodel.System dataFlowSystemModel = getSubject().transform(usageModel, system,
+		org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.System dataFlowSystemModel = getSubject().transform(usageModel, system,
 				allocationModel, characteristicTypeContainer);
 
 		Diagnostic validationResult = Diagnostician.INSTANCE.validate(dataFlowSystemModel);

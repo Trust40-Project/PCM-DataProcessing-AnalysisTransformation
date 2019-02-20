@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<systemmodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:systemmodel="http://sdq.ipd.kit.edu/dataflow/systemmodel" name="s1">
+<systemmodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:systemmodel="http://www.palladiosimulator.org/pcm/dataprocessing/prolog/0.1/" name="s1">
   <attributes type="//@types.0" name="EnumCharacteristicType Roles (_WjvUYL59Eei6GcxJOtcDSg)"/>
   <datatypes attributes="//@attributes.0" name="org.palladiosimulator.pcm.repository.PrimitiveDataType BOOL"/>
   <operations name="PerformDataTransmissionOperation callB (_QHgAI-aSEeiJ5POhgxpySg) - AC _5tW1sOaOEeiJ5POhgxpySg">

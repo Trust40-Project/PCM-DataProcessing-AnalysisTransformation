@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<systemmodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:systemmodel="http://sdq.ipd.kit.edu/dataflow/systemmodel" name="ExampleScenario">
+<systemmodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:systemmodel="http://www.palladiosimulator.org/pcm/dataprocessing/prolog/0.1/" name="ExampleScenario">
   <attributes type="//@types.0" name="EnumCharacteristicType AccessRights (_rkiSMFqnEeiY18w7ObeSrg)"/>
   <attributes type="//@types.0" name="EnumCharacteristicType Roles (_vP5JoFqnEeiY18w7ObeSrg)"/>
   <datatypes attributes="//@attributes.0 //@attributes.1" name="CollectionDataType FlightOffers (_XfY5nM5jEeWFJak7Wqvc0g)"/>

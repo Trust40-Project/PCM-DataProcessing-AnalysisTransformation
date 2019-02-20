@@ -6,9 +6,8 @@ import java.util.function.Supplier;
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characteristics.IQueryExecutor;
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.characteristics.Characteristic;
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.characteristics.CharacteristicType;
-
-import edu.kit.ipd.sdq.dataflow.systemmodel.Attribute;
-import edu.kit.ipd.sdq.dataflow.systemmodel.Value;
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.Attribute;
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.Value;
 
 public class QueryExecutorDelegator implements IQueryExecutor {
 

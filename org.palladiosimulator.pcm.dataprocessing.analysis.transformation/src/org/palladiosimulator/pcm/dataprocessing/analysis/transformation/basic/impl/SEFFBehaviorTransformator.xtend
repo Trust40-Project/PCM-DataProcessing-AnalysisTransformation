@@ -1,21 +1,22 @@
 package org.palladiosimulator.pcm.dataprocessing.analysis.transformation.basic.impl
 
+import de.uka.ipd.sdq.identifier.Identifier
 import org.palladiosimulator.pcm.core.composition.AssemblyConnector
 import org.palladiosimulator.pcm.core.composition.AssemblyContext
 import org.palladiosimulator.pcm.core.entity.Entity
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.IdentifierInstance
+import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.DataOperation
+import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.ReturnDataOperation
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.repository.OperationSignatureDataRefinement
 import org.palladiosimulator.pcm.dataprocessing.profile.api.ProfileConstants
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.OperationCall
 import org.palladiosimulator.pcm.repository.OperationRequiredRole
 import org.palladiosimulator.pcm.seff.ExternalCallAction
 import org.palladiosimulator.pcm.seff.ResourceDemandingSEFF
 import org.palladiosimulator.pcm.system.System
 
 import static org.palladiosimulator.pcm.dataprocessing.analysis.transformation.util.EMFUtils.*
-import de.uka.ipd.sdq.identifier.Identifier
-import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.DataOperation
-import edu.kit.ipd.sdq.dataflow.systemmodel.OperationCall
-import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.ReturnDataOperation
+
 import static extension org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.IdentifierInstance.createInstance
 
 class SEFFBehaviorTransformator extends BehaviorTransformator {

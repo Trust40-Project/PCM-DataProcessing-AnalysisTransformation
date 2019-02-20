@@ -1,12 +1,6 @@
 package org.palladiosimulator.pcm.dataprocessing.analysis.transformation.basic.impl
 
 import de.uka.ipd.sdq.identifier.Identifier
-import edu.kit.ipd.sdq.dataflow.systemmodel.LogicTerm
-import edu.kit.ipd.sdq.dataflow.systemmodel.Operation
-import edu.kit.ipd.sdq.dataflow.systemmodel.OperationCall
-import edu.kit.ipd.sdq.dataflow.systemmodel.SystemModelFactory
-import edu.kit.ipd.sdq.dataflow.systemmodel.Variable
-import edu.kit.ipd.sdq.dataflow.systemmodel.VariableAssignment
 import java.util.ArrayList
 import java.util.HashMap
 import java.util.LinkedHashSet
@@ -27,6 +21,12 @@ import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.DataPr
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.PerformDataTransmissionOperation
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.ProcessingFactory
 import org.palladiosimulator.pcm.dataprocessing.profile.api.ProfileConstants
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.LogicTerm
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.Operation
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.OperationCall
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.PrologmodelFactory
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.Variable
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.VariableAssignment
 import org.palladiosimulator.pcm.repository.BasicComponent
 import org.palladiosimulator.pcm.seff.ResourceDemandingSEFF
 import org.palladiosimulator.pcm.seff.StartAction
@@ -40,7 +40,7 @@ import static extension org.palladiosimulator.pcm.dataprocessing.analysis.transf
 
 abstract class BehaviorTransformator {
 	
-	protected static val factory = SystemModelFactory.eINSTANCE
+	protected static val factory = PrologmodelFactory.eINSTANCE
 	protected static val DataOperation SEFF_DUMMY_OPERATION = ProcessingFactory.eINSTANCE.createStoreDataOperation
 	
 	protected extension val TransformationFacilities transformationFacilities

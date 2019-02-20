@@ -7,10 +7,9 @@ import java.util.Optional;
 import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.data.Data;
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.DataOperation;
-
-import edu.kit.ipd.sdq.dataflow.systemmodel.LogicTerm;
-import edu.kit.ipd.sdq.dataflow.systemmodel.Variable;
-import edu.kit.ipd.sdq.dataflow.systemmodel.VariableAssignment;
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.LogicTerm;
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.Variable;
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.VariableAssignment;
 
 public interface IReturnValueAssignmentGenerator extends IPrioritizable {
 

@@ -26,13 +26,12 @@ import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characte
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characteristics.IReturnValueAssignmentGeneratorRegistry;
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characteristics.impl.DefaultReturnValueAssignmentGenerator;
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characteristics.impl.UserDefinedReturnValueAssignmentsGenerator;
-
-import edu.kit.ipd.sdq.dataflow.systemmodel.OperationCall;
-import edu.kit.ipd.sdq.dataflow.systemmodel.ReturnValueRef;
-import edu.kit.ipd.sdq.dataflow.systemmodel.StateRef;
-import edu.kit.ipd.sdq.dataflow.systemmodel.SystemModelPackage;
-import edu.kit.ipd.sdq.dataflow.systemmodel.Variable;
-import edu.kit.ipd.sdq.dataflow.systemmodel.VariableAssignment;
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.OperationCall;
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.PrologmodelPackage;
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.ReturnValueRef;
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.StateRef;
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.Variable;
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.VariableAssignment;
 
 public abstract class TransformationTestBase {
 
@@ -83,7 +82,7 @@ public abstract class TransformationTestBase {
 		assertThat(assignment.getAttribute(), is(nullValue()));
 		assertThat(assignment.getValue(), is(nullValue()));
 		if (assignment.getTerm() instanceof ReturnValueRef) {
-			assertThat(sourceVariable.eContainmentFeature(), is(SystemModelPackage.Literals.OPERATION__RETURN_VALUES));
+			assertThat(sourceVariable.eContainmentFeature(), is(PrologmodelPackage.Literals.OPERATION__RETURN_VALUES));
 			ReturnValueRef ref = (ReturnValueRef) assignment.getTerm();
 			assertThat(ref.getReturnValue(), is(sourceVariable));
 			assertThat(ref.getAttribute(), is(nullValue()));
@@ -92,7 +91,7 @@ public abstract class TransformationTestBase {
 			assertThat(ref.getCall(), is(sourceCall));
 		} else if (assignment.getTerm() instanceof StateRef) {
 			assertThat(sourceVariable.eContainmentFeature(),
-					is(SystemModelPackage.Literals.OPERATION__STATE_VARIABLES));
+					is(PrologmodelPackage.Literals.OPERATION__STATE_VARIABLES));
 			StateRef ref = (StateRef) assignment.getTerm();
 			assertThat(ref.getStateVariable(), is(sourceVariable));
 			assertThat(ref.getAttribute(), is(nullValue()));

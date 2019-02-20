@@ -1,10 +1,6 @@
 package org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characteristics.impl
 
 import com.google.common.base.Supplier
-import edu.kit.ipd.sdq.dataflow.systemmodel.LogicTerm
-import edu.kit.ipd.sdq.dataflow.systemmodel.SystemModelFactory
-import edu.kit.ipd.sdq.dataflow.systemmodel.Variable
-import edu.kit.ipd.sdq.dataflow.systemmodel.VariableAssignment
 import java.util.ArrayList
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characteristics.IQueryExecutor
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.characteristics.Characteristic
@@ -12,12 +8,16 @@ import org.palladiosimulator.pcm.dataprocessing.dataprocessing.characteristics.C
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.effectspecification.CharacteristicSpecification
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.effectspecification.DirectCharacteristic
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.CharacteristicChangeOperation
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.LogicTerm
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.PrologmodelFactory
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.Variable
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.VariableAssignment
 
 import static org.apache.commons.lang3.Validate.*
 
 class AssignmentsGeneratorUtils {
 	
-	static extension val SystemModelFactory factory = SystemModelFactory.eINSTANCE
+	static extension val PrologmodelFactory factory = PrologmodelFactory.eINSTANCE
 	
 	private new() {
 		// do not allow instantiating this class

@@ -9,18 +9,17 @@ import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.Iden
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.SEFFInstance;
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.data.Data;
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.DataOperation;
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.Caller;
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.LogicTerm;
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.Operation;
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.OperationCall;
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.Variable;
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.VariableAssignment;
 import org.palladiosimulator.pcm.resourceenvironment.ResourceContainer;
-
-import edu.kit.ipd.sdq.dataflow.systemmodel.Caller;
-import edu.kit.ipd.sdq.dataflow.systemmodel.LogicTerm;
-import edu.kit.ipd.sdq.dataflow.systemmodel.Operation;
-import edu.kit.ipd.sdq.dataflow.systemmodel.OperationCall;
-import edu.kit.ipd.sdq.dataflow.systemmodel.Variable;
-import edu.kit.ipd.sdq.dataflow.systemmodel.VariableAssignment;
 
 public interface TransformationFacilities {
 
-	edu.kit.ipd.sdq.dataflow.systemmodel.System getSystem();
+	org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.System getSystem();
 
 	Operation getOperation(IdentifierInstance<DataOperation, AssemblyContext> dataOpInstance);
 	

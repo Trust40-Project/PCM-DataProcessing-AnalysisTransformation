@@ -1,8 +1,5 @@
 package org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characteristics.impl
 
-import edu.kit.ipd.sdq.dataflow.systemmodel.LogicTerm
-import edu.kit.ipd.sdq.dataflow.systemmodel.Variable
-import edu.kit.ipd.sdq.dataflow.systemmodel.VariableAssignment
 import java.util.ArrayList
 import java.util.Map
 import java.util.Optional
@@ -21,9 +18,11 @@ import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.LoadDa
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.ReturnDataOperation
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.TransformDataOperation
 import org.palladiosimulator.pcm.dataprocessing.profile.api.ProfileConstants
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.LogicTerm
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.Variable
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.VariableAssignment
 
 import static org.apache.commons.lang3.Validate.*
-
 import static extension org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characteristics.impl.AssignmentsGeneratorUtils.*
 
 @Component

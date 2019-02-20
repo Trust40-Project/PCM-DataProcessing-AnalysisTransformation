@@ -1,16 +1,5 @@
 package org.palladiosimulator.pcm.dataprocessing.analysis.transformation.rbac.characteristics
 
-import edu.kit.ipd.sdq.dataflow.systemmodel.Attribute
-import edu.kit.ipd.sdq.dataflow.systemmodel.DefaultStateRef
-import edu.kit.ipd.sdq.dataflow.systemmodel.LogicTerm
-import edu.kit.ipd.sdq.dataflow.systemmodel.ParameterRef
-import edu.kit.ipd.sdq.dataflow.systemmodel.PropertyRef
-import edu.kit.ipd.sdq.dataflow.systemmodel.ReturnValueRef
-import edu.kit.ipd.sdq.dataflow.systemmodel.StateRef
-import edu.kit.ipd.sdq.dataflow.systemmodel.SystemModelFactory
-import edu.kit.ipd.sdq.dataflow.systemmodel.Value
-import edu.kit.ipd.sdq.dataflow.systemmodel.Variable
-import edu.kit.ipd.sdq.dataflow.systemmodel.VariableAssignment
 import java.util.ArrayList
 import java.util.List
 import java.util.Map
@@ -23,10 +12,21 @@ import org.palladiosimulator.pcm.dataprocessing.dataprocessing.data.Data
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.ManyToOneDataOperation
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.TransformDataOperation
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.util.ProcessingSwitch
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.Attribute
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.DefaultStateRef
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.LogicTerm
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.ParameterRef
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.PrologmodelFactory
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.PropertyRef
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.ReturnValueRef
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.StateRef
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.Variable
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.VariableAssignment
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.Value
 
 class DataProcessorSwitch extends ProcessingSwitch<List<VariableAssignment>> {
 
-	static extension val SystemModelFactory factory = SystemModelFactory.eINSTANCE
+	static extension val PrologmodelFactory factory = PrologmodelFactory.eINSTANCE
 	val IQueryExecutor queryExecutor
 	val Optional<AssemblyContext> ac
 	val Map<Data, LogicTerm> availableData

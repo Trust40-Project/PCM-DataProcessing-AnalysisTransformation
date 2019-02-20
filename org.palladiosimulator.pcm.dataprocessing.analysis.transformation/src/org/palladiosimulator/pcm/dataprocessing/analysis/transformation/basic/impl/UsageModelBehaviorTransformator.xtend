@@ -1,7 +1,6 @@
 package org.palladiosimulator.pcm.dataprocessing.analysis.transformation.basic.impl
 
 import de.uka.ipd.sdq.identifier.Identifier
-import edu.kit.ipd.sdq.dataflow.systemmodel.OperationCall
 import java.util.ArrayList
 import org.eclipse.emf.ecore.util.EcoreUtil
 import org.jgrapht.Graph
@@ -11,6 +10,7 @@ import org.palladiosimulator.pcm.core.entity.Entity
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.DataEdge
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.IdentifierInstance
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.DataOperation
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.OperationCall
 import org.palladiosimulator.pcm.system.System
 import org.palladiosimulator.pcm.usagemodel.EntryLevelSystemCall
 import org.palladiosimulator.pcm.usagemodel.ScenarioBehaviour

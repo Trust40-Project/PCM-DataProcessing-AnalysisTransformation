@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.impl.EPackageRegistryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.ocl.ecore.OCL;
+import org.eclipse.ocl.ecore.delegate.OCLDelegateDomain;
 import org.eclipse.ocl.pivot.utilities.PivotStandaloneSetup;
 import org.eclipse.ocl.xtext.completeocl.CompleteOCLStandaloneSetup;
 import org.modelversioning.emfprofile.Profile;
@@ -31,14 +33,24 @@ public final class StandaloneInitializer {
 		if (isRunningEmbedded()) {
 			return false;
 		}
+
+		// OCL Initialization
+		OCL.initialize(null);
+		OCLDelegateDomain.initialize(null);
+		
+		// OCL Pivot
+		PivotStandaloneSetup.doSetup();
+		CompleteOCLStandaloneSetup.doSetup();
+		
+		
+//		EStructuralFeature.Internal.SettingDelegate.Factory.Registry.INSTANCE.put(DynamicDispatchEnabler.URI, DynamicDispatchEnablingOCLSettingDelegateFactory.createDefault());
+//		EOperation.Internal.InvocationDelegate.Factory.Registry.INSTANCE.put(DynamicDispatchEnabler.URI, DynamicDispatchEnablingOCLInvocationDelegateFactory.createDefault());
+//		EValidator.ValidationDelegate.Registry.INSTANCE.put(DynamicDispatchEnabler.URI, DynamicDispatchEnablingOCLValidationDelegateFactory.createDefault());
+		
 		
 		// Detection of Meta Models and URIs by classpath magic
 		// https://wiki.eclipse.org/EMF/FAQ#How_do_I_make_my_EMF_standalone_application_Eclipse-aware.3F
 		EcorePlugin.ExtensionProcessor.process(null);
-
-		// OCL Pivot
-		PivotStandaloneSetup.doSetup();
-		CompleteOCLStandaloneSetup.doSetup();
 
 		// Resource URI Mapping
 		registerProjectURI(Api.class, PROJECT_NAME_PROFILE);
