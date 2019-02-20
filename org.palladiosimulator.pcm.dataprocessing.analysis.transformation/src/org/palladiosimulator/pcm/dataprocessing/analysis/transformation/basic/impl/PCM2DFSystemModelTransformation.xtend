@@ -66,9 +66,9 @@ class PCM2DFSystemModelTransformation implements ITransformator, TransformationF
 		system.systemusages += pcmUsageModel.usageScenario_UsageModel.map[scenarioBehaviour_UsageScenario].map[getSystemUsage]
 		system.datatypes.forEach[dt | dt.attributes += system.attributes] // we might want to optimise this later
 		
-		val idToObject = uniqueNameProvider.cache.inverse
-		val idDump = idToObject.keySet.sort.map[k | '''«k» -> «idToObject.get(k)»'''].join("\n")
-		print(idDump)
+//		val idToObject = uniqueNameProvider.cache.inverse
+//		val idDump = idToObject.keySet.sort.map[k | '''«k» -> «idToObject.get(k)»'''].join("\n")
+//		print(idDump)
 		
 		system
 	}
