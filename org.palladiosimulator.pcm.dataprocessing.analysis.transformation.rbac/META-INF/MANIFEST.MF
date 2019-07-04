@@ -13,4 +13,5 @@ Require-Bundle: org.palladiosimulator.pcm.dataprocessing.analysis.transformation
  org.eclipse.xtend.lib.macro
 Bundle-ActivationPolicy: lazy
 Service-Component: OSGI-INF/org.palladiosimulator.pcm.dataprocessing.analysis.transformation.rbac.characteristics.DefaultRBACReturnValueAssignmentGenerator.xml
+Export-Package: org.palladiosimulator.pcm.dataprocessing.analysis.transformation.rbac.characteristics
 
