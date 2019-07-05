@@ -11,6 +11,7 @@ import org.eclipse.ocl.ecore.OCL;
 import org.eclipse.ocl.ecore.delegate.OCLDelegateDomain;
 import org.eclipse.ocl.pivot.utilities.PivotStandaloneSetup;
 import org.eclipse.ocl.xtext.completeocl.CompleteOCLStandaloneSetup;
+import org.eclipse.ocl.xtext.essentialocl.EssentialOCLStandaloneSetup;
 import org.modelversioning.emfprofile.Profile;
 import org.palladiosimulator.pcm.dataprocessing.profile.api.Api;
 
@@ -34,10 +35,11 @@ public final class StandaloneInitializer {
 			initNonEmbeddedPart();
 		}
 
+		EssentialOCLStandaloneSetup.doSetup();
+		
 		// PCM Data Profile
 		ResourceSet rs = new ResourceSetImpl();
 		URI profileURI = createPluginRelativeURI(PROJECT_NAME_PROFILE, RELATIVE_PATH_PROFILE);
-		System.out.println(profileURI);
 		Profile profile = (Profile) rs.getResource(profileURI, true).getContents().get(0);
 		EPackageRegistryImpl.INSTANCE.put(profile.getNsURI(), profile);
 		
