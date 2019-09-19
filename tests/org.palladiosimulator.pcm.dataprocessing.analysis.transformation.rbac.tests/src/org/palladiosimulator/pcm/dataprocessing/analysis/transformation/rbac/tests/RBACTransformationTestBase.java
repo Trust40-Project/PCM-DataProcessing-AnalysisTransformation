@@ -64,7 +64,7 @@ public abstract class RBACTransformationTestBase extends TransformationTestBase 
 		
 		modelModifier.ifPresent(m -> m.modify(usageModel, system, allocationModel, characteristicTypeContainer));
 			
-		EObject actual = getSubject().transform(usageModel, system,
+		EObject actual = getSubject().transform(usageModel,
 				allocationModel, characteristicTypeContainer);
 
 		if (resultFileName.isPresent()) {

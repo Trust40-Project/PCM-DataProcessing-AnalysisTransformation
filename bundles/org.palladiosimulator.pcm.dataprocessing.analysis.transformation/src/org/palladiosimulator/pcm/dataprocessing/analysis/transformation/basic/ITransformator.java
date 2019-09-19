@@ -5,8 +5,8 @@ import org.palladiosimulator.pcm.dataprocessing.dataprocessing.characteristics.C
 import org.palladiosimulator.pcm.usagemodel.UsageModel;
 
 public interface ITransformator {
-	
-	org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.System transform(UsageModel pcmUsageModel, org.palladiosimulator.pcm.system.System pcmSystem,
+
+	org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.System transform(UsageModel pcmUsageModel,
 			Allocation pcmAllocationModel, CharacteristicTypeContainer pcmCharacteristicTypeContainer);
-	
+
 }

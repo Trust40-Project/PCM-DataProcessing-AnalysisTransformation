@@ -47,9 +47,6 @@ public class TransformationTest extends TransformationTestBase {
 		UsageModel usageModel = (UsageModel) rs
 				.getResource(createRelativeURI("models/minimalCallAndReturn/newUsageModel.usagemodel"), true)
 				.getContents().get(0);
-		org.palladiosimulator.pcm.system.System system = (org.palladiosimulator.pcm.system.System) rs
-				.getResource(createRelativeURI("models/minimalCallAndReturn/newSystem.system"), true).getContents()
-				.get(0);
 		Allocation allocationModel = (Allocation) rs
 				.getResource(createRelativeURI("models/minimalCallAndReturn/newAllocation.allocation"), true)
 				.getContents().get(0);
@@ -61,7 +58,7 @@ public class TransformationTest extends TransformationTestBase {
 				.getContents().get(0);
 		EcoreUtil.resolveAll(rs);
 
-		org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.System dataFlowSystemModel = getSubject().transform(usageModel, system,
+		org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.System dataFlowSystemModel = getSubject().transform(usageModel,
 				allocationModel, characteristicTypeContainer);
 
 		Diagnostic validationResult2 = Diagnostician.INSTANCE.validate(ds);
@@ -131,9 +128,6 @@ public class TransformationTest extends TransformationTestBase {
 		UsageModel usageModel = (UsageModel) rs
 				.getResource(createRelativeURI("models/minimalSameSignature/newUsageModel.usagemodel"), true)
 				.getContents().get(0);
-		org.palladiosimulator.pcm.system.System system = (org.palladiosimulator.pcm.system.System) rs
-				.getResource(createRelativeURI("models/minimalSameSignature/newAssembly.system"), true).getContents()
-				.get(0);
 		Allocation allocationModel = (Allocation) rs
 				.getResource(createRelativeURI("models/minimalSameSignature/newAllocation.allocation"), true)
 				.getContents().get(0);
@@ -142,7 +136,7 @@ public class TransformationTest extends TransformationTestBase {
 				.getContents().get(0);
 		EcoreUtil.resolveAll(rs);
 
-		org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.System dataFlowSystemModel = getSubject().transform(usageModel, system,
+		org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.System dataFlowSystemModel = getSubject().transform(usageModel,
 				allocationModel, characteristicTypeContainer);
 
 		Diagnostic validationResult = Diagnostician.INSTANCE.validate(dataFlowSystemModel);

@@ -40,6 +40,7 @@ import org.palladiosimulator.pcm.usagemodel.ScenarioBehaviour
 import org.palladiosimulator.pcm.usagemodel.UsageModel
 
 import static org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.IdentifierInstance.*
+import org.palladiosimulator.pcm.usagemodel.EntryLevelSystemCall
 
 class PCM2DFSystemModelTransformation implements ITransformator, TransformationFacilities {
 	
@@ -55,9 +56,10 @@ class PCM2DFSystemModelTransformation implements ITransformator, TransformationF
 		this.uniqueNameProvider = nameProvider
 	}
 	
-	override transform(UsageModel pcmUsageModel, System pcmSystem, Allocation pcmAllocationModel, CharacteristicTypeContainer pcmCharacteristicTypeContainer) {
+	override transform(UsageModel pcmUsageModel, Allocation pcmAllocationModel, CharacteristicTypeContainer pcmCharacteristicTypeContainer) {
 		this.pcmAllocationModel = pcmAllocationModel
 		this.pcmCharacteristicTypeContainer = pcmCharacteristicTypeContainer
+		val pcmSystem = pcmUsageModel.eAllContents.filter(EntryLevelSystemCall).map[providedRole_EntryLevelSystemCall.eContainer].filter(System).findFirst[true]
 		system.name = pcmSystem.entityName
 		system.types += pcmCharacteristicTypeContainer.characteristicTypes.map[valueType]
 		system.attributes += pcmCharacteristicTypeContainer.characteristicTypes.map[attribute]
