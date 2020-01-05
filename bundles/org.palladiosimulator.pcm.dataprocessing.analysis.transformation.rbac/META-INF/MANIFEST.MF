@@ -4,7 +4,7 @@ Bundle-Name: DataFlow Analysis Transformation - RBAC
 Bundle-SymbolicName: org.palladiosimulator.pcm.dataprocessing.analysis.transformation.rbac
 Bundle-Version: 0.1.0.qualifier
 Automatic-Module-Name: org.palladiosimulator.pcm.dataprocessing.analysis.transformation.rbac
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.palladiosimulator.pcm.dataprocessing.analysis.transformation;bundle-version="0.1.0",
  org.palladiosimulator.pcm.dataprocessing,
  com.google.guava,

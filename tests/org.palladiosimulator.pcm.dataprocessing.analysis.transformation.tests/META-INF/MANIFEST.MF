@@ -4,6 +4,6 @@ Bundle-Name: Analysis Transformation Tests
 Bundle-SymbolicName: org.palladiosimulator.pcm.dataprocessing.analysis.transformation.tests
 Bundle-Version: 0.1.0.qualifier
 Fragment-Host: org.palladiosimulator.pcm.dataprocessing.analysis.transformation;bundle-version="0.1.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.palladiosimulator.pcm.dataprocessing.analysis.transformation.tests.base;bundle-version="0.1.0"
 Automatic-Module-Name: org.palladiosimulator.pcm.dataprocessing.analysis.transformation.tests
