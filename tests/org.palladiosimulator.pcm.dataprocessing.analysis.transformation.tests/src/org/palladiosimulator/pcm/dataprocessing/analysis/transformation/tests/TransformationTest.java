@@ -149,4 +149,32 @@ public class TransformationTest extends TransformationTestBase {
 
 		assertThat(toString(comparison), comparison.getDifferences(), is(empty()));
 	}
+	
+	@Test
+	public void testMinStatic() throws IOException {
+		ResourceSet rs = new ResourceSetImpl();
+		UsageModel usageModel = (UsageModel) rs
+				.getResource(createRelativeURI("models/minStatic/newUsageModel.usagemodel"), true)
+				.getContents().get(0);
+		Allocation allocationModel = (Allocation) rs
+				.getResource(createRelativeURI("models/minStatic/newAllocation.allocation"), true)
+				.getContents().get(0);
+		DataSpecification dataSpecification = (DataSpecification) rs
+				.getResource(createRelativeURI("models/minStatic/newDataProcessing.dataprocessing"), true)
+				.getContents().get(0);
+		EcoreUtil.resolveAll(rs);
+		
+		org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.System dataFlowSystemModel = getSubject().transform(usageModel,
+				allocationModel, dataSpecification.getCharacteristicTypeContainers().iterator().next());
+
+		Diagnostic validationResult = Diagnostician.INSTANCE.validate(dataFlowSystemModel);
+		assertThat(toString(validationResult), validationResult.getSeverity(), is(Diagnostic.OK));
+		
+		Resource expectedResource = rs.getResource(createRelativeURI("models/minStatic/expected.xmi"), true);
+		
+		IComparisonScope scope = new DefaultComparisonScope(expectedResource.getContents().get(0), dataFlowSystemModel, null);
+		Comparison comparison = EMFCompare.builder().build().compare(scope);
+
+		assertThat(toString(comparison), comparison.getDifferences(), is(empty()));
+	}
 }

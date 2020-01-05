@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<system:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:system="http://palladiosimulator.org/PalladioComponentModel/System/5.2" id="_YWrt4C_CEeqRz6I3bnnYYQ" entityName="New System">
+  <assemblyContexts__ComposedStructure id="_aHRhwC_CEeqRz6I3bnnYYQ" entityName="Assembly_PrivacyChangingEchoComponent">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="newRepository.repository#_GNes0C_CEeqRz6I3bnnYYQ"/>
+  </assemblyContexts__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_cGEwwC_CEeqRz6I3bnnYYQ" entityName="newProvidedDelegationConnector" outerProvidedRole_ProvidedDelegationConnector="_bH9isC_CEeqRz6I3bnnYYQ" assemblyContext_ProvidedDelegationConnector="_aHRhwC_CEeqRz6I3bnnYYQ">
+    <innerProvidedRole_ProvidedDelegationConnector href="newRepository.repository#_SU38cC_CEeqRz6I3bnnYYQ"/>
+  </connectors__ComposedStructure>
+  <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_bH9isC_CEeqRz6I3bnnYYQ" entityName="PrivacyChangingEchoServiceProvidedRole">
+    <providedInterface__OperationProvidedRole href="newRepository.repository#_FjJWYC_CEeqRz6I3bnnYYQ"/>
+  </providedRoles_InterfaceProvidingEntity>
+</system:System>

@@ -85,7 +85,7 @@ class DefaultReturnValueAssignmentGenerator implements IReturnValueAssignmentGen
 		// always: copy all characteristics from input to output
 		result += createCopyAssignment(variable, availableData.get(returnVariable.key))
 		
-		result += variable.createChangeAssignments(dataOperation.operation, queryExecutor, dataOperation.characteristic, dataOperation.characteristic.characteristicType)
+		result += variable.createDirectChangeAssignments(dataOperation.operation, queryExecutor, dataOperation.characteristic, dataOperation.characteristic.characteristicType)
 		result
 	}
 	

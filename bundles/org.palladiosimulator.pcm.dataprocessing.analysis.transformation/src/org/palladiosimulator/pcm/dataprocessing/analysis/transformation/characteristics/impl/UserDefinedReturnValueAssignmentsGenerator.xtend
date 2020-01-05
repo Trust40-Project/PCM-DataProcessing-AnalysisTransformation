@@ -33,7 +33,7 @@ class UserDefinedReturnValueAssignmentsGenerator implements IReturnValueAssignme
 			for (characteristicChange : relevantProcessingEffects.map[characteristicChanges].flatten) {
 				
 				for (changeSpecification : characteristicChange.characteristicSpecifications) {
-					result += changeSpecification.createChangeAssignmentsBySpecification(returnVariable, queryExecutor)
+					result += changeSpecification.createChangeAssignmentsBySpecification(returnVariable, queryExecutor, dataOperation, availableData)
 				}
 				
 			}

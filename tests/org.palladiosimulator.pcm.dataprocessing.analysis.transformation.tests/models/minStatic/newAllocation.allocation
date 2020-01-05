@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<allocation:Allocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:allocation="http://palladiosimulator.org/PalladioComponentModel/Allocation/5.2" id="_7fWgwC_CEeq0E8o4OEZsfw" entityName="New Allocation">
+  <targetResourceEnvironment_Allocation href="newResourceEnvironment.resourceenvironment#/"/>
+  <system_Allocation href="newSystem.system#_YWrt4C_CEeqRz6I3bnnYYQ"/>
+  <allocationContexts_Allocation id="_DqtYoC_DEeq0E8o4OEZsfw" entityName="Allocation_Assembly_PrivacyChangingEchoComponent">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_gcglgC_CEeqRz6I3bnnYYQ"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_aHRhwC_CEeqRz6I3bnnYYQ"/>
+  </allocationContexts_Allocation>
+</allocation:Allocation>

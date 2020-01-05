@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataprocessing:DataSpecification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:characteristics="http://www.palladiosimulator.org/pcm/dataprocessing/characteristics/0.1/" xmlns:data="http://www.palladiosimulator.org/pcm/dataprocessing/data/0.1/" xmlns:dataprocessing="http://www.palladiosimulator.org/pcm/dataprocessing/0.1/" xmlns:effectspecification="http://www.palladiosimulator.org/pcm/dataprocessing/effectspecification/0.1/" xmlns:processing="http://www.palladiosimulator.org/pcm/dataprocessing/processing/0.1/" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2">
+  <dataProcessingContainers id="_R8HBsC_DEeq0E8o4OEZsfw" entityName="User.sendData">
+    <operations xsi:type="processing:CreateDataOperation" id="_euZzAC_EEeq0E8o4OEZsfw" entityName="User.sendData.createData">
+      <resultingData xsi:type="data:OriginalData" id="_gx7xAC_EEeq0E8o4OEZsfw" entityName="User.sendData.createData.data">
+        <originalType xsi:type="repository:CompositeDataType" href="newRepository.repository#_NmRfUC_CEeqRz6I3bnnYYQ"/>
+      </resultingData>
+      <initialCharacteristics xsi:type="characteristics:EnumCharacteristic" id="_x7TFty_EEeq0E8o4OEZsfw" characteristicType="_qxo7YC_EEeq0E8o4OEZsfw" literals="_tPW7AC_EEeq0E8o4OEZsfw"/>
+    </operations>
+    <operations xsi:type="processing:PerformDataTransmissionOperation" id="_3hocEy_EEeq0E8o4OEZsfw" entityName="User.sendData.send">
+      <inputMappings id="_6PmeMC_EEeq0E8o4OEZsfw" from="_gx7xAC_EEeq0E8o4OEZsfw" to="_BCAmIC_FEeq0E8o4OEZsfw"/>
+      <outputMappings id="_7jQecS_EEeq0E8o4OEZsfw" from="_DOnnoi_FEeq0E8o4OEZsfw" to="_74qGsi_EEeq0E8o4OEZsfw"/>
+      <outputData id="_74qGsi_EEeq0E8o4OEZsfw" entityName="User.sendData.receivedData">
+        <operation href="newRepository.repository#_Mw4vcC_CEeqRz6I3bnnYYQ"/>
+      </outputData>
+    </operations>
+    <operations xsi:type="processing:UserReadData" id="_JFWKdi_FEeq0E8o4OEZsfw" entityName="User.sendData.read" consumedData="_74qGsi_EEeq0E8o4OEZsfw"/>
+  </dataProcessingContainers>
+  <dataProcessingContainers id="_YUXHwC_EEeq0E8o4OEZsfw" entityName="PrivacyChangingEchoComponent.echo">
+    <operations xsi:type="processing:EffectSpecifyingTransformDataOperation" id="_MpJobS_FEeq0E8o4OEZsfw" entityName="PrivacyChangingEchoComponent.echo.changeCharacteritics" input="_BCAmIC_FEeq0E8o4OEZsfw" processingEffectOperationType="_a1-6gC_FEeq0E8o4OEZsfw">
+      <output xsi:type="data:DerivedData" id="_fkI2Qy_GEeq0E8o4OEZsfw" entityName="PrivacyChangingEchoComponent.echo.changeCharacteritics.result" sources="_BCAmIC_FEeq0E8o4OEZsfw">
+        <resultingDataType xsi:type="repository:CompositeDataType" href="newRepository.repository#_NmRfUC_CEeqRz6I3bnnYYQ"/>
+      </output>
+    </operations>
+    <operations xsi:type="processing:ReturnDataOperation" id="_joA7ZS_GEeq0E8o4OEZsfw" entityName="PrivacyChangingEchoComponent.echo.return" consumedData="_fkI2Qy_GEeq0E8o4OEZsfw" returnDestination="_DOnnoi_FEeq0E8o4OEZsfw"/>
+  </dataProcessingContainers>
+  <characteristicTypeContainers id="_qauQMS_EEeq0E8o4OEZsfw">
+    <characteristicTypes xsi:type="characteristics:EnumCharacteristicType" id="_qxo7YC_EEeq0E8o4OEZsfw" entityName="LevelCharacteristic" enum="_rqWsES_EEeq0E8o4OEZsfw"/>
+    <enumerations id="_rqWsES_EEeq0E8o4OEZsfw" entityName="Level">
+      <literals id="_smj1oC_EEeq0E8o4OEZsfw" entityName="Low"/>
+      <literals id="_s72wMC_EEeq0E8o4OEZsfw" entityName="Medium"/>
+      <literals id="_tPW7AC_EEeq0E8o4OEZsfw" entityName="High"/>
+    </enumerations>
+  </characteristicTypeContainers>
+  <operationSignatureDataRefinement id="_KgfvRi_EEeq0E8o4OEZsfw" entityName="PrivacyChangingEchoService.echo">
+    <parameterRefinements id="_BCAmIC_FEeq0E8o4OEZsfw" entityName="PrivacyChangingEchoService.echo.input">
+      <parameter href="newRepository.repository#/0/@interfaces__Repository.0/@signatures__OperationInterface.0/@parameters__OperationSignature.0"/>
+    </parameterRefinements>
+    <resultRefinements id="_DOnnoi_FEeq0E8o4OEZsfw" entityName="PrivacyChangingEchoService.echo.output">
+      <operation href="newRepository.repository#_Mw4vcC_CEeqRz6I3bnnYYQ"/>
+    </resultRefinements>
+  </operationSignatureDataRefinement>
+  <extensions xsi:type="effectspecification:ProcessingEffectSpecification" id="_P2DCOC_FEeq0E8o4OEZsfw">
+    <operationTypes id="_a1-6gC_FEeq0E8o4OEZsfw" entityName="MediumCappingOperation"/>
+    <processingEffects xsi:type="effectspecification:OperationTypeDataProcessingEffect" id="_QmXr4S_FEeq0E8o4OEZsfw" entityName="MediumCappingOperationTypeProcessingEffect" relevantOperationTypes="_a1-6gC_FEeq0E8o4OEZsfw">
+      <fromDataType xsi:type="repository:CompositeDataType" href="newRepository.repository#_NmRfUC_CEeqRz6I3bnnYYQ"/>
+      <toDataType xsi:type="repository:CompositeDataType" href="newRepository.repository#_NmRfUC_CEeqRz6I3bnnYYQ"/>
+      <characteristicChanges id="_U4TbIC_FEeq0E8o4OEZsfw" entityName="MediumCappingOperationTypeProcessingEffect.change" changeOperation="REPLACE">
+        <characteristicSpecifications xsi:type="effectspecification:MinStaticCharacteristic" id="_V7AOQS_FEeq0E8o4OEZsfw" entityName="MediumCappingOperationTypeProcessingEffect.change.min">
+          <staticMinValue xsi:type="characteristics:EnumCharacteristic" id="_WXTvwC_FEeq0E8o4OEZsfw" characteristicType="_qxo7YC_EEeq0E8o4OEZsfw" literals="_s72wMC_EEeq0E8o4OEZsfw"/>
+        </characteristicSpecifications>
+      </characteristicChanges>
+    </processingEffects>
+  </extensions>
+</dataprocessing:DataSpecification>

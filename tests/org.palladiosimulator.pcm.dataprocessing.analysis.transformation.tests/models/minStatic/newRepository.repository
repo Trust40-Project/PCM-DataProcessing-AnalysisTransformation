@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataProcessingProfile="http://www.palladiosimulator.org/pcm/dataprocessing/profile/0.1/" xmlns:emfprofileapplication="http://www.modelversioning.org/emfprofile/application/1.1" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2">
+  <repository:Repository id="_Da53gC_CEeqRz6I3bnnYYQ" entityName="New Repository">
+    <components__Repository xsi:type="repository:BasicComponent" id="_GNes0C_CEeqRz6I3bnnYYQ" entityName="PrivacyChangingEchoComponent">
+      <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_SU38cC_CEeqRz6I3bnnYYQ" entityName="PrivacyChangingEchoComponent.PrivacyChangingEchoService.OperationProvidedRole1" providedInterface__OperationProvidedRole="_FjJWYC_CEeqRz6I3bnnYYQ"/>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_SU_4QC_CEeqRz6I3bnnYYQ" describedService__SEFF="_Mw4vcC_CEeqRz6I3bnnYYQ">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_SVBtcC_CEeqRz6I3bnnYYQ" successor_AbstractAction="_UNcVsC_EEeq0E8o4OEZsfw"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_SVCUgC_CEeqRz6I3bnnYYQ" predecessor_AbstractAction="_UNcVsC_EEeq0E8o4OEZsfw"/>
+        <steps_Behaviour xsi:type="seff:InternalAction" id="_UNcVsC_EEeq0E8o4OEZsfw" entityName="echo" predecessor_AbstractAction="_SVBtcC_CEeqRz6I3bnnYYQ" successor_AbstractAction="_SVCUgC_CEeqRz6I3bnnYYQ"/>
+      </serviceEffectSpecifications__BasicComponent>
+    </components__Repository>
+    <interfaces__Repository xsi:type="repository:OperationInterface" id="_FjJWYC_CEeqRz6I3bnnYYQ" entityName="PrivacyChangingEchoService">
+      <signatures__OperationInterface id="_Mw4vcC_CEeqRz6I3bnnYYQ" entityName="echo" returnType__OperationSignature="_NmRfUC_CEeqRz6I3bnnYYQ">
+        <parameters__OperationSignature dataType__Parameter="_NmRfUC_CEeqRz6I3bnnYYQ" parameterName="input"/>
+      </signatures__OperationInterface>
+    </interfaces__Repository>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_NmRfUC_CEeqRz6I3bnnYYQ" entityName="UserData"/>
+  </repository:Repository>
+  <emfprofileapplication:ProfileApplication>
+    <stereotypeApplications xsi:type="dataProcessingProfile:OperationSignatureDataRefinement" appliedTo="_Mw4vcC_CEeqRz6I3bnnYYQ">
+      <extension href="../../../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_u8vnsLydEeiT-9xxrec-9Q"/>
+      <operationSignatureDataRefinement href="newDataProcessing.dataprocessing#_KgfvRi_EEeq0E8o4OEZsfw"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_UNcVsC_EEeq0E8o4OEZsfw">
+      <extension href="../../../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YGiQIFqhEeiGTpqaWj7bwA"/>
+      <dataProcessingContainer href="newDataProcessing.dataprocessing#_YUXHwC_EEeq0E8o4OEZsfw"/>
+    </stereotypeApplications>
+    <importedProfiles nsURI="http://www.palladiosimulator.org/pcm/dataprocessing/profile/0.1/" location="platform:/plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram"/>
+  </emfprofileapplication:ProfileApplication>
+</xmi:XMI>
