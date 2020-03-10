@@ -2,8 +2,12 @@ package org.palladiosimulator.pcm.dataprocessing.analysis.transformation.basic.i
 
 import java.util.ArrayList
 import java.util.Collections
+import java.util.HashMap
 import java.util.Map
+import org.eclipse.emf.ecore.EAttribute
+import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.util.EcoreUtil
 import org.palladiosimulator.mdsdprofiles.api.StereotypeAPI
 import org.palladiosimulator.pcm.allocation.Allocation
 import org.palladiosimulator.pcm.core.composition.AssemblyContext
@@ -36,11 +40,11 @@ import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.ValueSetType
 import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.VariableAssignment
 import org.palladiosimulator.pcm.repository.DataType
 import org.palladiosimulator.pcm.system.System
+import org.palladiosimulator.pcm.usagemodel.EntryLevelSystemCall
 import org.palladiosimulator.pcm.usagemodel.ScenarioBehaviour
 import org.palladiosimulator.pcm.usagemodel.UsageModel
 
 import static org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.IdentifierInstance.*
-import org.palladiosimulator.pcm.usagemodel.EntryLevelSystemCall
 
 class PCM2DFSystemModelTransformation implements ITransformator, TransformationFacilities {
 	
@@ -260,4 +264,24 @@ class PCM2DFSystemModelTransformation implements ITransformator, TransformationF
 			[Collections.unmodifiableCollection(pcmCharacteristicTypeContainer.characteristicTypes)]
 		);
 	}
+	
+	override transformModelId(UsageModel usageModel, Allocation allocModel, CharacteristicTypeContainer characModel, String... modelElementId) {
+		val rs = usageModel.eResource.resourceSet
+		EcoreUtil.resolveAll(rs)
+		return rs.allContents.filter(EObject).map[o | Pair.of(o.findId, o)].filter[modelElementId.contains(key)].toMap([key], [value.uniqueName])
+	}
+	
+	protected def findId(EObject obj) {
+		val attr = findIdAttribute(obj.eClass)
+		if (attr === null) {
+			return null
+		}
+		return obj.eGet(attr) as String
+	}
+	
+	val idAttributeCache = new HashMap<EClass, EAttribute>()
+	protected def findIdAttribute(EClass clz) {
+		return idAttributeCache.computeIfAbsent(clz, [clz.EAllAttributes.findFirst[a | a.isID]]);
+	}
+
 }
