@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prologmodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prologmodel="http://www.palladiosimulator.org/pcm/dataprocessing/prolog/0.1/" name="New System">
+  <attributes type="//@types.0" name="EnumCharacteristicType Origin (_tN5q8HKKEeq9tYpRa9lb6Q)"/>
+  <attributes type="//@types.0" name="EnumCharacteristicType Location (_vo7i8HKKEeq9tYpRa9lb6Q)"/>
+  <attributes type="//@types.1" name="EnumCharacteristicType Encryption (_98iygHKKEeq9tYpRa9lb6Q)"/>
+  <attributes type="//@types.1" name="EnumCharacteristicType PersonalInformation (__hrkUHKKEeq9tYpRa9lb6Q)"/>
+  <datatypes attributes="//@attributes.0 //@attributes.1 //@attributes.2 //@attributes.3" name="CompositeDataType Data (_xtqFsHKIEeq9tYpRa9lb6Q)"/>
+  <operations name="PerformDataTransmissionOperation EUBuy.buy.encryptCustomer.call (_ie28E3KPEeq9tYpRa9lb6Q) - AC _hvOdoHKJEeq9tYpRa9lb6Q">
+    <calls callee="//@operations.13" name="opCall_991e434a">
+      <preCallStateDefinitions variable="//@operations.13/@stateVariables.0">
+        <term xsi:type="prologmodel:StateRef" stateVariable="//@operations.7/@stateVariables.0"/>
+      </preCallStateDefinitions>
+    </calls>
+    <returnValues datatype="//@datatypes.0" name="EUBuy.buy.encryptCustomer.call.result_RETURN_c1e1467f"/>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
+    <returnValueAssignments variable="//@operations.0/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.13/@returnValues.0" call="//@operations.0/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="PerformDataTransmissionOperation EUBuy.buy.storeCustomer.call (_pNKnI3KPEeq9tYpRa9lb6Q) - AC _hvOdoHKJEeq9tYpRa9lb6Q">
+    <calls callee="//@operations.0" name="opCall_29825312"/>
+    <calls callee="//@operations.12" name="opCall_12f6427f">
+      <preCallStateDefinitions variable="//@operations.12/@stateVariables.0">
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.0/@returnValues.0" call="//@operations.1/@calls.0"/>
+      </preCallStateDefinitions>
+    </calls>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
+  </operations>
+  <operations name="CharacteristicChangingDataOperation EUBuy.buy.updateQuantity.removePersonal (_vIgkPHKPEeq9tYpRa9lb6Q) - AC _hvOdoHKJEeq9tYpRa9lb6Q">
+    <returnValues datatype="//@datatypes.0" name="Buy.buy.param.order_RETURN_439c4596"/>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
+    <returnValueAssignments variable="//@operations.2/@returnValues.0">
+      <term xsi:type="prologmodel:StateRef" stateVariable="//@operations.7/@stateVariables.1"/>
+    </returnValueAssignments>
+    <returnValueAssignments variable="//@operations.2/@returnValues.0" attribute="//@attributes.3" value="//@types.1/@values.0">
+      <term xsi:type="prologmodel:False"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="PerformDataTransmissionOperation EUBuy.buy.updateQuantity.call (_suUZs3KPEeq9tYpRa9lb6Q) - AC _hvOdoHKJEeq9tYpRa9lb6Q">
+    <calls callee="//@operations.2" name="opCall_fb4358dc"/>
+    <calls callee="//@operations.12" name="opCall_819a432c">
+      <preCallStateDefinitions variable="//@operations.12/@stateVariables.0">
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.2/@returnValues.0" call="//@operations.3/@calls.0"/>
+      </preCallStateDefinitions>
+    </calls>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
+  </operations>
+  <operations name="CharacteristicChangingDataOperation Encryptor.encrypt.encryptData (_dIcGfHKOEeq9tYpRa9lb6Q) - AC _r_pkkHKJEeq9tYpRa9lb6Q">
+    <returnValues datatype="//@datatypes.0" name="Encrypt.encrypt.param.input_RETURN_afc444fd"/>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
+    <returnValueAssignments variable="//@operations.4/@returnValues.0">
+      <term xsi:type="prologmodel:StateRef" stateVariable="//@operations.13/@stateVariables.0"/>
+    </returnValueAssignments>
+    <returnValueAssignments variable="//@operations.4/@returnValues.0" attribute="//@attributes.2" value="//@types.1/@values.0">
+      <term xsi:type="prologmodel:True"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="ReturnDataOperation Encryptor.encrypt.encryptData.return (_kAPrxnKOEeq9tYpRa9lb6Q) - AC _r_pkkHKJEeq9tYpRa9lb6Q">
+    <calls callee="//@operations.4" name="opCall_a2db5336"/>
+    <returnValues datatype="//@datatypes.0" name="Encrypt.encrypt.param.input_RETURN_43ef41d2"/>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
+    <returnValueAssignments variable="//@operations.5/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.4/@returnValues.0" call="//@operations.5/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="SystemDiscardData StoreDB.store.storeData (_00vjt3KOEeq9tYpRa9lb6Q) - AC _q7weoHKJEeq9tYpRa9lb6Q">
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.1"/>
+  </operations>
+  <operations name="ResourceDemandingSEFF (_8-hV8HKIEeq9tYpRa9lb6Q) - AC _hvOdoHKJEeq9tYpRa9lb6Q">
+    <calls callee="//@operations.1" name="opCall_d75422a"/>
+    <calls callee="//@operations.3" name="opCall_61a842d7"/>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
+    <stateVariables datatype="//@datatypes.0" name="Buy.buy.param.customer_STATE_aa9130ec"/>
+    <stateVariables datatype="//@datatypes.0" name="Buy.buy.param.order_STATE_eec2f91"/>
+  </operations>
+  <operations name="PerformDataTransmissionOperation USBuy.buy.storeCustomer.call (_C5tTQ3KPEeq9tYpRa9lb6Q) - AC _ojjRIHKJEeq9tYpRa9lb6Q">
+    <calls callee="//@operations.12" name="opCall_f7b0423c">
+      <preCallStateDefinitions variable="//@operations.12/@stateVariables.0">
+        <term xsi:type="prologmodel:StateRef" stateVariable="//@operations.11/@stateVariables.0"/>
+      </preCallStateDefinitions>
+    </calls>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.1"/>
+  </operations>
+  <operations name="CharacteristicChangingDataOperation USBuy.buy.updateQuantity.removePersonal (_K7VnbHKPEeq9tYpRa9lb6Q) - AC _ojjRIHKJEeq9tYpRa9lb6Q">
+    <returnValues datatype="//@datatypes.0" name="Buy.buy.param.order_RETURN_27894549"/>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.1"/>
+    <returnValueAssignments variable="//@operations.9/@returnValues.0">
+      <term xsi:type="prologmodel:StateRef" stateVariable="//@operations.11/@stateVariables.1"/>
+    </returnValueAssignments>
+    <returnValueAssignments variable="//@operations.9/@returnValues.0" attribute="//@attributes.3" value="//@types.1/@values.0">
+      <term xsi:type="prologmodel:False"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="PerformDataTransmissionOperation USBuy.buy.updateQuantity.call (_RNyc5HKPEeq9tYpRa9lb6Q) - AC _ojjRIHKJEeq9tYpRa9lb6Q">
+    <calls callee="//@operations.9" name="opCall_ba955837"/>
+    <calls callee="//@operations.12" name="opCall_5c4f42d4">
+      <preCallStateDefinitions variable="//@operations.12/@stateVariables.0">
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.9/@returnValues.0" call="//@operations.10/@calls.0"/>
+      </preCallStateDefinitions>
+    </calls>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.1"/>
+  </operations>
+  <operations name="ResourceDemandingSEFF (_8i7mIHKIEeq9tYpRa9lb6Q) - AC _ojjRIHKJEeq9tYpRa9lb6Q">
+    <calls callee="//@operations.8" name="opCall_158741f8"/>
+    <calls callee="//@operations.10" name="opCall_65f34290"/>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.1"/>
+    <stateVariables datatype="//@datatypes.0" name="Buy.buy.param.customer_STATE_b6b530fd"/>
+    <stateVariables datatype="//@datatypes.0" name="Buy.buy.param.order_STATE_1add2fa2"/>
+  </operations>
+  <operations name="ResourceDemandingSEFF (_GDFtwHKJEeq9tYpRa9lb6Q) - AC _q7weoHKJEeq9tYpRa9lb6Q">
+    <calls callee="//@operations.6" name="opCall_dca93a12"/>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.1"/>
+    <stateVariables datatype="//@datatypes.0" name="DB.store.param.input_STATE_5e4e3009"/>
+  </operations>
+  <operations name="ResourceDemandingSEFF (_NVfkYHKJEeq9tYpRa9lb6Q) - AC _r_pkkHKJEeq9tYpRa9lb6Q">
+    <calls callee="//@operations.5" name="opCall_2805417c"/>
+    <returnValues datatype="//@datatypes.0" name="Encrypt.encrypt.result_RETURN_63c730f2"/>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
+    <returnValueAssignments variable="//@operations.13/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.5/@returnValues.0" call="//@operations.13/@calls.0"/>
+    </returnValueAssignments>
+    <stateVariables datatype="//@datatypes.0" name="Encrypt.encrypt.param.input_STATE_f0ea3343"/>
+  </operations>
+  <operations name="CreateDataOperation EUBuyingAtUS.callBuyUS.createCustomerData (_gWCVwHKMEeq9tYpRa9lb6Q) - AC n/a">
+    <returnValues datatype="//@datatypes.0" name="EUBuyingAtUS.callBuyUS.createCustomerData.customer_RETURN_13624143"/>
+    <returnValueAssignments variable="//@operations.14/@returnValues.0">
+      <term xsi:type="prologmodel:False"/>
+    </returnValueAssignments>
+    <returnValueAssignments variable="//@operations.14/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.0">
+      <term xsi:type="prologmodel:True"/>
+    </returnValueAssignments>
+    <returnValueAssignments variable="//@operations.14/@returnValues.0" attribute="//@attributes.3" value="//@types.1/@values.0">
+      <term xsi:type="prologmodel:True"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="CreateDataOperation EUBuyingAtUS.callBuyUS.createOrderData (_qytI8HKMEeq9tYpRa9lb6Q) - AC n/a">
+    <returnValues datatype="//@datatypes.0" name="EUBuyingAtUS.callBuyUS.createOrderData.order_RETURN_a1b13d6c"/>
+    <returnValueAssignments variable="//@operations.15/@returnValues.0">
+      <term xsi:type="prologmodel:False"/>
+    </returnValueAssignments>
+    <returnValueAssignments variable="//@operations.15/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.0">
+      <term xsi:type="prologmodel:True"/>
+    </returnValueAssignments>
+    <returnValueAssignments variable="//@operations.15/@returnValues.0" attribute="//@attributes.3" value="//@types.1/@values.0">
+      <term xsi:type="prologmodel:True"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="PerformDataTransmissionOperation EUBuyingAtUS.callBuyUS.performCall (_z6DH83KMEeq9tYpRa9lb6Q) - AC n/a">
+    <calls callee="//@operations.14" name="opCall_d88b4540"/>
+    <calls callee="//@operations.15" name="opCall_fc1d43fb"/>
+    <calls callee="//@operations.11" name="opCall_3ccb3cc9">
+      <preCallStateDefinitions variable="//@operations.11/@stateVariables.0">
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.14/@returnValues.0" call="//@operations.16/@calls.0"/>
+      </preCallStateDefinitions>
+      <preCallStateDefinitions variable="//@operations.11/@stateVariables.1">
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.15/@returnValues.0" call="//@operations.16/@calls.1"/>
+      </preCallStateDefinitions>
+    </calls>
+  </operations>
+  <operations name="ScenarioBehaviour EU buying at US (_zJWLIHKJEeq9tYpRa9lb6Q)_dataOp">
+    <calls callee="//@operations.16" name="opCall_eb823ab2"/>
+  </operations>
+  <operations name="CreateDataOperation EUBuyingAtEU.callBuyEU.createCustomerData (_gWCVwHKMEeq9tYpRa9lb6Qa) - AC n/a">
+    <returnValues datatype="//@datatypes.0" name="EUBuyingAtEU.callBuyEU.createCustomerData.customer_RETURN_834f41cd"/>
+    <returnValueAssignments variable="//@operations.18/@returnValues.0">
+      <term xsi:type="prologmodel:False"/>
+    </returnValueAssignments>
+    <returnValueAssignments variable="//@operations.18/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.0">
+      <term xsi:type="prologmodel:True"/>
+    </returnValueAssignments>
+    <returnValueAssignments variable="//@operations.18/@returnValues.0" attribute="//@attributes.3" value="//@types.1/@values.0">
+      <term xsi:type="prologmodel:True"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="CreateDataOperation EUBuyingAtEU.callBuyEU.createOrderData (_qytI8HKMEeq9tYpRa9lb6Qa) - AC n/a">
+    <returnValues datatype="//@datatypes.0" name="EUBuyingAtEU.callBuyEU.createOrderData.order_RETURN_bef3df6"/>
+    <returnValueAssignments variable="//@operations.19/@returnValues.0">
+      <term xsi:type="prologmodel:False"/>
+    </returnValueAssignments>
+    <returnValueAssignments variable="//@operations.19/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.0">
+      <term xsi:type="prologmodel:True"/>
+    </returnValueAssignments>
+    <returnValueAssignments variable="//@operations.19/@returnValues.0" attribute="//@attributes.3" value="//@types.1/@values.0">
+      <term xsi:type="prologmodel:True"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="PerformDataTransmissionOperation EUBuyingAtEU.callBuyEU.performCall (_z6DH83KMEeq9tYpRa9lb6Qa) - AC n/a">
+    <calls callee="//@operations.18" name="opCall_52de45ca"/>
+    <calls callee="//@operations.19" name="opCall_74b04485"/>
+    <calls callee="//@operations.7" name="opCall_694e3cfd">
+      <preCallStateDefinitions variable="//@operations.7/@stateVariables.0">
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.18/@returnValues.0" call="//@operations.20/@calls.0"/>
+      </preCallStateDefinitions>
+      <preCallStateDefinitions variable="//@operations.7/@stateVariables.1">
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.19/@returnValues.0" call="//@operations.20/@calls.1"/>
+      </preCallStateDefinitions>
+    </calls>
+  </operations>
+  <operations name="ScenarioBehaviour EU buying at EU (_-QA9kHKJEeq9tYpRa9lb6Q)_dataOp">
+    <calls callee="//@operations.20" name="opCall_f2663a9c"/>
+  </operations>
+  <operations name="CreateDataOperation USBuyingAtUS.callBuyUS.createCustomerData (_gWCVwHKMEeq9tYpRa9lb6Qb) - AC n/a">
+    <returnValues datatype="//@datatypes.0" name="USBuyingAtUS.callBuyUS.createCustomerData.customer_RETURN_a8824223"/>
+    <returnValueAssignments variable="//@operations.22/@returnValues.0">
+      <term xsi:type="prologmodel:False"/>
+    </returnValueAssignments>
+    <returnValueAssignments variable="//@operations.22/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.1">
+      <term xsi:type="prologmodel:True"/>
+    </returnValueAssignments>
+    <returnValueAssignments variable="//@operations.22/@returnValues.0" attribute="//@attributes.3" value="//@types.1/@values.0">
+      <term xsi:type="prologmodel:True"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="CreateDataOperation USBuyingAtUS.callBuyUS.createOrderData (_qytI8HKMEeq9tYpRa9lb6Qb) - AC n/a">
+    <returnValues datatype="//@datatypes.0" name="USBuyingAtUS.callBuyUS.createOrderData.order_RETURN_2ea63e4c"/>
+    <returnValueAssignments variable="//@operations.23/@returnValues.0">
+      <term xsi:type="prologmodel:False"/>
+    </returnValueAssignments>
+    <returnValueAssignments variable="//@operations.23/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.1">
+      <term xsi:type="prologmodel:True"/>
+    </returnValueAssignments>
+    <returnValueAssignments variable="//@operations.23/@returnValues.0" attribute="//@attributes.3" value="//@types.1/@values.0">
+      <term xsi:type="prologmodel:True"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="PerformDataTransmissionOperation USBuyingAtUS.callBuyUS.performCall (_z6DH83KMEeq9tYpRa9lb6Qb) - AC n/a">
+    <calls callee="//@operations.22" name="opCall_78214620"/>
+    <calls callee="//@operations.23" name="opCall_98f444db"/>
+    <calls callee="//@operations.11" name="opCall_87ac3d39">
+      <preCallStateDefinitions variable="//@operations.11/@stateVariables.0">
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.22/@returnValues.0" call="//@operations.24/@calls.0"/>
+      </preCallStateDefinitions>
+      <preCallStateDefinitions variable="//@operations.11/@stateVariables.1">
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.23/@returnValues.0" call="//@operations.24/@calls.1"/>
+      </preCallStateDefinitions>
+    </calls>
+  </operations>
+  <operations name="ScenarioBehaviour US buying at US (_DtrgIHKKEeq9tYpRa9lb6Q)_dataOp">
+    <calls callee="//@operations.24" name="opCall_49fa3b5b"/>
+  </operations>
+  <properties type="//@types.0" name="EnumCharacteristicType Origin (_tN5q8HKKEeq9tYpRa9lb6Q)"/>
+  <properties type="//@types.0" name="EnumCharacteristicType Location (_vo7i8HKKEeq9tYpRa9lb6Q)"/>
+  <properties type="//@types.1" name="EnumCharacteristicType Encryption (_98iygHKKEeq9tYpRa9lb6Q)"/>
+  <properties type="//@types.1" name="EnumCharacteristicType PersonalInformation (__hrkUHKKEeq9tYpRa9lb6Q)"/>
+  <types name="Enumeration Location (_o4HWcXKKEeq9tYpRa9lb6Q)">
+    <values name="EnumCharacteristicLiteral EU (_ryWS8HKKEeq9tYpRa9lb6Q)"/>
+    <values name="EnumCharacteristicLiteral US (_sa788HKKEeq9tYpRa9lb6Q)"/>
+  </types>
+  <types name="Enumeration Flag (_xcaSwXKKEeq9tYpRa9lb6Q)">
+    <values name="EnumCharacteristicLiteral true (_6MC8YHKKEeq9tYpRa9lb6Q)"/>
+  </types>
+  <systemusages name="ScenarioBehaviour EU buying at US (_zJWLIHKJEeq9tYpRa9lb6Q)">
+    <calls callee="//@operations.17" name="opCall_bd4b2b13"/>
+  </systemusages>
+  <systemusages name="ScenarioBehaviour EU buying at EU (_-QA9kHKJEeq9tYpRa9lb6Q)">
+    <calls callee="//@operations.21" name="opCall_921a2a5d"/>
+  </systemusages>
+  <systemusages name="ScenarioBehaviour US buying at US (_DtrgIHKKEeq9tYpRa9lb6Q)">
+    <calls callee="//@operations.25" name="opCall_d8562b85"/>
+  </systemusages>
+</prologmodel:System>

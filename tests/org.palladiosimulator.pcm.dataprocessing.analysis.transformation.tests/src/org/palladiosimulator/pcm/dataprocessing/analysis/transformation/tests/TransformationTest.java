@@ -3,7 +3,7 @@ package org.palladiosimulator.pcm.dataprocessing.analysis.transformation.tests;
 import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -116,10 +116,6 @@ public class TransformationTest extends TransformationTestBase {
 		VariableAssignment transmitOperationReturnAssignment = transmitOperation.getReturnValueAssignments().get(0);
 		assertFullCopy(transmitOperationReturnAssignment, transmitOperation.getReturnValues().get(0),
 				seffOperation.getReturnValues().get(0), transmitOperation.getCalls().get(1));
-
-//		Resource r = rs.createResource(createRelativeURI("models/minimalCallAndReturn/result.xmi"));
-//		r.getContents().add(dataFlowSystemModel);
-//		r.save(Collections.emptyMap());
 	}
 	
 	@Test
@@ -171,6 +167,34 @@ public class TransformationTest extends TransformationTestBase {
 		assertThat(toString(validationResult), validationResult.getSeverity(), is(Diagnostic.OK));
 		
 		Resource expectedResource = rs.getResource(createRelativeURI("models/minStatic/expected.xmi"), true);
+		
+		IComparisonScope scope = new DefaultComparisonScope(expectedResource.getContents().get(0), dataFlowSystemModel, null);
+		Comparison comparison = EMFCompare.builder().build().compare(scope);
+
+		assertThat(toString(comparison), comparison.getDifferences(), is(empty()));
+	}
+	
+	@Test
+	public void testGeolocation() throws IOException {
+		ResourceSet rs = new ResourceSetImpl();
+		UsageModel usageModel = (UsageModel) rs
+				.getResource(createRelativeURI("models/geoLocation/newUsageModel.usagemodel"), true)
+				.getContents().get(0);
+		Allocation allocationModel = (Allocation) rs
+				.getResource(createRelativeURI("models/geoLocation/newAllocation.allocation"), true)
+				.getContents().get(0);
+		CharacteristicTypeContainer characteristics = (CharacteristicTypeContainer) rs
+				.getResource(createRelativeURI("models/geoLocation/characteristics.xmi"), true)
+				.getContents().get(0);
+		EcoreUtil.resolveAll(rs);
+		
+		org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.System dataFlowSystemModel = getSubject().transform(usageModel,
+				allocationModel, characteristics);
+
+		Diagnostic validationResult = Diagnostician.INSTANCE.validate(dataFlowSystemModel);
+		assertThat(toString(validationResult), validationResult.getSeverity(), is(Diagnostic.OK));
+		
+		Resource expectedResource = rs.getResource(createRelativeURI("models/geoLocation/expected.xmi"), true);
 		
 		IComparisonScope scope = new DefaultComparisonScope(expectedResource.getContents().get(0), dataFlowSystemModel, null);
 		Comparison comparison = EMFCompare.builder().build().compare(scope);
