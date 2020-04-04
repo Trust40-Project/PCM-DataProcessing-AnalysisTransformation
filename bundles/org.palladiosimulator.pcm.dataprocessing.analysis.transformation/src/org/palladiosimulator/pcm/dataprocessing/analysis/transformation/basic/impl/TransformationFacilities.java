@@ -5,8 +5,8 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
 import org.palladiosimulator.pcm.core.composition.AssemblyContext;
-import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.IdentifierInstance;
-import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.SEFFInstance;
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.IdentifierInstance;
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.SEFFInstance;
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.data.Data;
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.DataOperation;
 import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.Caller;

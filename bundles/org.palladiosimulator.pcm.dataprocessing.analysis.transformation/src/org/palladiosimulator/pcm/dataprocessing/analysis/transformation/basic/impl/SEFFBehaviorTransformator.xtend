@@ -4,7 +4,7 @@ import de.uka.ipd.sdq.identifier.Identifier
 import org.palladiosimulator.pcm.core.composition.AssemblyConnector
 import org.palladiosimulator.pcm.core.composition.AssemblyContext
 import org.palladiosimulator.pcm.core.entity.Entity
-import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.IdentifierInstance
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.IdentifierInstance
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.DataOperation
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.ReturnDataOperation
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.repository.OperationSignatureDataRefinement
@@ -17,7 +17,7 @@ import org.palladiosimulator.pcm.system.System
 
 import static org.palladiosimulator.pcm.dataprocessing.analysis.transformation.util.EMFUtils.*
 
-import static extension org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.IdentifierInstance.createInstance
+import static extension org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.DataOperationInstance.createInstance
 
 class SEFFBehaviorTransformator extends BehaviorTransformator {
 	

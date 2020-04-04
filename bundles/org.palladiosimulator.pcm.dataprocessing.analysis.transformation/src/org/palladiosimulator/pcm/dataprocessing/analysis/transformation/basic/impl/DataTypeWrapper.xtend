@@ -13,6 +13,10 @@ class DataTypeWrapper implements DataType {
 	new(DataType type) {
 		delegate = type
 	}
+	
+	def getDelegate() {
+		delegate
+	}
 
 	override hashCode() {
 		if (delegate instanceof PrimitiveDataType) {

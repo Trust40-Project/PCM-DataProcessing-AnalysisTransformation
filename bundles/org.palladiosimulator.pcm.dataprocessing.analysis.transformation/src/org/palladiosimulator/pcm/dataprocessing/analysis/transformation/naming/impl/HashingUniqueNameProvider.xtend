@@ -1,10 +1,10 @@
 package org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.impl
 
 import de.uka.ipd.sdq.identifier.Identifier
-import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.IdentifierInstance
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.AbstractUniqueNameProvider
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.IdentifierInstance
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.util.Hash
 import org.palladiosimulator.pcm.repository.PrimitiveDataType
-import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.AbstractUniqueNameProvider
 
 class HashingUniqueNameProvider extends AbstractUniqueNameProvider {
 	

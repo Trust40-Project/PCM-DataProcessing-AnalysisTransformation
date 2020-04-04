@@ -3,8 +3,7 @@ package org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming
 import de.uka.ipd.sdq.identifier.Identifier
 import org.palladiosimulator.pcm.core.entity.Entity
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.basic.impl.DataTypeWrapper
-import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.IdentifierInstance
-import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.IUniqueNameProvider
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.IdentifierInstance
 import org.palladiosimulator.pcm.repository.DataType
 import org.palladiosimulator.pcm.repository.PrimitiveDataType
 

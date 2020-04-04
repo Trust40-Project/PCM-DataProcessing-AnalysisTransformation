@@ -4,20 +4,21 @@ import java.util.ArrayList
 import java.util.Collections
 import java.util.HashMap
 import java.util.Map
+import org.apache.commons.lang3.mutable.Mutable
 import org.eclipse.emf.ecore.EAttribute
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EObject
-import org.eclipse.emf.ecore.util.EcoreUtil
 import org.palladiosimulator.mdsdprofiles.api.StereotypeAPI
 import org.palladiosimulator.pcm.allocation.Allocation
 import org.palladiosimulator.pcm.core.composition.AssemblyContext
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.basic.ITransformationTrace
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.basic.ITransformator
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characteristics.IQueryExecutor
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characteristics.IReturnValueAssignmentGeneratorRegistry
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characteristics.impl.QueryExecutorDelegator
-import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.IdentifierInstance
-import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.SEFFInstance
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.ICachingUniqueNameProvider
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.IdentifierInstance
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.SEFFInstance
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.util.EMFUtils
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.util.Hash
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.characteristics.Characteristic
@@ -44,7 +45,7 @@ import org.palladiosimulator.pcm.usagemodel.EntryLevelSystemCall
 import org.palladiosimulator.pcm.usagemodel.ScenarioBehaviour
 import org.palladiosimulator.pcm.usagemodel.UsageModel
 
-import static org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.IdentifierInstance.*
+import static org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.ScenarioBehaviorInstance.*
 
 class PCM2DFSystemModelTransformation implements ITransformator, TransformationFacilities {
 	
@@ -60,7 +61,7 @@ class PCM2DFSystemModelTransformation implements ITransformator, TransformationF
 		this.uniqueNameProvider = nameProvider
 	}
 	
-	override transform(UsageModel pcmUsageModel, Allocation pcmAllocationModel, CharacteristicTypeContainer pcmCharacteristicTypeContainer) {
+	override transform(UsageModel pcmUsageModel, Allocation pcmAllocationModel, CharacteristicTypeContainer pcmCharacteristicTypeContainer, Mutable<ITransformationTrace> trace) {
 		this.pcmAllocationModel = pcmAllocationModel
 		this.pcmCharacteristicTypeContainer = pcmCharacteristicTypeContainer
 		val pcmSystem = pcmUsageModel.eAllContents.filter(EntryLevelSystemCall).map[providedRole_EntryLevelSystemCall.eContainer].filter(System).findFirst[true]
@@ -75,6 +76,8 @@ class PCM2DFSystemModelTransformation implements ITransformator, TransformationF
 //		val idToObject = uniqueNameProvider.cache.inverse
 //		val idDump = idToObject.keySet.sort.map[k | '''«k» -> «idToObject.get(k)»'''].join("\n")
 //		print(idDump)
+		
+		trace.value = new TransformationTraceImpl(uniqueNameProvider.cache)
 		
 		system
 	}
@@ -131,7 +134,7 @@ class PCM2DFSystemModelTransformation implements ITransformator, TransformationF
 		sysUsageDataOp.name = scenarioBehavior.uniqueName + "_dataOp"
 		
 		val transformator = new UsageModelBehaviorTransformator(this)
-		transformator.transformBehavior(sysUsageDataOp, createInstance(null, scenarioBehavior))
+		transformator.transformBehavior(sysUsageDataOp, createInstance(scenarioBehavior))
 		
 		// copy properties of processing node to operation
 		scenarioBehavior.copyCharacteristicsTo(sysUsageDataOp)
@@ -265,11 +268,11 @@ class PCM2DFSystemModelTransformation implements ITransformator, TransformationF
 		);
 	}
 	
-	override transformModelId(UsageModel usageModel, Allocation allocModel, CharacteristicTypeContainer characModel, String... modelElementId) {
-		val rs = usageModel.eResource.resourceSet
-		EcoreUtil.resolveAll(rs)
-		return rs.allContents.filter(EObject).map[o | Pair.of(o.findId, o)].filter[modelElementId.contains(key)].toMap([key], [value.uniqueName])
-	}
+//	override transformModelId(UsageModel usageModel, Allocation allocModel, CharacteristicTypeContainer characModel, String... modelElementId) {
+//		val rs = usageModel.eResource.resourceSet
+//		EcoreUtil.resolveAll(rs)
+//		return rs.allContents.filter(EObject).map[o | Pair.of(o.findId, o)].filter[modelElementId.contains(key)].toMap([key], [value.uniqueName])
+//	}
 	
 	protected def findId(EObject obj) {
 		val attr = findIdAttribute(obj.eClass)

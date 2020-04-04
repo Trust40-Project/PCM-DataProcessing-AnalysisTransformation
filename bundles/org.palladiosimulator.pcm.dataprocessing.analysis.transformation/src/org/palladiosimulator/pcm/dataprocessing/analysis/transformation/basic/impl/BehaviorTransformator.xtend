@@ -12,9 +12,9 @@ import org.palladiosimulator.pcm.core.composition.AssemblyContext
 import org.palladiosimulator.pcm.core.composition.ComposedStructure
 import org.palladiosimulator.pcm.core.entity.Entity
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.DataEdge
-import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.IdentifierInstance
-import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.SEFFInstance
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.graph.DataOperationGraphFactory
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.IdentifierInstance
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.SEFFInstance
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.data.Data
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.DataOperation
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.DataProcessingContainer
@@ -34,9 +34,8 @@ import org.palladiosimulator.pcm.system.System
 
 import static org.palladiosimulator.mdsdprofiles.api.StereotypeAPI.*
 import static org.palladiosimulator.pcm.dataprocessing.analysis.transformation.util.EMFUtils.*
-
-import static extension org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.IdentifierInstance.createInstance
-import static extension org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.SEFFInstance.createInstance
+import static extension org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.SEFFInstance.createInstance
+import static extension org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.DataOperationInstance.createInstance
 
 abstract class BehaviorTransformator {
 	

@@ -1,4 +1,4 @@
-package org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto;
+package org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers;
 
 import java.util.Optional;
 
@@ -11,7 +11,7 @@ public class IdentifierInstance<ENTITY_TYPE extends Identifier, IDENTIFIER_TYPE 
 	private final Optional<IDENTIFIER_TYPE> identifier;
 	private final ENTITY_TYPE entity;
 
-	public IdentifierInstance(ENTITY_TYPE entity, IDENTIFIER_TYPE identifier) {
+	protected IdentifierInstance(ENTITY_TYPE entity, IDENTIFIER_TYPE identifier) {
 		super();
 		this.identifier = Optional.ofNullable(identifier);
 		this.entity = entity;
@@ -64,11 +64,6 @@ public class IdentifierInstance<ENTITY_TYPE extends Identifier, IDENTIFIER_TYPE 
 		String identifierId = identifier.map(Identifier::getId).orElse("");
 
 		return String.format("IdentifierInstance[%s] (Entity: %s, Identifier: %s)", entity.eClass().getName(), entityName, identifierId);
-	}
-
-	public static <ENTITY_TYPE extends Identifier, IDENTIFIER_TYPE extends Identifier> IdentifierInstance<ENTITY_TYPE, IDENTIFIER_TYPE> createInstance(
-			IDENTIFIER_TYPE identifier, ENTITY_TYPE entity) {
-		return new IdentifierInstance<ENTITY_TYPE, IDENTIFIER_TYPE>(entity, identifier);
 	}
 
 }
