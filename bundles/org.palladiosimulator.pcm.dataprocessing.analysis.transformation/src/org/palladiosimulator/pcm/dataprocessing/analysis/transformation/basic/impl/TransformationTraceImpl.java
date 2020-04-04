@@ -51,6 +51,26 @@ public class TransformationTraceImpl implements ITransformationTrace {
 		return castToType(foundElement, Identifier.class);
 	}
 
+	@Override
+	public Optional<String> resolveId(SEFFInstance entity) {
+		return getOptionalId(entity);
+	}
+
+	@Override
+	public Optional<String> resolveId(DataOperationInstance entity) {
+		return getOptionalId(entity);
+	}
+
+	@Override
+	public Optional<String> resolveId(DataType entity) {
+		return getOptionalId(entity);
+	}
+
+	@Override
+	public Optional<String> resolveId(Identifier entity) {
+		return getOptionalId(entity);
+	}
+
 	protected <T> Optional<T> findBySystemModelId(String id, Class<T> clazz) {
 		return castToType(findBySystemModelId(id), clazz);
 	}
@@ -62,4 +82,9 @@ public class TransformationTraceImpl implements ITransformationTrace {
 	protected static <T> Optional<T> castToType(Optional<Object> element, Class<T> clazz) {
 		return element.filter(clazz::isInstance).map(clazz::cast);
 	}
+
+	protected Optional<String> getOptionalId(Object o) {
+		return Optional.ofNullable(nameCache.get(o));
+	}
+
 }

@@ -28,4 +28,12 @@ public interface ITransformationTrace {
 	 * @return The identifier element.
 	 */
 	Optional<Identifier> resolveIdentifier(String id);
+
+	Optional<String> resolveId(SEFFInstance entity);
+
+	Optional<String> resolveId(DataOperationInstance entity);
+
+	Optional<String> resolveId(DataType entity);
+
+	Optional<String> resolveId(Identifier entity);
 }
