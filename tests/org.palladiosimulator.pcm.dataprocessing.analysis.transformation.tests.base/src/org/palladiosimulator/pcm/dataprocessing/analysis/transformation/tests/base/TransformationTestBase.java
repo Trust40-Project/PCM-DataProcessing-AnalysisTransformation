@@ -3,7 +3,7 @@ package org.palladiosimulator.pcm.dataprocessing.analysis.transformation.tests.b
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.Matchers.nullValue;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.fail;
 
 import java.io.ByteArrayOutputStream;
@@ -26,6 +26,7 @@ import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characte
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characteristics.IReturnValueAssignmentGeneratorRegistry;
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characteristics.impl.DefaultReturnValueAssignmentGenerator;
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characteristics.impl.UserDefinedReturnValueAssignmentsGenerator;
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.impl.HumanReadableUniqueNameProvider;
 import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.OperationCall;
 import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.PrologmodelPackage;
 import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.ReturnValueRef;

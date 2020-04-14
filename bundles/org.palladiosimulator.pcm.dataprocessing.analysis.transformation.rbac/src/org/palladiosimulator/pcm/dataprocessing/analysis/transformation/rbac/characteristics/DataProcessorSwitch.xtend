@@ -28,19 +28,15 @@ class DataProcessorSwitch extends ProcessingSwitch<List<VariableAssignment>> {
 
 	static extension val PrologmodelFactory factory = PrologmodelFactory.eINSTANCE
 	val IQueryExecutor queryExecutor
-	val Optional<AssemblyContext> ac
 	val Map<Data, LogicTerm> availableData
 	val Map<Data, Variable> returnVariables
-	val String characteristicNameRoles
 	val String characteristicNameAccessRights
 
 	new(IQueryExecutor queryExecutor, Optional<AssemblyContext> ac, Map<Data, LogicTerm> availableData,
 		Map<Data, Variable> returnVariables, String characteristicNameRoles, String characteristicNameAccessRights) {
 		this.queryExecutor = queryExecutor
-		this.ac = ac
 		this.availableData = availableData
 		this.returnVariables = returnVariables
-		this.characteristicNameRoles = characteristicNameRoles
 		this.characteristicNameAccessRights = characteristicNameAccessRights
 	}
 	

@@ -1,4 +1,4 @@
-package org.palladiosimulator.pcm.dataprocessing.analysis.transformation.tests.base
+package org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.impl
 
 import de.uka.ipd.sdq.identifier.Identifier
 import org.palladiosimulator.pcm.core.entity.Entity
