@@ -18,6 +18,7 @@ import org.palladiosimulator.pcm.system.System
 import static org.palladiosimulator.pcm.dataprocessing.analysis.transformation.util.EMFUtils.*
 
 import static extension org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.DataOperationInstance.createInstance
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.IdentifierAssemblyContextInstance
 
 class SEFFBehaviorTransformator extends BehaviorTransformator {
 	
@@ -42,7 +43,7 @@ class SEFFBehaviorTransformator extends BehaviorTransformator {
 		targetSEFFCandidates.findFirst[true]
 	}
 	
-	override protected createReturnVariables(IdentifierInstance<? extends Identifier, AssemblyContext> behaviorIdentifier) {
+	override protected createReturnVariables(IdentifierAssemblyContextInstance<?> behaviorIdentifier) {
 		val seff = behaviorIdentifier.entity as ResourceDemandingSEFF
 		val signature = seff.describedService__SEFF
 		
@@ -50,7 +51,7 @@ class SEFFBehaviorTransformator extends BehaviorTransformator {
 		signatureRefinement.map([sr | sr.resultRefinements.map[getReturnVariable(behaviorIdentifier)]]).orElse(#[])
 	}
 	
-	override protected createStateVariables(IdentifierInstance<? extends Identifier, AssemblyContext> behaviorIdentifier) {
+	override protected createStateVariables(IdentifierAssemblyContextInstance<?> behaviorIdentifier) {
 		val seff = behaviorIdentifier.entity as ResourceDemandingSEFF
 		val signature = seff.describedService__SEFF
 		val signatureRefinement = tryGetTaggedValue(signature, ProfileConstants.TAGGED_VALUE_NAME_OPERATION_SIGNATURE_DATA_REFINEMENT, ProfileConstants.STEREOTYPE_NAME_OPERATION_SIGNATURE_DATA_REFINEMENT, OperationSignatureDataRefinement)
@@ -61,7 +62,7 @@ class SEFFBehaviorTransformator extends BehaviorTransformator {
 		(identifier as ResourceDemandingSEFF).findAllDataOperations
 	}
 	
-	override protected createReturnValueAssignmentsForConsumerOperations(DataOperation consumerDataOp, AssemblyContext selfAssemblyContext, IdentifierInstance<? extends Identifier, AssemblyContext> selfInstance, OperationCall consumerOpCall) {
+	override protected createReturnValueAssignmentsForConsumerOperations(DataOperation consumerDataOp, AssemblyContext selfAssemblyContext, IdentifierAssemblyContextInstance<?> selfInstance, OperationCall consumerOpCall) {
 		if (!(consumerDataOp instanceof ReturnDataOperation)) {
 			return #[]
 		}
@@ -87,7 +88,7 @@ class SEFFBehaviorTransformator extends BehaviorTransformator {
 		#[returnVariableAssignment]
 	}
 	
-	override protected getPropertySource(IdentifierInstance<? extends Identifier, AssemblyContext> instance) {
+	override protected getPropertySource(IdentifierAssemblyContextInstance<?> instance) {
 		instance.identifier.get.resourceContainer
 	}
 	

@@ -3,21 +3,29 @@ package org.palladiosimulator.pcm.dataprocessing.analysis.transformation.basic.i
 import java.util.Optional;
 
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.basic.ITransformationTrace;
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.basic.VariableSourceTraceEntry;
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.DataOperationInstance;
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.SEFFInstance;
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.ScenarioBehaviorInstance;
+import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.Variable;
 import org.palladiosimulator.pcm.repository.DataType;
 
 import com.google.common.collect.BiMap;
+import com.google.common.collect.HashBiMap;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
 public class TransformationTraceImpl implements ITransformationTrace {
 
-	private final BiMap<Object, String> nameCache;
+	private BiMap<Object, String> nameCache = HashBiMap.create();
+	private BiMap<VariableSourceTraceEntry, String> variableCache = HashBiMap.create();
 
-	public TransformationTraceImpl(BiMap<Object, String> nameCache) {
-		this.nameCache = nameCache;
+	public void addVariableMapping(VariableSourceTraceEntry source, Variable variable) {
+	    variableCache.put(source, variable.getName());
+	}
+	
+	public void addNameCache(BiMap<Object, String> nameCache) {
+	    this.nameCache.putAll(nameCache);
 	}
 
 	@Override
@@ -86,5 +94,15 @@ public class TransformationTraceImpl implements ITransformationTrace {
 	protected Optional<String> getOptionalId(Object o) {
 		return Optional.ofNullable(nameCache.get(o));
 	}
+
+    @Override
+    public Optional<VariableSourceTraceEntry> resolveVariable(String id) {
+        return Optional.ofNullable(variableCache.inverse().get(id));
+    }
+
+    @Override
+    public Optional<String> resolveId(VariableSourceTraceEntry entity) {
+        return Optional.ofNullable(variableCache.get(entity));
+    }
 
 }

@@ -13,10 +13,12 @@ import org.palladiosimulator.pcm.allocation.Allocation
 import org.palladiosimulator.pcm.core.composition.AssemblyContext
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.basic.ITransformationTrace
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.basic.ITransformator
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.basic.VariablePurpose
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characteristics.IQueryExecutor
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characteristics.IReturnValueAssignmentGeneratorRegistry
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characteristics.impl.QueryExecutorDelegator
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.ICachingUniqueNameProvider
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.DataOperationInstance
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.IdentifierInstance
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.SEFFInstance
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.util.EMFUtils
@@ -46,6 +48,7 @@ import org.palladiosimulator.pcm.usagemodel.ScenarioBehaviour
 import org.palladiosimulator.pcm.usagemodel.UsageModel
 
 import static org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.ScenarioBehaviorInstance.*
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.IdentifierAssemblyContextInstance
 
 class PCM2DFSystemModelTransformation implements ITransformator, TransformationFacilities {
 	
@@ -53,6 +56,7 @@ class PCM2DFSystemModelTransformation implements ITransformator, TransformationF
 	val extension ICachingUniqueNameProvider uniqueNameProvider
 	val IReturnValueAssignmentGeneratorRegistry returnValueAssignmentGeneratorRegistry;
 	val IQueryExecutor queryExecutor = createQueryExecutor()
+	val traceRecorder = new TransformationTraceImpl
 	var Allocation pcmAllocationModel
 	var CharacteristicTypeContainer pcmCharacteristicTypeContainer
 	
@@ -77,7 +81,8 @@ class PCM2DFSystemModelTransformation implements ITransformator, TransformationF
 //		val idDump = idToObject.keySet.sort.map[k | '''«k» -> «idToObject.get(k)»'''].join("\n")
 //		print(idDump)
 		
-		trace.value = new TransformationTraceImpl(uniqueNameProvider.cache)
+		traceRecorder.addNameCache(uniqueNameProvider.cache)
+		trace.value = traceRecorder
 		
 		system
 	}
@@ -153,7 +158,7 @@ class PCM2DFSystemModelTransformation implements ITransformator, TransformationF
 	}
 	
 	// TRANSFORMATION: SEFFInstance, DataOperation -> Operation
-	override create op: factory.createOperation getOperation(IdentifierInstance<DataOperation, AssemblyContext> dataOpInstance) {
+	override create op: factory.createOperation getOperation(DataOperationInstance dataOpInstance) {
 		op.name = dataOpInstance.uniqueName
 		
 		// we never have input parameters
@@ -167,7 +172,7 @@ class PCM2DFSystemModelTransformation implements ITransformator, TransformationF
 		// we assume that properties have been copied or will be copied
 	}
 	
-	override getOperation(IdentifierInstance<DataOperation, AssemblyContext> dataOpInstance, EObject propertySource) {
+	override getOperation(DataOperationInstance dataOpInstance, EObject propertySource) {
 		val op = dataOpInstance.operation
 		propertySource.copyCharacteristicsTo(op)
 		op
@@ -181,27 +186,22 @@ class PCM2DFSystemModelTransformation implements ITransformator, TransformationF
 	}
 
 	// TRANSFORMATION: Data -> Variable
-	override getStateVariable(Data data, IdentifierInstance<?, ?> instance) {
+	override getStateVariable(Data data, IdentifierAssemblyContextInstance<?> instance) {
 		data.getVariable(VariablePurpose.STATE, instance)
 	}
 	
-	protected def getParameterVariable(Data data, IdentifierInstance<?, ?> instance) {
+	protected def getParameterVariable(Data data, IdentifierAssemblyContextInstance<?> instance) {
 		data.getVariable(VariablePurpose.PARAMETER, instance)
 	}
 	
-	override getReturnVariable(Data data, IdentifierInstance<?, ?> instance) {
+	override getReturnVariable(Data data, IdentifierAssemblyContextInstance<?> instance) {
 		data.getVariable(VariablePurpose.RETURN, instance)
 	}
 	
-	protected def create variable: factory.createVariable getVariable(Data data, VariablePurpose purpose, IdentifierInstance<?, ?> entityInstance) {
+	protected def create variable: factory.createVariable getVariable(Data data, VariablePurpose purpose, IdentifierAssemblyContextInstance<?> entityInstance) {
 		variable.name = '''«data.entityName»_«purpose»_«Hash.init(entityInstance.uniqueName).add(data.uniqueName).hash»'''
 		variable.datatype = data.type.dataType
-	}
-	
-	private enum VariablePurpose {
-		PARAMETER,
-		STATE,
-		RETURN
+		traceRecorder.addVariableMapping(new VariableSourceTraceEntryImpl(purpose, data, entityInstance), variable)
 	}
 
 	// TRANSFORMATION: DataType -> DataType
@@ -245,7 +245,7 @@ class PCM2DFSystemModelTransformation implements ITransformator, TransformationF
 		throw new IllegalArgumentException("Unable to transform characteristic " + characteristic.class.name)
 	}
 	
-	override createReturnValueAssignments(IdentifierInstance<DataOperation, AssemblyContext> opInstance, Map<Data, LogicTerm> availableData) {
+	override createReturnValueAssignments(DataOperationInstance opInstance, Map<Data, LogicTerm> availableData) {
 		val returnVariables = newImmutableMap(opInstance.outgoingData.map[data | data -> data.getReturnVariable(opInstance)])
 		
 		val result = new ArrayList<VariableAssignment>()

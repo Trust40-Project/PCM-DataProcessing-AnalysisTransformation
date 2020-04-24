@@ -15,6 +15,7 @@ import org.palladiosimulator.pcm.system.System
 import org.palladiosimulator.pcm.usagemodel.EntryLevelSystemCall
 import org.palladiosimulator.pcm.usagemodel.ScenarioBehaviour
 import org.palladiosimulator.pcm.usagemodel.Start
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.IdentifierAssemblyContextInstance
 
 class UsageModelBehaviorTransformator extends BehaviorTransformator {
 	
@@ -39,17 +40,17 @@ class UsageModelBehaviorTransformator extends BehaviorTransformator {
 		targetSEFFCandidates.findFirst[true]
 	}
 	
-	override protected createReturnVariables(IdentifierInstance<? extends Identifier, AssemblyContext> behaviorIdentifier) {
+	override protected createReturnVariables(IdentifierAssemblyContextInstance<?> behaviorIdentifier) {
 		// Usage models cannot return data
 		#[]
 	}
 	
-	override protected createStateVariables(IdentifierInstance<? extends Identifier, AssemblyContext> behaviorIdentifier) {
+	override protected createStateVariables(IdentifierAssemblyContextInstance<?> behaviorIdentifier) {
 		// Usage models cannot state data
 		#[]
 	}
 	
-	override protected createReturnValueAssignmentsForConsumerOperations(DataOperation consumerDataOp, AssemblyContext selfAssemblyContext, IdentifierInstance<? extends Identifier, AssemblyContext> selfInstance, OperationCall consumerOpCall) {
+	override protected createReturnValueAssignmentsForConsumerOperations(DataOperation consumerDataOp, AssemblyContext selfAssemblyContext, IdentifierAssemblyContextInstance<?> selfInstance, OperationCall consumerOpCall) {
 		// Usage models cannot return data
 		#[]
 	}
@@ -62,7 +63,7 @@ class UsageModelBehaviorTransformator extends BehaviorTransformator {
 		ops
 	}
 	
-	override protected getPropertySource(IdentifierInstance<? extends Identifier, AssemblyContext> instance) {
+	override protected getPropertySource(IdentifierAssemblyContextInstance<?> instance) {
 		// ScenarioBehavior itself
 		instance.entity
 	}

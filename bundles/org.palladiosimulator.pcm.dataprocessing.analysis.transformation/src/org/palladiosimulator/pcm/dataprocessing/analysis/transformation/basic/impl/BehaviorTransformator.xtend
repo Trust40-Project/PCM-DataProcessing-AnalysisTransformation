@@ -13,6 +13,8 @@ import org.palladiosimulator.pcm.core.composition.ComposedStructure
 import org.palladiosimulator.pcm.core.entity.Entity
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.DataEdge
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.graph.DataOperationGraphFactory
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.DataOperationInstance
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.IdentifierAssemblyContextInstance
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.IdentifierInstance
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.SEFFInstance
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.data.Data
@@ -34,8 +36,9 @@ import org.palladiosimulator.pcm.system.System
 
 import static org.palladiosimulator.mdsdprofiles.api.StereotypeAPI.*
 import static org.palladiosimulator.pcm.dataprocessing.analysis.transformation.util.EMFUtils.*
-import static extension org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.SEFFInstance.createInstance
+
 import static extension org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.DataOperationInstance.createInstance
+import static extension org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.SEFFInstance.createInstance
 
 abstract class BehaviorTransformator {
 	
@@ -50,7 +53,7 @@ abstract class BehaviorTransformator {
 	
 	protected abstract def Iterable<DataOperation> findAllDataOps(Identifier identifier)
 	
-	protected def transformBehavior(Operation behaviorOperation, IdentifierInstance<? extends Identifier, AssemblyContext> selfInstance) {
+	protected def transformBehavior(Operation behaviorOperation, IdentifierAssemblyContextInstance<?> selfInstance) {
 
 		val selfAssemblyContext = selfInstance.identifier.orElse(null)
 		val selfPropertySource = selfInstance.propertySource
@@ -136,11 +139,11 @@ abstract class BehaviorTransformator {
 		}
 	}
 	
-	protected abstract def EObject getPropertySource(IdentifierInstance<? extends Identifier, AssemblyContext> instance)
+	protected abstract def EObject getPropertySource(IdentifierAssemblyContextInstance<?> instance)
 	
-	protected abstract def Iterable<VariableAssignment> createReturnValueAssignmentsForConsumerOperations(DataOperation consumerDataOp, AssemblyContext selfAssemblyContext, IdentifierInstance<? extends Identifier, AssemblyContext> selfInstance, OperationCall consumerOpCall)
+	protected abstract def Iterable<VariableAssignment> createReturnValueAssignmentsForConsumerOperations(DataOperation consumerDataOp, AssemblyContext selfAssemblyContext, IdentifierAssemblyContextInstance<?> selfInstance, OperationCall consumerOpCall)
 	
-	protected def handleTransferOperation(PerformDataTransmissionOperation callerDataOperation, Operation caller, IdentifierInstance<DataOperation, AssemblyContext> callerInstance, Map<Data, LogicTerm> resultRefCache) {
+	protected def handleTransferOperation(PerformDataTransmissionOperation callerDataOperation, Operation caller, DataOperationInstance callerInstance, Map<Data, LogicTerm> resultRefCache) {
 		/*
 		 * Data transmissions have to be treated special because they decouple data
 		 * operations by indirect data flows:
@@ -204,8 +207,8 @@ abstract class BehaviorTransformator {
 		// intentionally left blank
 	}
 	
-	protected abstract def Iterable<Variable> createReturnVariables(IdentifierInstance<? extends Identifier, AssemblyContext> behaviorIdentifier)
-	protected abstract def Iterable<Variable> createStateVariables(IdentifierInstance<? extends Identifier, AssemblyContext> behaviorIdentifier)
+	protected abstract def Iterable<Variable> createReturnVariables(IdentifierAssemblyContextInstance<?> behaviorIdentifier)
+	protected abstract def Iterable<Variable> createStateVariables(IdentifierAssemblyContextInstance<?> behaviorIdentifier)
 	protected abstract def SEFFInstance determineCalledSEFF(Iterable<Entity> callAction, IdentifierInstance<? extends Entity, AssemblyContext> callerInstance)
 	
 	protected def createDataOpGraph(Iterable<DataOperation> dataOps) {

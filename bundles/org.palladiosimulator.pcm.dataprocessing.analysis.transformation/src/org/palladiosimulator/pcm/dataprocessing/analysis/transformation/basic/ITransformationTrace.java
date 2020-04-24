@@ -15,6 +15,8 @@ public interface ITransformationTrace {
 	Optional<DataOperationInstance> resolveDataOperationInstance(String id);
 
 	Optional<DataType> resolveDataType(String id);
+	
+	Optional<VariableSourceTraceEntry> resolveVariable(String id);
 
 	/**
 	 * Resolves the ID of a PCM {@link de.uka.ipd.sdq.identifier.Identifier}.
@@ -32,6 +34,8 @@ public interface ITransformationTrace {
 	Optional<String> resolveId(SEFFInstance entity);
 
 	Optional<String> resolveId(DataOperationInstance entity);
+	
+	Optional<String> resolveId(VariableSourceTraceEntry entity);
 
 	Optional<String> resolveId(DataType entity);
 

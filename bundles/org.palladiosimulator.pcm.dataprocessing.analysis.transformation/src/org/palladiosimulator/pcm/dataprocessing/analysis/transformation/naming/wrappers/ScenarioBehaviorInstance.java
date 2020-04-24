@@ -1,9 +1,8 @@
 package org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers;
 
-import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 import org.palladiosimulator.pcm.usagemodel.ScenarioBehaviour;
 
-public class ScenarioBehaviorInstance extends IdentifierInstance<ScenarioBehaviour, AssemblyContext> {
+public class ScenarioBehaviorInstance extends IdentifierAssemblyContextInstance<ScenarioBehaviour> {
 
 	protected ScenarioBehaviorInstance(ScenarioBehaviour entity) {
 		super(entity, null);
