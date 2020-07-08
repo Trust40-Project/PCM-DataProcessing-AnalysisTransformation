@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<systemmodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:systemmodel="http://www.palladiosimulator.org/pcm/dataprocessing/prolog/0.1/" name="ExampleScenario">
+<prologmodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prologmodel="http://www.palladiosimulator.org/pcm/dataprocessing/prolog/0.1/" name="ExampleScenario">
   <attributes type="//@types.0" name="EnumCharacteristicType AccessRights (_rkiSMFqnEeiY18w7ObeSrg)"/>
   <attributes type="//@types.0" name="EnumCharacteristicType Roles (_vP5JoFqnEeiY18w7ObeSrg)"/>
   <datatypes attributes="//@attributes.0 //@attributes.1" name="CollectionDataType FlightOffers (_XfY5nM5jEeWFJak7Wqvc0g)"/>
@@ -12,13 +12,13 @@
   <operations name="PerformDataTransmissionOperation TA - getFlightOffers - callAirline (_uQFK88eeEeiB6cKI8lzNcA) - AC _0WeT8MN-EeWst9mTsticNA">
     <calls callee="//@operations.28" name="opCall_c8024272">
       <preCallStateDefinitions variable="//@operations.28/@stateVariables.0">
-        <term xsi:type="systemmodel:StateRef" stateVariable="//@operations.5/@stateVariables.0"/>
+        <term xsi:type="prologmodel:StateRef" stateVariable="//@operations.5/@stateVariables.0"/>
       </preCallStateDefinitions>
     </calls>
     <returnValues datatype="//@datatypes.0" name="TravelAgency_output_FlightOffers_RETURN_bf4044d1"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.1"/>
     <returnValueAssignments variable="//@operations.0/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.28/@returnValues.0" call="//@operations.0/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.28/@returnValues.0" call="//@operations.0/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="ReturnDataOperation TA - getFlightOffers - returnFlights (_Pp4oRcefEeiB6cKI8lzNcA) - AC _0WeT8MN-EeWst9mTsticNA">
@@ -26,23 +26,23 @@
     <returnValues datatype="//@datatypes.0" name="TravelAgency_output_FlightOffers_RETURN_9cc240cf"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.1"/>
     <returnValueAssignments variable="//@operations.1/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.0/@returnValues.0" call="//@operations.1/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.0/@returnValues.0" call="//@operations.1/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="LoadAllDataOperation Airline - getFlightOffers - loadFlightOffers (_W1FRYsekEeip1b0JyeeICQ) - AC _HRAO0MOAEeWst9mTsticNA">
     <returnValues datatype="//@datatypes.0" name="Airline_FlightOffers_loaded_RETURN_d0394117"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.2"/>
     <returnValueAssignments variable="//@operations.2/@returnValues.0">
-      <term xsi:type="systemmodel:False"/>
+      <term xsi:type="prologmodel:False"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.2/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.2">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.2/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.0">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.2/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.1">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
   </operations>
   <operations name="SelectionDataOperation Airline - getFlightOffers - filterOffers (_r0AlmseoEeipL8MRUQplkg) - AC _HRAO0MOAEeWst9mTsticNA">
@@ -50,7 +50,7 @@
     <returnValues datatype="//@datatypes.0" name="Airline_FlightOffers_filtered_RETURN_fd814127"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.2"/>
     <returnValueAssignments variable="//@operations.3/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.2/@returnValues.0" call="//@operations.3/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.2/@returnValues.0" call="//@operations.3/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="ReturnDataOperation Airline - getFlightOffers - returnOffers (_WVNsRcepEeiCOOJ6eAJBcg) - AC _HRAO0MOAEeWst9mTsticNA">
@@ -58,7 +58,7 @@
     <returnValues datatype="//@datatypes.0" name="Airline_FlightOffers_filtered_RETURN_fb7c3f86"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.2"/>
     <returnValueAssignments variable="//@operations.4/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.3/@returnValues.0" call="//@operations.4/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.3/@returnValues.0" call="//@operations.4/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="ResourceDemandingSEFF (_brO1YN5fEeeel_96Qa_d5A) - AC _0WeT8MN-EeWst9mTsticNA">
@@ -66,21 +66,24 @@
     <returnValues datatype="//@datatypes.0" name="TravelAgency/Airline_output_FlightOffers_RETURN_dcef373e"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.1"/>
     <returnValueAssignments variable="//@operations.5/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.1/@returnValues.0" call="//@operations.5/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.1/@returnValues.0" call="//@operations.5/@calls.0"/>
     </returnValueAssignments>
     <stateVariables datatype="//@datatypes.1" name="TravelAgency/Airline_input_RequestData_STATE_799370a"/>
+    <defaultStateDefinitions variable="//@operations.5/@stateVariables.0">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
   </operations>
   <operations name="CreateDataOperation TA - payComission - createConfirmation (_4Gy78MefEeiB6cKI8lzNcA) - AC _0WeT8MN-EeWst9mTsticNA">
     <returnValues datatype="//@datatypes.2" name="TA_comission_confirmation_RETURN_5ca93d3e"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.1"/>
     <returnValueAssignments variable="//@operations.6/@returnValues.0">
-      <term xsi:type="systemmodel:False"/>
+      <term xsi:type="prologmodel:False"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.6/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.2">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.6/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.1">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
   </operations>
   <operations name="ReturnDataOperation TA - payComission - returnConfirmation (_Gk_D1cegEeiB6cKI8lzNcA) - AC _0WeT8MN-EeWst9mTsticNA">
@@ -88,7 +91,7 @@
     <returnValues datatype="//@datatypes.2" name="TA_comission_confirmation_RETURN_ab953dd0"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.1"/>
     <returnValueAssignments variable="//@operations.7/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.6/@returnValues.0" call="//@operations.7/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.6/@returnValues.0" call="//@operations.7/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="ResourceDemandingSEFF (_pto2QHVnEeiXttXAU56kmA) - AC _0WeT8MN-EeWst9mTsticNA">
@@ -96,21 +99,24 @@
     <returnValues datatype="//@datatypes.2" name="TA_output_confirmation_RETURN_563030bf"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.1"/>
     <returnValueAssignments variable="//@operations.8/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.7/@returnValues.0" call="//@operations.8/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.7/@returnValues.0" call="//@operations.8/@calls.0"/>
     </returnValueAssignments>
     <stateVariables datatype="//@datatypes.3" name="TA_input_offerId_STATE_af6a2f00"/>
+    <defaultStateDefinitions variable="//@operations.8/@stateVariables.0">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
   </operations>
   <operations name="CreateDataOperation TP - confirmBooking - createConfirmation (_sjvp8MAUEeiUI73niYsUQw) - AC _2pBlYMN-EeWst9mTsticNA">
     <returnValues datatype="//@datatypes.2" name="TP - confirmBooking - createdConfirmation_RETURN_2f3643e6"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.9/@returnValues.0">
-      <term xsi:type="systemmodel:False"/>
+      <term xsi:type="prologmodel:False"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.9/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.0">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.9/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.2">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
   </operations>
   <operations name="ReturnDataOperation TP - confirmBooking - returnConfirmation (_0s7XlcAUEeiUI73niYsUQw) - AC _2pBlYMN-EeWst9mTsticNA">
@@ -118,7 +124,7 @@
     <returnValues datatype="//@datatypes.2" name="TP - confirmBooking - createdConfirmation_RETURN_450543f7"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.10/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.9/@returnValues.0" call="//@operations.10/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.9/@returnValues.0" call="//@operations.10/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="ResourceDemandingSEFF (_nUbBQNT3Eee-_bZGhm8PwA) - AC _2pBlYMN-EeWst9mTsticNA">
@@ -126,21 +132,27 @@
     <returnValues datatype="//@datatypes.2" name="TravelPlanner_output_confirmBooking_RETURN_ebeb354e"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.11/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.10/@returnValues.0" call="//@operations.11/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.10/@returnValues.0" call="//@operations.11/@calls.0"/>
     </returnValueAssignments>
     <stateVariables datatype="//@datatypes.4" name="TravelPlanner_input_airline_STATE_d0c0331b"/>
     <stateVariables datatype="//@datatypes.3" name="TravelPlanner_input_offerId_STATE_cde13302"/>
+    <defaultStateDefinitions variable="//@operations.11/@stateVariables.0">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
+    <defaultStateDefinitions variable="//@operations.11/@stateVariables.1">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
   </operations>
   <operations name="PerformDataTransmissionOperation TP - getFlightOffers - callTA (_Or1ZU8AEEeixfaJ5gBxJGQ) - AC _2pBlYMN-EeWst9mTsticNA">
     <calls callee="//@operations.5" name="opCall_586540b1">
       <preCallStateDefinitions variable="//@operations.5/@stateVariables.0">
-        <term xsi:type="systemmodel:StateRef" stateVariable="//@operations.14/@stateVariables.0"/>
+        <term xsi:type="prologmodel:StateRef" stateVariable="//@operations.14/@stateVariables.0"/>
       </preCallStateDefinitions>
     </calls>
     <returnValues datatype="//@datatypes.0" name="TP_output_FlightOffers_RETURN_ae373f1f"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.12/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.5/@returnValues.0" call="//@operations.12/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.5/@returnValues.0" call="//@operations.12/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="ReturnDataOperation TP - getFlightOffers - returnFlightOffers (_ax3XBcAEEeixfaJ5gBxJGQ) - AC _2pBlYMN-EeWst9mTsticNA">
@@ -148,7 +160,7 @@
     <returnValues datatype="//@datatypes.0" name="TP_output_FlightOffers_RETURN_775f3f1c"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.13/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.12/@returnValues.0" call="//@operations.13/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.12/@returnValues.0" call="//@operations.13/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="ResourceDemandingSEFF (_Jo_X8N5fEeeel_96Qa_d5A) - AC _2pBlYMN-EeWst9mTsticNA">
@@ -156,31 +168,34 @@
     <returnValues datatype="//@datatypes.0" name="TP_output_FlightOffers_RETURN_2be23060"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.14/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.13/@returnValues.0" call="//@operations.14/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.13/@returnValues.0" call="//@operations.14/@calls.0"/>
     </returnValueAssignments>
     <stateVariables datatype="//@datatypes.1" name="TP_input_RequestData_STATE_5178303f"/>
+    <defaultStateDefinitions variable="//@operations.14/@stateVariables.0">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
   </operations>
   <operations name="ProjectionDataOperation TP - bookSelected - extractOfferId (_qr-_dMAGEei_D8NS_upkXw) - AC _2pBlYMN-EeWst9mTsticNA">
     <returnValues datatype="//@datatypes.3" name="TP - bookSelected - offerId_RETURN_a8953c9c"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.15/@returnValues.0">
-      <term xsi:type="systemmodel:StateRef" stateVariable="//@operations.25/@stateVariables.0"/>
+      <term xsi:type="prologmodel:StateRef" stateVariable="//@operations.25/@stateVariables.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="PerformDataTransmissionOperation TP - bookSelected - callAirline (_NLNCI8AGEei_D8NS_upkXw) - AC _2pBlYMN-EeWst9mTsticNA">
     <calls callee="//@operations.15" name="opCall_e2f4fd7"/>
     <calls callee="//@operations.26" name="opCall_7dd41d8">
       <preCallStateDefinitions variable="//@operations.26/@stateVariables.1">
-        <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.15/@returnValues.0" call="//@operations.16/@calls.0"/>
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.15/@returnValues.0" call="//@operations.16/@calls.0"/>
       </preCallStateDefinitions>
       <preCallStateDefinitions variable="//@operations.26/@stateVariables.0">
-        <term xsi:type="systemmodel:StateRef" stateVariable="//@operations.25/@stateVariables.1"/>
+        <term xsi:type="prologmodel:StateRef" stateVariable="//@operations.25/@stateVariables.1"/>
       </preCallStateDefinitions>
     </calls>
     <returnValues datatype="//@datatypes.2" name="TP_output_bookingConfirmation_RETURN_2d454278"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.16/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.26/@returnValues.0" call="//@operations.16/@calls.1"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.26/@returnValues.0" call="//@operations.16/@calls.1"/>
     </returnValueAssignments>
   </operations>
   <operations name="ReturnDataOperation TP - bookSelected - returnConfirmation (_-2yq5cAREei4h6B-w6nC0g) - AC _2pBlYMN-EeWst9mTsticNA">
@@ -188,39 +203,39 @@
     <returnValues datatype="//@datatypes.2" name="TP_output_bookingConfirmation_RETURN_3b3f3fb8"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.17/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.16/@returnValues.0" call="//@operations.17/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.16/@returnValues.0" call="//@operations.17/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="CreateDataOperation Airline - bookFlight - createAirlineIdentification (_GpbogMesEeiCOOJ6eAJBcg) - AC _HRAO0MOAEeWst9mTsticNA">
     <returnValues datatype="//@datatypes.4" name="Airline_Airline_identification_RETURN_45d84455"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.2"/>
     <returnValueAssignments variable="//@operations.18/@returnValues.0">
-      <term xsi:type="systemmodel:False"/>
+      <term xsi:type="prologmodel:False"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.18/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.2">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.18/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.1">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.18/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.0">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
   </operations>
   <operations name="PerformDataTransmissionOperation Airline - bookgFlight - callForBookingConfirmation (__Xpu48epEeiCOOJ6eAJBcg) - AC _HRAO0MOAEeWst9mTsticNA">
     <calls callee="//@operations.18" name="opCall_9f6c5be3"/>
     <calls callee="//@operations.11" name="opCall_254749a4">
       <preCallStateDefinitions variable="//@operations.11/@stateVariables.1">
-        <term xsi:type="systemmodel:StateRef" stateVariable="//@operations.26/@stateVariables.1"/>
+        <term xsi:type="prologmodel:StateRef" stateVariable="//@operations.26/@stateVariables.1"/>
       </preCallStateDefinitions>
       <preCallStateDefinitions variable="//@operations.11/@stateVariables.0">
-        <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.18/@returnValues.0" call="//@operations.19/@calls.0"/>
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.18/@returnValues.0" call="//@operations.19/@calls.0"/>
       </preCallStateDefinitions>
     </calls>
     <returnValues datatype="//@datatypes.2" name="Airline_output_bookingConfirmationUser_RETURN_e8574df6"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.2"/>
     <returnValueAssignments variable="//@operations.19/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.11/@returnValues.0" call="//@operations.19/@calls.1"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.11/@returnValues.0" call="//@operations.19/@calls.1"/>
     </returnValueAssignments>
   </operations>
   <operations name="SystemDiscardData Airline - bookFlight - discardUserConfirmation (_Ird1E8pGEeivW8XRYOcdkQ) - AC _HRAO0MOAEeWst9mTsticNA">
@@ -230,13 +245,13 @@
   <operations name="PerformDataTransmissionOperation Airline - bookFlight - callPayComission (_8ezyI8esEeiCOOJ6eAJBcg) - AC _HRAO0MOAEeWst9mTsticNA">
     <calls callee="//@operations.8" name="opCall_b6b14584">
       <preCallStateDefinitions variable="//@operations.8/@stateVariables.0">
-        <term xsi:type="systemmodel:StateRef" stateVariable="//@operations.26/@stateVariables.1"/>
+        <term xsi:type="prologmodel:StateRef" stateVariable="//@operations.26/@stateVariables.1"/>
       </preCallStateDefinitions>
     </calls>
     <returnValues datatype="//@datatypes.2" name="Airline_Confirmation_payComission_RETURN_d88347aa"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.2"/>
     <returnValueAssignments variable="//@operations.21/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.8/@returnValues.0" call="//@operations.21/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.8/@returnValues.0" call="//@operations.21/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="SystemDiscardData Airline - bookFlight - discardComissionConfirmation (_OPBkR8pGEeivW8XRYOcdkQ) - AC _HRAO0MOAEeWst9mTsticNA">
@@ -247,13 +262,13 @@
     <returnValues datatype="//@datatypes.2" name="Airline_Confirmation_forBooking_RETURN_d4ab4387"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.2"/>
     <returnValueAssignments variable="//@operations.23/@returnValues.0">
-      <term xsi:type="systemmodel:False"/>
+      <term xsi:type="prologmodel:False"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.23/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.2">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.23/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.0">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
   </operations>
   <operations name="ReturnDataOperation Airline - bookFlight - returnBookingConfirmation (_r8VB1cetEeiCOOJ6eAJBcg) - AC _HRAO0MOAEeWst9mTsticNA">
@@ -261,7 +276,7 @@
     <returnValues datatype="//@datatypes.2" name="Airline_Confirmation_forBooking_RETURN_75e43ce"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.2"/>
     <returnValueAssignments variable="//@operations.24/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.23/@returnValues.0" call="//@operations.24/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.23/@returnValues.0" call="//@operations.24/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="ResourceDemandingSEFF (_LFOscN5fEeeel_96Qa_d5A) - AC _2pBlYMN-EeWst9mTsticNA">
@@ -269,10 +284,16 @@
     <returnValues datatype="//@datatypes.2" name="TP_output_bookingConfirmation_RETURN_a01f3305"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.25/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.17/@returnValues.0" call="//@operations.25/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.17/@returnValues.0" call="//@operations.25/@calls.0"/>
     </returnValueAssignments>
     <stateVariables datatype="//@datatypes.5" name="TP_input_flightOffer_STATE_5a6b303a"/>
     <stateVariables datatype="//@datatypes.6" name="TP_input_CreditCardDetails_STATE_82bb3223"/>
+    <defaultStateDefinitions variable="//@operations.25/@stateVariables.0">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
+    <defaultStateDefinitions variable="//@operations.25/@stateVariables.1">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
   </operations>
   <operations name="ResourceDemandingSEFF (_1NGIAMOAEeWst9mTsticNA) - AC _HRAO0MOAEeWst9mTsticNA">
     <calls callee="//@operations.20" name="opCall_583941ce"/>
@@ -281,10 +302,16 @@
     <returnValues datatype="//@datatypes.2" name="Airline_output_bookingConfirmation_RETURN_a6103583"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.2"/>
     <returnValueAssignments variable="//@operations.26/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.24/@returnValues.0" call="//@operations.26/@calls.2"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.24/@returnValues.0" call="//@operations.26/@calls.2"/>
     </returnValueAssignments>
     <stateVariables datatype="//@datatypes.6" name="Airline_input_ccd_STATE_b4972f45"/>
     <stateVariables datatype="//@datatypes.3" name="Airline_input_offerId_STATE_7c3230cb"/>
+    <defaultStateDefinitions variable="//@operations.26/@stateVariables.0">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
+    <defaultStateDefinitions variable="//@operations.26/@stateVariables.1">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
   </operations>
   <operations name="ResourceDemandingSEFF (_y4dQkM5wEeWFJak7Wqvc0g) - AC _HRAO0MOAEeWst9mTsticNA">
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.2"/>
@@ -294,18 +321,21 @@
     <returnValues datatype="//@datatypes.0" name="TravelAgency/Airline_output_FlightOffers_RETURN_ce5f3720"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.2"/>
     <returnValueAssignments variable="//@operations.28/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.4/@returnValues.0" call="//@operations.28/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.4/@returnValues.0" call="//@operations.28/@calls.0"/>
     </returnValueAssignments>
     <stateVariables datatype="//@datatypes.1" name="TravelAgency/Airline_input_RequestData_STATE_f8dc36ec"/>
+    <defaultStateDefinitions variable="//@operations.28/@stateVariables.0">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
   </operations>
   <operations name="LoadDataOperation CCC - releaseCCD - loadCCD (_bZiTAcevEeiCOOJ6eAJBcg) - AC _XOyEsMOBEeWst9mTsticNA">
     <returnValues datatype="//@datatypes.6" name="CCC_ccd_RETURN_8e032f93"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.29/@returnValues.0">
-      <term xsi:type="systemmodel:False"/>
+      <term xsi:type="prologmodel:False"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.29/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.0">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
   </operations>
   <operations name="ReturnDataOperation CCC - releaseCCD - returnCCD (_oA2Y1cevEeiCOOJ6eAJBcg) - AC _XOyEsMOBEeWst9mTsticNA">
@@ -313,7 +343,7 @@
     <returnValues datatype="//@datatypes.6" name="CCC_ccd_RETURN_89ea3145"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.30/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.29/@returnValues.0" call="//@operations.30/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.29/@returnValues.0" call="//@operations.30/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="ResourceDemandingSEFF (_YtkKYN5fEeeel_96Qa_d5A) - AC _XOyEsMOBEeWst9mTsticNA">
@@ -321,17 +351,17 @@
     <returnValues datatype="//@datatypes.6" name="CCC_output_CCDetails_RETURN_d7e92f07"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.31/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.30/@returnValues.0" call="//@operations.31/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.30/@returnValues.0" call="//@operations.31/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="CharacteristicChangingDataOperation CCC - declassifyCCD - changeRights (_t-99G8evEeiCOOJ6eAJBcg) - AC _XOyEsMOBEeWst9mTsticNA">
     <returnValues datatype="//@datatypes.6" name="CCC_input_CCDetails_RETURN_6106403d"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.32/@returnValues.0">
-      <term xsi:type="systemmodel:StateRef" stateVariable="//@operations.34/@stateVariables.0"/>
+      <term xsi:type="prologmodel:StateRef" stateVariable="//@operations.34/@stateVariables.0"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.32/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.2">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
   </operations>
   <operations name="ReturnDataOperation CCC - declassifyCCD - returnCCD (_2JwNNcevEeiCOOJ6eAJBcg) - AC _XOyEsMOBEeWst9mTsticNA">
@@ -339,7 +369,7 @@
     <returnValues datatype="//@datatypes.6" name="CCC_input_CCDetails_RETURN_34d538e8"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.33/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.32/@returnValues.0" call="//@operations.33/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.32/@returnValues.0" call="//@operations.33/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="ResourceDemandingSEFF (_ZdekYN5fEeeel_96Qa_d5A) - AC _XOyEsMOBEeWst9mTsticNA">
@@ -347,9 +377,12 @@
     <returnValues datatype="//@datatypes.6" name="CCC_output_CCDetails_declassified_RETURN_84ff3457"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.34/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.33/@returnValues.0" call="//@operations.34/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.33/@returnValues.0" call="//@operations.34/@calls.0"/>
     </returnValueAssignments>
     <stateVariables datatype="//@datatypes.6" name="CCC_input_CCDetails_STATE_32db2f3e"/>
+    <defaultStateDefinitions variable="//@operations.34/@stateVariables.0">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
   </operations>
   <operations name="ResourceDemandingSEFF (_aJze4N5fEeeel_96Qa_d5A) - AC _XOyEsMOBEeWst9mTsticNA">
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
@@ -358,29 +391,29 @@
     <returnValues datatype="//@datatypes.1" name="initialRequestData_RETURN_e5062de0"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.36/@returnValues.0">
-      <term xsi:type="systemmodel:False"/>
+      <term xsi:type="prologmodel:False"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.36/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.2">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.36/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.1">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.36/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.0">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
   </operations>
   <operations name="PerformDataTransmissionOperation UsageModel - RequestFlightOffers - CallTravelAgency (_81yW47_ZEeitJoiAXfVRAA) - AC n/a">
     <calls callee="//@operations.36" name="opCall_1a354322"/>
     <calls callee="//@operations.14" name="opCall_c5ad42de">
       <preCallStateDefinitions variable="//@operations.14/@stateVariables.0">
-        <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.36/@returnValues.0" call="//@operations.37/@calls.0"/>
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.36/@returnValues.0" call="//@operations.37/@calls.0"/>
       </preCallStateDefinitions>
     </calls>
     <returnValues datatype="//@datatypes.0" name="UsageModel_output_FlightOffers_RETURN_2f7d44a3"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.37/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.14/@returnValues.0" call="//@operations.37/@calls.1"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.14/@returnValues.0" call="//@operations.37/@calls.1"/>
     </returnValueAssignments>
   </operations>
   <operations name="SelectionDataOperation UsageModel - SelectFlightOffer (_zRqZqr_3EeiDXdgUH3RFCw) - AC n/a">
@@ -388,7 +421,7 @@
     <returnValues datatype="//@datatypes.5" name="UsageModel - SelectedFlightOffer_RETURN_6b6b366d"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.38/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.37/@returnValues.0" call="//@operations.38/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.37/@returnValues.0" call="//@operations.38/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="PerformDataTransmissionOperation UsageModel - ReleaseCCD (_eqrSE7_4EeiDXdgUH3RFCw) - AC n/a">
@@ -396,20 +429,20 @@
     <returnValues datatype="//@datatypes.6" name="UsageModel_output_CCDetails_RETURN_fe5337ab"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.39/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.31/@returnValues.0" call="//@operations.39/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.31/@returnValues.0" call="//@operations.39/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="PerformDataTransmissionOperation UsageModel - DeclassifyCCD (_rpkU87_5EeiwRoF0I7MrEQ) - AC n/a">
     <calls callee="//@operations.39" name="opCall_1c253fa2"/>
     <calls callee="//@operations.34" name="opCall_108a39e5">
       <preCallStateDefinitions variable="//@operations.34/@stateVariables.0">
-        <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.39/@returnValues.0" call="//@operations.40/@calls.0"/>
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.39/@returnValues.0" call="//@operations.40/@calls.0"/>
       </preCallStateDefinitions>
     </calls>
     <returnValues datatype="//@datatypes.6" name="UsageModel_output_CCDetails_declassified_RETURN_f6433e8d"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.40/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.34/@returnValues.0" call="//@operations.40/@calls.1"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.34/@returnValues.0" call="//@operations.40/@calls.1"/>
     </returnValueAssignments>
   </operations>
   <operations name="PerformDataTransmissionOperation UsageModel - BookSelected (_rkubw7_6EeiwRoF0I7MrEQ) - AC n/a">
@@ -417,16 +450,16 @@
     <calls callee="//@operations.40" name="opCall_eef64112"/>
     <calls callee="//@operations.25" name="opCall_3539a5">
       <preCallStateDefinitions variable="//@operations.25/@stateVariables.0">
-        <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.38/@returnValues.0" call="//@operations.41/@calls.0"/>
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.38/@returnValues.0" call="//@operations.41/@calls.0"/>
       </preCallStateDefinitions>
       <preCallStateDefinitions variable="//@operations.25/@stateVariables.1">
-        <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.40/@returnValues.0" call="//@operations.41/@calls.1"/>
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.40/@returnValues.0" call="//@operations.41/@calls.1"/>
       </preCallStateDefinitions>
     </calls>
     <returnValues datatype="//@datatypes.2" name="UsageModel_output_bookingConfirmation_RETURN_42a33dba"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.41/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.25/@returnValues.0" call="//@operations.41/@calls.2"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.25/@returnValues.0" call="//@operations.41/@calls.2"/>
     </returnValueAssignments>
   </operations>
   <operations name="UserReadData UsageModel - ReadBookingConfirmation (_oWcy1sADEeixfaJ5gBxJGQ) - AC n/a">
@@ -447,4 +480,4 @@
   <systemusages name="ScenarioBehaviour defaultUsageScenarioBehaviour (_rdqzEGB1Eea8PL_gXolfGA)">
     <calls callee="//@operations.43" name="opCall_5a5938bd"/>
   </systemusages>
-</systemmodel:System>
+</prologmodel:System>

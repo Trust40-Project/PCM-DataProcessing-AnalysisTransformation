@@ -1,137 +1,138 @@
-<?xml version="1.0" encoding="ASCII" standalone="no"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:dataProcessingProfile="http://www.palladiosimulator.org/pcm/dataprocessing/profile/0.1/" xmlns:emfprofileapplication="http://www.modelversioning.org/emfprofile/application/1.1" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0">
-  <repository:Repository xmlns:characteristics="http://palladiosimulator.org/dataflow/confidentiality/characterizedactions/0.1.0/characteristics" xmlns:characterizedActions="http://palladiosimulator.org/dataflow/confidentiality/characterizedactions/0.1.0" xmlns:expressions="http://palladiosimulator.org/dataflow/confidentiality/characterizedactions/0.1.0/expressions" xmlns:expressions_1="http://palladiosimulator.org/dataflow/dictionary/characterized/expressions/1.0" xmlns:repository_1="http://palladiosimulator.org/dataflow/confidentiality/characterizedactions/0.1.0/repository" entityName="New Repository" id="_zIIhgN60EeiymtGzi4643g">
-    <components__Repository entityName="ContactApp" id="_es1QEN62EeiymtGzi4643g" xsi:type="repository:BasicComponent">
-      <providedRoles_InterfaceProvidingEntity entityName="ContactApp.ContactManager.OperationProvidedRole_InternalApp" id="_1gnw8N62EeiymtGzi4643g" providedInterface__OperationProvidedRole="_3vgVQN60EeiymtGzi4643g" xsi:type="repository:OperationProvidedRole"/>
-      <requiredRoles_InterfaceRequiringEntity entityName="ContactApp.SMSService.OperationRequiredRole_InternalApp" id="_yxqQUN62EeiymtGzi4643g" requiredInterface__OperationRequiredRole="_6_yaQN60EeiymtGzi4643g" xsi:type="repository:OperationRequiredRole"/>
-      <serviceEffectSpecifications__BasicComponent describedService__SEFF="_HptIIN61EeiymtGzi4643g" id="_1goYAN62EeiymtGzi4643g" xsi:type="characterizedActions:CharacterizedResourceDemandingSEFF">
-        <steps_Behaviour id="_1goYAd62EeiymtGzi4643g" successor_AbstractAction="_XV2D4N9EEeiymtGzi4643g" xsi:type="seff:StartAction"/>
-        <steps_Behaviour id="_1goYAt62EeiymtGzi4643g" predecessor_AbstractAction="_XV2D4N9EEeiymtGzi4643g" xsi:type="seff:StopAction"/>
-        <steps_Behaviour entityName="saveContact" id="_XV2D4N9EEeiymtGzi4643g" predecessor_AbstractAction="_1goYAd62EeiymtGzi4643g" successor_AbstractAction="_1goYAt62EeiymtGzi4643g" xsi:type="seff:InternalAction"/>
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataProcessingProfile="http://www.palladiosimulator.org/pcm/dataprocessing/profile/0.1/" xmlns:emfprofileapplication="http://www.modelversioning.org/emfprofile/application/1.1" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2">
+  <repository:Repository id="_zIIhgN60EeiymtGzi4643g" entityName="New Repository">
+    <components__Repository xsi:type="repository:BasicComponent" id="_es1QEN62EeiymtGzi4643g" entityName="ContactApp">
+      <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1gnw8N62EeiymtGzi4643g" entityName="ContactApp.ContactManager.OperationProvidedRole_InternalApp" providedInterface__OperationProvidedRole="_3vgVQN60EeiymtGzi4643g"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_yxqQUN62EeiymtGzi4643g" entityName="ContactApp.SMSService.OperationRequiredRole_InternalApp" requiredInterface__OperationRequiredRole="_6_yaQN60EeiymtGzi4643g"/>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1goYAN62EeiymtGzi4643g" describedService__SEFF="_HptIIN61EeiymtGzi4643g">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_1goYAd62EeiymtGzi4643g" successor_AbstractAction="_XV2D4N9EEeiymtGzi4643g"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_1goYAt62EeiymtGzi4643g" predecessor_AbstractAction="_XV2D4N9EEeiymtGzi4643g"/>
+        <steps_Behaviour xsi:type="seff:InternalAction" id="_XV2D4N9EEeiymtGzi4643g" entityName="saveContact" predecessor_AbstractAction="_1goYAd62EeiymtGzi4643g" successor_AbstractAction="_1goYAt62EeiymtGzi4643g"/>
       </serviceEffectSpecifications__BasicComponent>
-      <serviceEffectSpecifications__BasicComponent describedService__SEFF="_O7G5MN61EeiymtGzi4643g" id="_1hFrAN62EeiymtGzi4643g" xsi:type="characterizedActions:CharacterizedResourceDemandingSEFF">
-        <steps_Behaviour id="_1hFrAd62EeiymtGzi4643g" successor_AbstractAction="_bndqEN9EEeiymtGzi4643g" xsi:type="seff:StartAction"/>
-        <steps_Behaviour id="_1hFrAt62EeiymtGzi4643g" predecessor_AbstractAction="_bndqEN9EEeiymtGzi4643g" xsi:type="seff:StopAction"/>
-        <steps_Behaviour entityName="deleteContact" id="_bndqEN9EEeiymtGzi4643g" predecessor_AbstractAction="_1hFrAd62EeiymtGzi4643g" successor_AbstractAction="_1hFrAt62EeiymtGzi4643g" xsi:type="seff:InternalAction"/>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1hFrAN62EeiymtGzi4643g" describedService__SEFF="_O7G5MN61EeiymtGzi4643g">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_1hFrAd62EeiymtGzi4643g" successor_AbstractAction="_bndqEN9EEeiymtGzi4643g"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_1hFrAt62EeiymtGzi4643g" predecessor_AbstractAction="_bndqEN9EEeiymtGzi4643g"/>
+        <steps_Behaviour xsi:type="seff:InternalAction" id="_bndqEN9EEeiymtGzi4643g" entityName="deleteContact" predecessor_AbstractAction="_1hFrAd62EeiymtGzi4643g" successor_AbstractAction="_1hFrAt62EeiymtGzi4643g"/>
       </serviceEffectSpecifications__BasicComponent>
-      <serviceEffectSpecifications__BasicComponent describedService__SEFF="_UI8QAN61EeiymtGzi4643g" id="_1hZ0EN62EeiymtGzi4643g" xsi:type="characterizedActions:CharacterizedResourceDemandingSEFF">
-        <steps_Behaviour id="_1hZ0Ed62EeiymtGzi4643g" successor_AbstractAction="_gsqpUN9EEeiymtGzi4643g" xsi:type="seff:StartAction"/>
-        <steps_Behaviour id="_1hZ0Et62EeiymtGzi4643g" predecessor_AbstractAction="_gsqpUN9EEeiymtGzi4643g" xsi:type="seff:StopAction"/>
-        <steps_Behaviour entityName="readAndReturnContacts" id="_gsqpUN9EEeiymtGzi4643g" predecessor_AbstractAction="_1hZ0Ed62EeiymtGzi4643g" successor_AbstractAction="_1hZ0Et62EeiymtGzi4643g" xsi:type="seff:InternalAction"/>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1hZ0EN62EeiymtGzi4643g" describedService__SEFF="_UI8QAN61EeiymtGzi4643g">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_1hZ0Ed62EeiymtGzi4643g" successor_AbstractAction="_gsqpUN9EEeiymtGzi4643g"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_1hZ0Et62EeiymtGzi4643g" predecessor_AbstractAction="_gsqpUN9EEeiymtGzi4643g"/>
+        <steps_Behaviour xsi:type="seff:InternalAction" id="_gsqpUN9EEeiymtGzi4643g" entityName="readAndReturnContacts" predecessor_AbstractAction="_1hZ0Ed62EeiymtGzi4643g" successor_AbstractAction="_1hZ0Et62EeiymtGzi4643g"/>
       </serviceEffectSpecifications__BasicComponent>
-      <serviceEffectSpecifications__BasicComponent describedService__SEFF="_E7_vQN62EeiymtGzi4643g" id="_1hy1oN62EeiymtGzi4643g" xsi:type="characterizedActions:CharacterizedResourceDemandingSEFF">
-        <steps_Behaviour id="_1hy1od62EeiymtGzi4643g" successor_AbstractAction="_lxGMgN9EEeiymtGzi4643g" xsi:type="seff:StartAction"/>
-        <steps_Behaviour id="_1hy1ot62EeiymtGzi4643g" predecessor_AbstractAction="_lxGMgN9EEeiymtGzi4643g" xsi:type="seff:StopAction"/>
-        <steps_Behaviour entityName="extractSMSReceiver" id="_lxGMgN9EEeiymtGzi4643g" predecessor_AbstractAction="_1hy1od62EeiymtGzi4643g" successor_AbstractAction="_1hy1ot62EeiymtGzi4643g" xsi:type="seff:InternalAction"/>
-      </serviceEffectSpecifications__BasicComponent>
-    </components__Repository>
-    <components__Repository entityName="SMSApp" id="_iOpxAN62EeiymtGzi4643g" xsi:type="repository:BasicComponent">
-      <providedRoles_InterfaceProvidingEntity entityName="SMSApp.SMSService.OperationProvidedRole_InternalApp" id="_l4lFEN62EeiymtGzi4643g" providedInterface__OperationProvidedRole="_6_yaQN60EeiymtGzi4643g" xsi:type="repository:OperationProvidedRole"/>
-      <requiredRoles_InterfaceRequiringEntity entityName="SMSApp.SMSService.OperationRequiredRole_ExternalSender" id="_nd7SQN62EeiymtGzi4643g" requiredInterface__OperationRequiredRole="_6_yaQN60EeiymtGzi4643g" xsi:type="repository:OperationRequiredRole"/>
-      <serviceEffectSpecifications__BasicComponent describedService__SEFF="_Xb-4oN62EeiymtGzi4643g" id="_l4zukN62EeiymtGzi4643g" xsi:type="characterizedActions:CharacterizedResourceDemandingSEFF">
-        <steps_Behaviour id="_l4zukd62EeiymtGzi4643g" successor_AbstractAction="_qt8hAN9EEeiymtGzi4643g" xsi:type="seff:StartAction"/>
-        <steps_Behaviour id="_l4zukt62EeiymtGzi4643g" predecessor_AbstractAction="_qt8hAN9EEeiymtGzi4643g" xsi:type="seff:StopAction"/>
-        <steps_Behaviour calledService_ExternalService="_Xb-4oN62EeiymtGzi4643g" entityName="delegateSendCall" id="_qt8hAN9EEeiymtGzi4643g" predecessor_AbstractAction="_l4zukd62EeiymtGzi4643g" role_ExternalService="_nd7SQN62EeiymtGzi4643g" successor_AbstractAction="_l4zukt62EeiymtGzi4643g" xsi:type="characterizedActions:CharacterizedExternalCallAction"/>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1hy1oN62EeiymtGzi4643g" describedService__SEFF="_E7_vQN62EeiymtGzi4643g">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_1hy1od62EeiymtGzi4643g" successor_AbstractAction="_lxGMgN9EEeiymtGzi4643g"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_1hy1ot62EeiymtGzi4643g" predecessor_AbstractAction="_lxGMgN9EEeiymtGzi4643g"/>
+        <steps_Behaviour xsi:type="seff:InternalAction" id="_lxGMgN9EEeiymtGzi4643g" entityName="extractSMSReceiver" predecessor_AbstractAction="_1hy1od62EeiymtGzi4643g" successor_AbstractAction="_1hy1ot62EeiymtGzi4643g"/>
       </serviceEffectSpecifications__BasicComponent>
     </components__Repository>
-    <components__Repository entityName="SMSProvider" id="_jSnvcN62EeiymtGzi4643g" xsi:type="repository:BasicComponent">
-      <providedRoles_InterfaceProvidingEntity entityName="SMSProvider.SMSService.OperationProvidedRole_ExternalService" id="_vdvogN62EeiymtGzi4643g" providedInterface__OperationProvidedRole="_6_yaQN60EeiymtGzi4643g" xsi:type="repository:OperationProvidedRole"/>
-      <serviceEffectSpecifications__BasicComponent describedService__SEFF="_Xb-4oN62EeiymtGzi4643g" id="_vdwPkN62EeiymtGzi4643g" xsi:type="characterizedActions:CharacterizedResourceDemandingSEFF">
-        <steps_Behaviour id="_vdw2oN62EeiymtGzi4643g" successor_AbstractAction="_xaTEQN9EEeiymtGzi4643g" xsi:type="seff:StartAction"/>
-        <steps_Behaviour id="_vdw2od62EeiymtGzi4643g" predecessor_AbstractAction="_xaTEQN9EEeiymtGzi4643g" xsi:type="seff:StopAction"/>
-        <steps_Behaviour entityName="sendSMS" id="_xaTEQN9EEeiymtGzi4643g" predecessor_AbstractAction="_vdw2oN62EeiymtGzi4643g" successor_AbstractAction="_vdw2od62EeiymtGzi4643g" xsi:type="seff:InternalAction"/>
+    <components__Repository xsi:type="repository:BasicComponent" id="_iOpxAN62EeiymtGzi4643g" entityName="SMSApp">
+      <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_l4lFEN62EeiymtGzi4643g" entityName="SMSApp.SMSService.OperationProvidedRole_InternalApp" providedInterface__OperationProvidedRole="_6_yaQN60EeiymtGzi4643g"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_nd7SQN62EeiymtGzi4643g" entityName="SMSApp.SMSService.OperationRequiredRole_ExternalSender" requiredInterface__OperationRequiredRole="_6_yaQN60EeiymtGzi4643g"/>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_l4zukN62EeiymtGzi4643g" describedService__SEFF="_Xb-4oN62EeiymtGzi4643g">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_l4zukd62EeiymtGzi4643g" successor_AbstractAction="_qt8hAN9EEeiymtGzi4643g"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_l4zukt62EeiymtGzi4643g" predecessor_AbstractAction="_qt8hAN9EEeiymtGzi4643g"/>
+        <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_qt8hAN9EEeiymtGzi4643g" entityName="delegateSendCall" predecessor_AbstractAction="_l4zukd62EeiymtGzi4643g" successor_AbstractAction="_l4zukt62EeiymtGzi4643g" calledService_ExternalService="_Xb-4oN62EeiymtGzi4643g" role_ExternalService="_nd7SQN62EeiymtGzi4643g"/>
       </serviceEffectSpecifications__BasicComponent>
     </components__Repository>
-    <interfaces__Repository entityName="SMSService" id="_6_yaQN60EeiymtGzi4643g" xsi:type="repository:OperationInterface">
-      <signatures__OperationInterface entityName="sendSMS" id="_Xb-4oN62EeiymtGzi4643g">
+    <components__Repository xsi:type="repository:BasicComponent" id="_jSnvcN62EeiymtGzi4643g" entityName="SMSProvider">
+      <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_vdvogN62EeiymtGzi4643g" entityName="SMSProvider.SMSService.OperationProvidedRole_ExternalService" providedInterface__OperationProvidedRole="_6_yaQN60EeiymtGzi4643g"/>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_vdwPkN62EeiymtGzi4643g" describedService__SEFF="_Xb-4oN62EeiymtGzi4643g">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_vdw2oN62EeiymtGzi4643g" successor_AbstractAction="_xaTEQN9EEeiymtGzi4643g"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_vdw2od62EeiymtGzi4643g" predecessor_AbstractAction="_xaTEQN9EEeiymtGzi4643g"/>
+        <steps_Behaviour xsi:type="seff:InternalAction" id="_xaTEQN9EEeiymtGzi4643g" entityName="sendSMS" predecessor_AbstractAction="_vdw2oN62EeiymtGzi4643g" successor_AbstractAction="_vdw2od62EeiymtGzi4643g"/>
+      </serviceEffectSpecifications__BasicComponent>
+    </components__Repository>
+    <interfaces__Repository xsi:type="repository:OperationInterface" id="_6_yaQN60EeiymtGzi4643g" entityName="SMSService">
+      <signatures__OperationInterface id="_Xb-4oN62EeiymtGzi4643g" entityName="sendSMS">
         <parameters__OperationSignature dataType__Parameter="_tEfHkN61EeiymtGzi4643g" parameterName="receiver"/>
         <parameters__OperationSignature dataType__Parameter="_P2o34N62EeiymtGzi4643g" parameterName="body"/>
       </signatures__OperationInterface>
     </interfaces__Repository>
-    <interfaces__Repository entityName="ContactManager" id="_3vgVQN60EeiymtGzi4643g" xsi:type="repository:OperationInterface">
-      <signatures__OperationInterface entityName="addContact" id="_HptIIN61EeiymtGzi4643g">
+    <interfaces__Repository xsi:type="repository:OperationInterface" id="_3vgVQN60EeiymtGzi4643g" entityName="ContactManager">
+      <signatures__OperationInterface id="_HptIIN61EeiymtGzi4643g" entityName="addContact">
         <parameters__OperationSignature dataType__Parameter="_CSgZ8N61EeiymtGzi4643g" parameterName="contact"/>
       </signatures__OperationInterface>
-      <signatures__OperationInterface entityName="deleteContact" id="_O7G5MN61EeiymtGzi4643g">
+      <signatures__OperationInterface id="_O7G5MN61EeiymtGzi4643g" entityName="deleteContact">
         <parameters__OperationSignature dataType__Parameter="_CSgZ8N61EeiymtGzi4643g" parameterName="contact"/>
       </signatures__OperationInterface>
-      <signatures__OperationInterface entityName="listContacts" id="_UI8QAN61EeiymtGzi4643g" returnType__OperationSignature="_VfkEsN61EeiymtGzi4643g"/>
-      <signatures__OperationInterface entityName="getSMSReceiver" id="_E7_vQN62EeiymtGzi4643g" returnType__OperationSignature="_tEfHkN61EeiymtGzi4643g">
+      <signatures__OperationInterface id="_UI8QAN61EeiymtGzi4643g" entityName="listContacts" returnType__OperationSignature="_VfkEsN61EeiymtGzi4643g"/>
+      <signatures__OperationInterface id="_E7_vQN62EeiymtGzi4643g" entityName="getSMSReceiver" returnType__OperationSignature="_tEfHkN61EeiymtGzi4643g">
         <parameters__OperationSignature dataType__Parameter="_CSgZ8N61EeiymtGzi4643g" parameterName="contact"/>
       </signatures__OperationInterface>
     </interfaces__Repository>
-    <dataTypes__Repository entityName="Contact" id="_CSgZ8N61EeiymtGzi4643g" xsi:type="repository:CompositeDataType">
-      <innerDeclaration_CompositeDataType datatype_InnerDeclaration="_jD3-QN61EeiymtGzi4643g" entityName="name"/>
-      <innerDeclaration_CompositeDataType datatype_InnerDeclaration="_tEfHkN61EeiymtGzi4643g" entityName="smsReceiver"/>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_CSgZ8N61EeiymtGzi4643g" entityName="Contact">
+      <innerDeclaration_CompositeDataType entityName="name" datatype_InnerDeclaration="_jD3-QN61EeiymtGzi4643g"/>
+      <innerDeclaration_CompositeDataType entityName="smsReceiver" datatype_InnerDeclaration="_tEfHkN61EeiymtGzi4643g"/>
     </dataTypes__Repository>
-    <dataTypes__Repository entityName="ContactList" id="_VfkEsN61EeiymtGzi4643g" innerType_CollectionDataType="_CSgZ8N61EeiymtGzi4643g" xsi:type="repository:CollectionDataType"/>
-    <dataTypes__Repository entityName="Name" id="_jD3-QN61EeiymtGzi4643g" xsi:type="repository:CompositeDataType">
+    <dataTypes__Repository xsi:type="repository:CollectionDataType" id="_VfkEsN61EeiymtGzi4643g" entityName="ContactList" innerType_CollectionDataType="_CSgZ8N61EeiymtGzi4643g"/>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_jD3-QN61EeiymtGzi4643g" entityName="Name">
       <innerDeclaration_CompositeDataType entityName="name">
-        <datatype_InnerDeclaration href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1" xsi:type="repository:PrimitiveDataType"/>
+        <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
       </innerDeclaration_CompositeDataType>
     </dataTypes__Repository>
-    <dataTypes__Repository entityName="PhoneNumber" id="_oWPPwN61EeiymtGzi4643g" xsi:type="repository:CompositeDataType">
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_oWPPwN61EeiymtGzi4643g" entityName="PhoneNumber">
       <innerDeclaration_CompositeDataType entityName="phoneNumber">
-        <datatype_InnerDeclaration href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1" xsi:type="repository:PrimitiveDataType"/>
+        <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
       </innerDeclaration_CompositeDataType>
     </dataTypes__Repository>
-    <dataTypes__Repository entityName="SMSReceiver" id="_tEfHkN61EeiymtGzi4643g" xsi:type="repository:CompositeDataType">
-      <innerDeclaration_CompositeDataType datatype_InnerDeclaration="_oWPPwN61EeiymtGzi4643g" entityName="phoneNumber"/>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_tEfHkN61EeiymtGzi4643g" entityName="SMSReceiver">
+      <innerDeclaration_CompositeDataType entityName="phoneNumber" datatype_InnerDeclaration="_oWPPwN61EeiymtGzi4643g"/>
     </dataTypes__Repository>
-    <dataTypes__Repository entityName="SMSBody" id="_P2o34N62EeiymtGzi4643g" xsi:type="repository:CompositeDataType">
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_P2o34N62EeiymtGzi4643g" entityName="SMSBody">
       <innerDeclaration_CompositeDataType entityName="smsBody">
-        <datatype_InnerDeclaration href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1" xsi:type="repository:PrimitiveDataType"/>
+        <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
       </innerDeclaration_CompositeDataType>
     </dataTypes__Repository>
   </repository:Repository>
   <emfprofileapplication:ProfileApplication>
-    <stereotypeApplications appliedTo="_Xb-4oN62EeiymtGzi4643g" xsi:type="dataProcessingProfile:OperationSignatureDataRefinement">
+    <stereotypeApplications xsi:type="dataProcessingProfile:OperationSignatureDataRefinement" appliedTo="_Xb-4oN62EeiymtGzi4643g">
       <extension href="../../../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_u8vnsLydEeiT-9xxrec-9Q"/>
       <operationSignatureDataRefinement href="DataSpecification.xmi#_eskgNt9MEeiymtGzi4643g"/>
     </stereotypeApplications>
-    <stereotypeApplications appliedTo="_HptIIN61EeiymtGzi4643g" xsi:type="dataProcessingProfile:OperationSignatureDataRefinement">
+    <stereotypeApplications xsi:type="dataProcessingProfile:OperationSignatureDataRefinement" appliedTo="_HptIIN61EeiymtGzi4643g">
       <extension href="../../../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_u8vnsLydEeiT-9xxrec-9Q"/>
       <operationSignatureDataRefinement href="DataSpecification.xmi#_hmrg5t9MEeiymtGzi4643g"/>
     </stereotypeApplications>
-    <stereotypeApplications appliedTo="_O7G5MN61EeiymtGzi4643g" xsi:type="dataProcessingProfile:OperationSignatureDataRefinement">
+    <stereotypeApplications xsi:type="dataProcessingProfile:OperationSignatureDataRefinement" appliedTo="_O7G5MN61EeiymtGzi4643g">
       <extension href="../../../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_u8vnsLydEeiT-9xxrec-9Q"/>
       <operationSignatureDataRefinement href="DataSpecification.xmi#_nMMX6t9MEeiymtGzi4643g"/>
     </stereotypeApplications>
-    <stereotypeApplications appliedTo="_UI8QAN61EeiymtGzi4643g" xsi:type="dataProcessingProfile:OperationSignatureDataRefinement">
+    <stereotypeApplications xsi:type="dataProcessingProfile:OperationSignatureDataRefinement" appliedTo="_UI8QAN61EeiymtGzi4643g">
       <extension href="../../../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_u8vnsLydEeiT-9xxrec-9Q"/>
       <operationSignatureDataRefinement href="DataSpecification.xmi#_owjGmt9MEeiymtGzi4643g"/>
     </stereotypeApplications>
-    <stereotypeApplications appliedTo="_E7_vQN62EeiymtGzi4643g" xsi:type="dataProcessingProfile:OperationSignatureDataRefinement">
+    <stereotypeApplications xsi:type="dataProcessingProfile:OperationSignatureDataRefinement" appliedTo="_E7_vQN62EeiymtGzi4643g">
       <extension href="../../../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_u8vnsLydEeiT-9xxrec-9Q"/>
       <operationSignatureDataRefinement href="DataSpecification.xmi#_qosT-t9MEeiymtGzi4643g"/>
     </stereotypeApplications>
-    <stereotypeApplications appliedTo="_es1QEN62EeiymtGzi4643g" xsi:type="dataProcessingProfile:StoreHaving">
+    <stereotypeApplications xsi:type="dataProcessingProfile:StoreHaving" appliedTo="_es1QEN62EeiymtGzi4643g">
       <extension href="../../../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_pFHmQFqjEeiW1d-qz7Oqsw"/>
       <storeContainer href="DataSpecification.xmi#_X9KMct9NEeiymtGzi4643g"/>
     </stereotypeApplications>
-    <stereotypeApplications appliedTo="_XV2D4N9EEeiymtGzi4643g" xsi:type="dataProcessingProfile:DataProcessingSpecification">
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_XV2D4N9EEeiymtGzi4643g">
       <extension href="../../../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YGiQIFqhEeiGTpqaWj7bwA"/>
       <dataProcessingContainer href="DataSpecification.xmi#_81kZcORBEeiIPLcNcSP07w"/>
     </stereotypeApplications>
-    <stereotypeApplications appliedTo="_bndqEN9EEeiymtGzi4643g" xsi:type="dataProcessingProfile:DataProcessingSpecification">
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_bndqEN9EEeiymtGzi4643g">
       <extension href="../../../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YGiQIFqhEeiGTpqaWj7bwA"/>
       <dataProcessingContainer href="DataSpecification.xmi#_DDiXkORCEeiIPLcNcSP07w"/>
     </stereotypeApplications>
-    <stereotypeApplications appliedTo="_gsqpUN9EEeiymtGzi4643g" xsi:type="dataProcessingProfile:DataProcessingSpecification">
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_gsqpUN9EEeiymtGzi4643g">
       <extension href="../../../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YGiQIFqhEeiGTpqaWj7bwA"/>
       <dataProcessingContainer href="DataSpecification.xmi#_E0c7kORCEeiIPLcNcSP07w"/>
     </stereotypeApplications>
-    <stereotypeApplications appliedTo="_lxGMgN9EEeiymtGzi4643g" xsi:type="dataProcessingProfile:DataProcessingSpecification">
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_lxGMgN9EEeiymtGzi4643g">
       <extension href="../../../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YGiQIFqhEeiGTpqaWj7bwA"/>
       <dataProcessingContainer href="DataSpecification.xmi#_GHnMkORCEeiIPLcNcSP07w"/>
     </stereotypeApplications>
-    <stereotypeApplications appliedTo="_qt8hAN9EEeiymtGzi4643g" xsi:type="dataProcessingProfile:DataProcessingSpecification">
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_qt8hAN9EEeiymtGzi4643g">
       <extension href="../../../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YpnIAFqhEeiGTpqaWj7bwA"/>
       <dataProcessingContainer href="DataSpecification.xmi#_OJQu0ORCEeiIPLcNcSP07w"/>
     </stereotypeApplications>
-    <stereotypeApplications appliedTo="_xaTEQN9EEeiymtGzi4643g" xsi:type="dataProcessingProfile:DataProcessingSpecification">
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_xaTEQN9EEeiymtGzi4643g">
       <extension href="../../../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YGiQIFqhEeiGTpqaWj7bwA"/>
       <dataProcessingContainer href="DataSpecification.xmi#_RrwlMORCEeiIPLcNcSP07w"/>
     </stereotypeApplications>
-    <importedProfiles location="platform:/plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram" nsURI="http://www.palladiosimulator.org/pcm/dataprocessing/profile/0.1/"/>
+    <importedProfiles nsURI="http://www.palladiosimulator.org/pcm/dataprocessing/profile/0.1/" location="platform:/plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram"/>
   </emfprofileapplication:ProfileApplication>
 </xmi:XMI>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<systemmodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:systemmodel="http://www.palladiosimulator.org/pcm/dataprocessing/prolog/0.1/" name="ContactSMSManager">
+<prologmodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prologmodel="http://www.palladiosimulator.org/pcm/dataprocessing/prolog/0.1/" name="ContactSMSManager">
   <attributes type="//@types.0" name="EnumCharacteristicType AccessRights (_rkiSMFqnEeiY18w7ObeSrg)"/>
   <attributes type="//@types.0" name="EnumCharacteristicType Roles (_vP5JoFqnEeiY18w7ObeSrg)"/>
   <datatypes attributes="//@attributes.0 //@attributes.1" name="CompositeDataType Contact (_CSgZ8N61EeiymtGzi4643g)"/>
@@ -13,6 +13,9 @@
     <calls callee="//@operations.0" name="opCall_c79b3ae6"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.1"/>
     <stateVariables datatype="//@datatypes.0" name="ContactManager_addContact_input_Contact_STATE_2964372a"/>
+    <defaultStateDefinitions variable="//@operations.1/@stateVariables.0">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
   </operations>
   <operations name="DeleteDataOperation ContactApp_deleteContact_delete (_YJGmruRDEeibidCGD3lq3g) - AC _dFWH4N9FEeiymtGzi4643g">
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.1"/>
@@ -21,18 +24,21 @@
     <calls callee="//@operations.2" name="opCall_137b3d46"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.1"/>
     <stateVariables datatype="//@datatypes.0" name="ContactManager_deleteContact_input_Contact_STATE_d14f3840"/>
+    <defaultStateDefinitions variable="//@operations.3/@stateVariables.0">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
   </operations>
   <operations name="LoadAllDataOperation ContactApp_listContacts_loadData (_bs75wuRDEeibidCGD3lq3g) - AC _dFWH4N9FEeiymtGzi4643g">
     <returnValues datatype="//@datatypes.1" name="ContactApp_listContacts_loadData_Contacts_RETURN_f30442bf"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.1"/>
     <returnValueAssignments variable="//@operations.4/@returnValues.0">
-      <term xsi:type="systemmodel:False"/>
+      <term xsi:type="prologmodel:False"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.4/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.0">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.4/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.1">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
   </operations>
   <operations name="ReturnDataOperation ContactApp_listContacts_return (_eUTkpeRDEeibidCGD3lq3g) - AC _dFWH4N9FEeiymtGzi4643g">
@@ -40,7 +46,7 @@
     <returnValues datatype="//@datatypes.1" name="ContactApp_listContacts_loadData_Contacts_RETURN_8811424d"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.1"/>
     <returnValueAssignments variable="//@operations.5/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.4/@returnValues.0" call="//@operations.5/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.4/@returnValues.0" call="//@operations.5/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="ResourceDemandingSEFF (_1hZ0EN62EeiymtGzi4643g) - AC _dFWH4N9FEeiymtGzi4643g">
@@ -48,14 +54,14 @@
     <returnValues datatype="//@datatypes.1" name="ContactManager_listContacts_output_ContactList_RETURN_d493922"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.1"/>
     <returnValueAssignments variable="//@operations.6/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.5/@returnValues.0" call="//@operations.6/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.5/@returnValues.0" call="//@operations.6/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="EffectSpecifyingTransformDataOperation ContactApp_getSMSReceiver_anonymize (_5vo4beRDEeibidCGD3lq3g) - AC _dFWH4N9FEeiymtGzi4643g">
     <returnValues datatype="//@datatypes.2" name="ContactApp_getSMSReceiver_SMSReceiver_RETURN_1e648e4"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.1"/>
     <returnValueAssignments variable="//@operations.7/@returnValues.0">
-      <term xsi:type="systemmodel:StateRef" stateVariable="//@operations.9/@stateVariables.0"/>
+      <term xsi:type="prologmodel:StateRef" stateVariable="//@operations.9/@stateVariables.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="ReturnDataOperation ContactApp_getSMSReceiver_return (_CXhUNeREEeibidCGD3lq3g) - AC _dFWH4N9FEeiymtGzi4643g">
@@ -63,7 +69,7 @@
     <returnValues datatype="//@datatypes.2" name="ContactApp_getSMSReceiver_SMSReceiver_RETURN_55b54007"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.1"/>
     <returnValueAssignments variable="//@operations.8/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.7/@returnValues.0" call="//@operations.8/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.7/@returnValues.0" call="//@operations.8/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="ResourceDemandingSEFF (_1hy1oN62EeiymtGzi4643g) - AC _dFWH4N9FEeiymtGzi4643g">
@@ -71,17 +77,20 @@
     <returnValues datatype="//@datatypes.2" name="ContactManager_getSMSReceiver_output_SMSReceiver_RETURN_8dfe398d"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.1"/>
     <returnValueAssignments variable="//@operations.9/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.8/@returnValues.0" call="//@operations.9/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.8/@returnValues.0" call="//@operations.9/@calls.0"/>
     </returnValueAssignments>
     <stateVariables datatype="//@datatypes.0" name="ContactManager_getSMSReceiver_input_Contact_STATE_18c738dd"/>
+    <defaultStateDefinitions variable="//@operations.9/@stateVariables.0">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
   </operations>
   <operations name="PerformDataTransmissionOperation SMSApp_sendSMS_callSMSProvider (_GVPuA-REEeibidCGD3lq3g) - AC _egZwoN9FEeiymtGzi4643g">
     <calls callee="//@operations.14" name="opCall_71cc42c4">
       <preCallStateDefinitions variable="//@operations.14/@stateVariables.0">
-        <term xsi:type="systemmodel:StateRef" stateVariable="//@operations.13/@stateVariables.0"/>
+        <term xsi:type="prologmodel:StateRef" stateVariable="//@operations.13/@stateVariables.0"/>
       </preCallStateDefinitions>
       <preCallStateDefinitions variable="//@operations.14/@stateVariables.1">
-        <term xsi:type="systemmodel:StateRef" stateVariable="//@operations.13/@stateVariables.1"/>
+        <term xsi:type="prologmodel:StateRef" stateVariable="//@operations.13/@stateVariables.1"/>
       </preCallStateDefinitions>
     </calls>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.2"/>
@@ -97,6 +106,12 @@
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.2"/>
     <stateVariables datatype="//@datatypes.3" name="SMSService_sendSMS_input_SMSBody_STATE_ebe234c7"/>
     <stateVariables datatype="//@datatypes.2" name="SMSService_sendSMS_input_SMSReceiver_STATE_cc4f3659"/>
+    <defaultStateDefinitions variable="//@operations.13/@stateVariables.0">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
+    <defaultStateDefinitions variable="//@operations.13/@stateVariables.1">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
   </operations>
   <operations name="ResourceDemandingSEFF (_vdwPkN62EeiymtGzi4643g) - AC _farAgN9FEeiymtGzi4643g">
     <calls callee="//@operations.11" name="opCall_e3533b69"/>
@@ -104,25 +119,31 @@
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.2"/>
     <stateVariables datatype="//@datatypes.3" name="SMSService_sendSMS_input_SMSBody_STATE_e53034ae"/>
     <stateVariables datatype="//@datatypes.2" name="SMSService_sendSMS_input_SMSReceiver_STATE_c5393640"/>
+    <defaultStateDefinitions variable="//@operations.14/@stateVariables.0">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
+    <defaultStateDefinitions variable="//@operations.14/@stateVariables.1">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
   </operations>
   <operations name="CreateDataOperation Usage_createContact_createData (_JNYogN9REeiymtGzi4643g) - AC n/a">
     <returnValues datatype="//@datatypes.0" name="Usage_createContact_createData_Contact_RETURN_c5ec39f5"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.15/@returnValues.0">
-      <term xsi:type="systemmodel:False"/>
+      <term xsi:type="prologmodel:False"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.15/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.0">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.15/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.1">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
   </operations>
   <operations name="PerformDataTransmissionOperation Usage_createContact_callContactApp_call (_RYXF499REeiymtGzi4643g) - AC n/a">
     <calls callee="//@operations.15" name="opCall_e6d94465"/>
     <calls callee="//@operations.1" name="opCall_92f3f09">
       <preCallStateDefinitions variable="//@operations.1/@stateVariables.0">
-        <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.15/@returnValues.0" call="//@operations.16/@calls.0"/>
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.15/@returnValues.0" call="//@operations.16/@calls.0"/>
       </preCallStateDefinitions>
     </calls>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
@@ -135,20 +156,20 @@
     <returnValues datatype="//@datatypes.0" name="Usage_deleteContact_createData_Contact_RETURN_c56a39f5"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.18/@returnValues.0">
-      <term xsi:type="systemmodel:False"/>
+      <term xsi:type="prologmodel:False"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.18/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.0">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.18/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.1">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
   </operations>
   <operations name="PerformDataTransmissionOperation Usage_deleteContact_callContactApp_call (_DI5hE99SEeiymtGzi4643g) - AC n/a">
     <calls callee="//@operations.18" name="opCall_dfaa4457"/>
     <calls callee="//@operations.3" name="opCall_ffa63eec">
       <preCallStateDefinitions variable="//@operations.3/@stateVariables.0">
-        <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.18/@returnValues.0" call="//@operations.19/@calls.0"/>
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.18/@returnValues.0" call="//@operations.19/@calls.0"/>
       </preCallStateDefinitions>
     </calls>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
@@ -162,7 +183,7 @@
     <returnValues datatype="//@datatypes.1" name="Usage_listContacts_output_ContactsList_RETURN_9f52447b"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.21/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.6/@returnValues.0" call="//@operations.21/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.6/@returnValues.0" call="//@operations.21/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="UserReadData Usage_listContacts_readContacts_readData (_CbEbpuQ9EeicNpyYqOMeKA) - AC n/a">
@@ -178,7 +199,7 @@
     <returnValues datatype="//@datatypes.1" name="Usage_sendSMS_callContactApp_output_ContactList_RETURN_a8644638"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.24/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.6/@returnValues.0" call="//@operations.24/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.6/@returnValues.0" call="//@operations.24/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="SelectionDataOperation Usage_sendSMS_selectContact_select (_ELj2--Q_EeiIPLcNcSP07w) - AC n/a">
@@ -186,33 +207,33 @@
     <returnValues datatype="//@datatypes.0" name="Usage_sendSMS_selectContact_SelectedContact_RETURN_4d573d74"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.25/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.24/@returnValues.0" call="//@operations.25/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.24/@returnValues.0" call="//@operations.25/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="PerformDataTransmissionOperation Usage_sendSMS_callContactApp_getSMSReceiver_call (_5D8z4-Q_EeiIPLcNcSP07w) - AC n/a">
     <calls callee="//@operations.25" name="opCall_55b24983"/>
     <calls callee="//@operations.9" name="opCall_532941f7">
       <preCallStateDefinitions variable="//@operations.9/@stateVariables.0">
-        <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.25/@returnValues.0" call="//@operations.26/@calls.0"/>
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.25/@returnValues.0" call="//@operations.26/@calls.0"/>
       </preCallStateDefinitions>
     </calls>
     <returnValues datatype="//@datatypes.2" name="Usage_sendSMS_callContactApp_getSMSReceiver_SMSReceiver_RETURN_da0e4ca8"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.26/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.9/@returnValues.0" call="//@operations.26/@calls.1"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.9/@returnValues.0" call="//@operations.26/@calls.1"/>
     </returnValueAssignments>
   </operations>
   <operations name="CreateDataOperation Usage_sendSMS_createBody_create (_q6wPIORAEeiIPLcNcSP07w) - AC n/a">
     <returnValues datatype="//@datatypes.3" name="Usage_sendSMS_createBody_SMSBody_RETURN_5f7436e1"/>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
     <returnValueAssignments variable="//@operations.27/@returnValues.0">
-      <term xsi:type="systemmodel:False"/>
+      <term xsi:type="prologmodel:False"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.27/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.2">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
     <returnValueAssignments variable="//@operations.27/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.0">
-      <term xsi:type="systemmodel:True"/>
+      <term xsi:type="prologmodel:True"/>
     </returnValueAssignments>
   </operations>
   <operations name="PerformDataTransmissionOperation Usage_sendSMS_callSMSApp_call (_1H7Nw-RAEeiIPLcNcSP07w) - AC n/a">
@@ -220,10 +241,10 @@
     <calls callee="//@operations.27" name="opCall_ca813f96"/>
     <calls callee="//@operations.13" name="opCall_ffca3b27">
       <preCallStateDefinitions variable="//@operations.13/@stateVariables.1">
-        <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.26/@returnValues.0" call="//@operations.28/@calls.0"/>
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.26/@returnValues.0" call="//@operations.28/@calls.0"/>
       </preCallStateDefinitions>
       <preCallStateDefinitions variable="//@operations.13/@stateVariables.0">
-        <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.27/@returnValues.0" call="//@operations.28/@calls.1"/>
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.27/@returnValues.0" call="//@operations.28/@calls.1"/>
       </preCallStateDefinitions>
     </calls>
     <propertyDefinitions property="//@properties.1" presentValues="//@types.0/@values.0"/>
@@ -251,4 +272,4 @@
   <systemusages name="ScenarioBehaviour ScenarioBehaviour (_Dm4MoN9JEeiymtGzi4643g)">
     <calls callee="//@operations.29" name="opCall_6272e7f"/>
   </systemusages>
-</systemmodel:System>
+</prologmodel:System>
