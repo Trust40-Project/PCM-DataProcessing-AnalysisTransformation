@@ -8,14 +8,15 @@ import org.palladiosimulator.pcm.core.composition.AssemblyContext
 import org.palladiosimulator.pcm.core.composition.ProvidedDelegationConnector
 import org.palladiosimulator.pcm.core.entity.Entity
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.dto.DataEdge
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.IdentifierAssemblyContextInstance
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.IdentifierInstance
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.SEFFInstance
 import org.palladiosimulator.pcm.dataprocessing.dataprocessing.processing.DataOperation
 import org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.OperationCall
 import org.palladiosimulator.pcm.system.System
 import org.palladiosimulator.pcm.usagemodel.EntryLevelSystemCall
 import org.palladiosimulator.pcm.usagemodel.ScenarioBehaviour
 import org.palladiosimulator.pcm.usagemodel.Start
-import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.IdentifierAssemblyContextInstance
 
 class UsageModelBehaviorTransformator extends BehaviorTransformator {
 	
@@ -29,7 +30,7 @@ class UsageModelBehaviorTransformator extends BehaviorTransformator {
 		}
 	}
 	
-	override protected determineCalledSEFF(Iterable<Entity> callAction, IdentifierInstance<? extends Entity, AssemblyContext> callerInstance) {
+	override protected determineCalledSEFF(Iterable<Entity> callAction, IdentifierInstance<?, AssemblyContext> callerInstance) {
 		val elsc = callAction.filter(EntryLevelSystemCall).findFirst[true]
 		val calledSignature = elsc.operationSignature__EntryLevelSystemCall
 		
@@ -58,7 +59,7 @@ class UsageModelBehaviorTransformator extends BehaviorTransformator {
 	override protected findAllDataOps(Identifier identifier) {
 		var ops = new ArrayList<DataOperation>();
 		for (var action = (identifier as ScenarioBehaviour).actions_ScenarioBehaviour.findFirst[a | a instanceof Start]; action !== null; action = action.successor) {
-			ops += action.findAllDataOperationsOfStereotpyedEObject
+			ops += action.findAllDataOperationsOfStereotypedEObject
 		}
 		ops
 	}
@@ -66,6 +67,21 @@ class UsageModelBehaviorTransformator extends BehaviorTransformator {
 	override protected getPropertySource(IdentifierAssemblyContextInstance<?> instance) {
 		// ScenarioBehavior itself
 		instance.entity
+	}
+	
+	override protected getCalledSeffsWithoutDataTransfers(IdentifierAssemblyContextInstance<?> callerInstance) {
+		val sb = callerInstance.entity as ScenarioBehaviour
+		var calledSeffs = new ArrayList<SEFFInstance>();
+		for (var action = sb.actions_ScenarioBehaviour.findFirst[a | a instanceof Start]; action !== null; action = action.successor) {
+			if (action instanceof EntryLevelSystemCall) {
+				val elsc = action as EntryLevelSystemCall
+				if (elsc.findAllDataOperationsOfStereotypedEObject.isEmpty) {
+					val calledSeff = elsc.determineCalledSEFF(callerInstance)
+					calledSeffs += calledSeff
+				}
+			}
+		}
+		calledSeffs
 	}
 	
 }

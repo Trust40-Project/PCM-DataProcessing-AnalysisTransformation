@@ -19,6 +19,7 @@ import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characte
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.characteristics.impl.QueryExecutorDelegator
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.ICachingUniqueNameProvider
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.DataOperationInstance
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.IdentifierAssemblyContextInstance
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.IdentifierInstance
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.SEFFInstance
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.util.EMFUtils
@@ -48,7 +49,6 @@ import org.palladiosimulator.pcm.usagemodel.ScenarioBehaviour
 import org.palladiosimulator.pcm.usagemodel.UsageModel
 
 import static org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.ScenarioBehaviorInstance.*
-import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.IdentifierAssemblyContextInstance
 
 class PCM2DFSystemModelTransformation implements ITransformator, TransformationFacilities {
 	

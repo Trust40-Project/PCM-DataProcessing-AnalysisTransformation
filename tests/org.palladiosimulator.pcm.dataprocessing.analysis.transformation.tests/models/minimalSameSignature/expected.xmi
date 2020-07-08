@@ -1,63 +1,69 @@
 <?xml version="1.0" encoding="ASCII"?>
-<systemmodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:systemmodel="http://www.palladiosimulator.org/pcm/dataprocessing/prolog/0.1/" name="s1">
+<prologmodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prologmodel="http://www.palladiosimulator.org/pcm/dataprocessing/prolog/0.1/" name="s1">
   <attributes type="//@types.0" name="EnumCharacteristicType Roles (_WjvUYL59Eei6GcxJOtcDSg)"/>
   <datatypes attributes="//@attributes.0" name="org.palladiosimulator.pcm.repository.PrimitiveDataType BOOL"/>
   <operations name="PerformDataTransmissionOperation callB (_QHgAI-aSEeiJ5POhgxpySg) - AC _5tW1sOaOEeiJ5POhgxpySg">
     <calls callee="//@operations.4" name="opCall_e2733a91">
       <preCallStateDefinitions variable="//@operations.4/@stateVariables.0">
-        <term xsi:type="systemmodel:StateRef" stateVariable="//@operations.3/@stateVariables.0"/>
+        <term xsi:type="prologmodel:StateRef" stateVariable="//@operations.3/@stateVariables.0"/>
       </preCallStateDefinitions>
     </calls>
     <returnValues datatype="//@datatypes.0" name="a_r1_RETURN_92a9308f"/>
     <returnValueAssignments variable="//@operations.0/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.4/@returnValues.0" call="//@operations.0/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.4/@returnValues.0" call="//@operations.0/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="ReturnDataOperation a_return (_5t4gheaWEeiJ5POhgxpySg) - AC _5tW1sOaOEeiJ5POhgxpySg">
     <calls callee="//@operations.0" name="opCall_b4523da0"/>
     <returnValues datatype="//@datatypes.0" name="a_r1_RETURN_a3592d0a"/>
     <returnValueAssignments variable="//@operations.1/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.0/@returnValues.0" call="//@operations.1/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.0/@returnValues.0" call="//@operations.1/@calls.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="ReturnDataOperation returnData (_amH7JeaSEeiJ5POhgxpySg) - AC _7BIxwOaOEeiJ5POhgxpySg">
     <returnValues datatype="//@datatypes.0" name="signature_p1_RETURN_2f6e3274"/>
     <returnValueAssignments variable="//@operations.2/@returnValues.0">
-      <term xsi:type="systemmodel:StateRef" stateVariable="//@operations.4/@stateVariables.0"/>
+      <term xsi:type="prologmodel:StateRef" stateVariable="//@operations.4/@stateVariables.0"/>
     </returnValueAssignments>
   </operations>
   <operations name="ResourceDemandingSEFF (_0ztmMOaOEeiJ5POhgxpySg) - AC _5tW1sOaOEeiJ5POhgxpySg">
     <calls callee="//@operations.1" name="opCall_4a9c36f1"/>
     <returnValues datatype="//@datatypes.0" name="signature_r1_RETURN_95052d5d"/>
     <returnValueAssignments variable="//@operations.3/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.1/@returnValues.0" call="//@operations.3/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.1/@returnValues.0" call="//@operations.3/@calls.0"/>
     </returnValueAssignments>
     <stateVariables datatype="//@datatypes.0" name="signature_p1_STATE_24cb2e9c"/>
+    <defaultStateDefinitions variable="//@operations.3/@stateVariables.0">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
   </operations>
   <operations name="ResourceDemandingSEFF (_zYUmQOaOEeiJ5POhgxpySg) - AC _7BIxwOaOEeiJ5POhgxpySg">
     <calls callee="//@operations.2" name="opCall_c76637ba"/>
     <returnValues datatype="//@datatypes.0" name="signature_r1_RETURN_9e652d78"/>
     <returnValueAssignments variable="//@operations.4/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.2/@returnValues.0" call="//@operations.4/@calls.0"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.2/@returnValues.0" call="//@operations.4/@calls.0"/>
     </returnValueAssignments>
     <stateVariables datatype="//@datatypes.0" name="signature_p1_STATE_2e7c2eb7"/>
+    <defaultStateDefinitions variable="//@operations.4/@stateVariables.0">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
   </operations>
   <operations name="CreateDataOperation createData (_htIPgOaREeiJ5POhgxpySg) - AC n/a">
     <returnValues datatype="//@datatypes.0" name="d1_RETURN_d2472483"/>
     <returnValueAssignments variable="//@operations.5/@returnValues.0">
-      <term xsi:type="systemmodel:False"/>
+      <term xsi:type="prologmodel:False"/>
     </returnValueAssignments>
   </operations>
   <operations name="PerformDataTransmissionOperation callA (_y0LQA-aREeiJ5POhgxpySg) - AC n/a">
     <calls callee="//@operations.5" name="opCall_7ae92fd4"/>
     <calls callee="//@operations.3" name="opCall_7b0e3352">
       <preCallStateDefinitions variable="//@operations.3/@stateVariables.0">
-        <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.5/@returnValues.0" call="//@operations.6/@calls.0"/>
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.5/@returnValues.0" call="//@operations.6/@calls.0"/>
       </preCallStateDefinitions>
     </calls>
     <returnValues datatype="//@datatypes.0" name="usage_r1_RETURN_bb092b32"/>
     <returnValueAssignments variable="//@operations.6/@returnValues.0">
-      <term xsi:type="systemmodel:ReturnValueRef" returnValue="//@operations.3/@returnValues.0" call="//@operations.6/@calls.1"/>
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.3/@returnValues.0" call="//@operations.6/@calls.1"/>
     </returnValueAssignments>
   </operations>
   <operations name="UserReadData discard (_1wbMduaWEeiJ5POhgxpySg) - AC n/a">
@@ -73,4 +79,4 @@
   <systemusages name="ScenarioBehaviour ScenarioBehaviour (_PspXgOaPEeiJ5POhgxpySg)">
     <calls callee="//@operations.8" name="opCall_51573017"/>
   </systemusages>
-</systemmodel:System>
+</prologmodel:System>

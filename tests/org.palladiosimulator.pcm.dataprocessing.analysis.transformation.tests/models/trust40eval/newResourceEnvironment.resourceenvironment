@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<resourceenvironment:ResourceEnvironment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:resourceenvironment="http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.2" entityName="New ResourceEnvironment">
+  <linkingResources__ResourceEnvironment id="_8LqdIJp-EeqbD7MI1AForg" entityName="LinkingResource1" connectedResourceContainers_LinkingResource="_0zVksJp-EeqbD7MI1AForg _44SA0Jp-EeqbD7MI1AForg _6K104Jp-EeqbD7MI1AForg">
+    <communicationLinkResourceSpecifications_LinkingResource id="_8Lxx4Jp-EeqbD7MI1AForg">
+      <communicationLinkResourceType_CommunicationLinkResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_o3sScH2AEdyH8uerKnHYug"/>
+      <latency_CommunicationLinkResourceSpecification specification="1"/>
+      <throughput_CommunicationLinkResourceSpecification specification="1"/>
+    </communicationLinkResourceSpecifications_LinkingResource>
+  </linkingResources__ResourceEnvironment>
+  <resourceContainer_ResourceEnvironment id="_0zVksJp-EeqbD7MI1AForg" entityName="DecentralizedSensors"/>
+  <resourceContainer_ResourceEnvironment id="_44SA0Jp-EeqbD7MI1AForg" entityName="EnerChart Application Server"/>
+  <resourceContainer_ResourceEnvironment id="_6K104Jp-EeqbD7MI1AForg" entityName="Trust 4.0 Application Server"/>
+</resourceenvironment:ResourceEnvironment>

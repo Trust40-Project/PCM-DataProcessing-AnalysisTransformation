@@ -19,6 +19,9 @@ import static org.palladiosimulator.pcm.dataprocessing.analysis.transformation.u
 
 import static extension org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.DataOperationInstance.createInstance
 import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.IdentifierAssemblyContextInstance
+import org.palladiosimulator.pcm.dataprocessing.analysis.transformation.naming.wrappers.SEFFInstance
+import java.util.ArrayList
+import org.palladiosimulator.pcm.seff.StartAction
 
 class SEFFBehaviorTransformator extends BehaviorTransformator {
 	
@@ -26,7 +29,7 @@ class SEFFBehaviorTransformator extends BehaviorTransformator {
 		super(transformationFacilities)
 	}
 	
-	override protected determineCalledSEFF(Iterable<Entity> callAction, IdentifierInstance<? extends Entity, AssemblyContext> callerInstance) {
+	override protected determineCalledSEFF(Iterable<Entity> callAction, IdentifierInstance<?, AssemblyContext> callerInstance) {
 		val eca = callAction.filter(ExternalCallAction).findFirst[true]
 		
 		val calledOperationSignature = eca.calledService_ExternalService
@@ -90,6 +93,21 @@ class SEFFBehaviorTransformator extends BehaviorTransformator {
 	
 	override protected getPropertySource(IdentifierAssemblyContextInstance<?> instance) {
 		instance.identifier.get.resourceContainer
+	}
+	
+	override protected getCalledSeffsWithoutDataTransfers(IdentifierAssemblyContextInstance<?> callerInstance) {
+		val callerSeff = callerInstance.entity as ResourceDemandingSEFF
+		var calledSeffs = new ArrayList<SEFFInstance>();
+		for (var action = callerSeff.steps_Behaviour.findFirst[a | a instanceof StartAction]; action !== null; action = action.successor_AbstractAction) {
+			if (action instanceof ExternalCallAction) {
+				val eca = action as ExternalCallAction
+				if (eca.findAllDataOperationsOfStereotypedEObject.isEmpty) {
+					val calledSeff = eca.determineCalledSEFF(callerInstance)
+					calledSeffs += calledSeff
+				}
+			}
+		}
+		calledSeffs
 	}
 	
 }

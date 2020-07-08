@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataprocessing:DataSpecification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:characteristics="http://www.palladiosimulator.org/pcm/dataprocessing/characteristics/0.1/" xmlns:data="http://www.palladiosimulator.org/pcm/dataprocessing/data/0.1/" xmlns:dataprocessing="http://www.palladiosimulator.org/pcm/dataprocessing/0.1/" xmlns:effectspecification="http://www.palladiosimulator.org/pcm/dataprocessing/effectspecification/0.1/" xmlns:processing="http://www.palladiosimulator.org/pcm/dataprocessing/processing/0.1/" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xsi:schemaLocation="http://www.palladiosimulator.org/pcm/dataprocessing/characteristics/0.1/ http://www.palladiosimulator.org/pcm/dataprocessing/0.1/#//characteristics http://www.palladiosimulator.org/pcm/dataprocessing/data/0.1/ http://www.palladiosimulator.org/pcm/dataprocessing/0.1/#//data http://www.palladiosimulator.org/pcm/dataprocessing/effectspecification/0.1/ http://www.palladiosimulator.org/pcm/dataprocessing/0.1/#//effectspecification http://www.palladiosimulator.org/pcm/dataprocessing/processing/0.1/ http://www.palladiosimulator.org/pcm/dataprocessing/0.1/#//processing http://palladiosimulator.org/PalladioComponentModel/Repository/5.2 http://palladiosimulator.org/PalladioComponentModel/5.2#//repository">
+  <dataProcessingContainers id="_VrcVUJneEeqbD7MI1AForg" entityName="TimeSeriesDB.store">
+    <operations xsi:type="processing:StoreDataOperation" id="_tWZnZJnhEeqbD7MI1AForg" entityName="TimeSeriesDB.store.store" consumedData="_CwTkMJniEeqbD7MI1AForg" store="_8zigQJngEeqbD7MI1AForg"/>
+  </dataProcessingContainers>
+  <dataProcessingContainers id="_JYOTYJniEeqbD7MI1AForg" entityName="TimeSeriesDB.read">
+    <operations xsi:type="processing:LoadAllDataOperation" id="_OL6E0pniEeqbD7MI1AForg" entityName="TimeSeriesDB.read.loadAllData" store="_8zigQJngEeqbD7MI1AForg">
+      <resultingData xsi:type="data:OriginalData" id="_eb2eMJniEeqbD7MI1AForg" entityName="TimeSeriesDB.read.loadAllData.data">
+        <originalType xsi:type="repository:CollectionDataType" href="newRepository.repository#_0hC44JnQEeqbD7MI1AForg"/>
+      </resultingData>
+    </operations>
+    <operations xsi:type="processing:ReturnDataOperation" id="_hjs_9ZniEeqbD7MI1AForg" entityName="TimeSeriesDB.read.returnData" consumedData="_eb2eMJniEeqbD7MI1AForg" returnDestination="_EkgFspniEeqbD7MI1AForg"/>
+  </dataProcessingContainers>
+  <dataProcessingContainers id="_l6RssJnkEeqbD7MI1AForg" entityName="PushingSensor.execute">
+    <operations xsi:type="processing:CreateDataOperation" id="_p72rwJnkEeqbD7MI1AForg" entityName="PushingSensor.execute.createData.timeseries">
+      <resultingData xsi:type="data:OriginalData" id="_umIpkJnkEeqbD7MI1AForg" entityName="PushingSensor.execute.createData.timeseries">
+        <originalType xsi:type="repository:CollectionDataType" href="newRepository.repository#_0hC44JnQEeqbD7MI1AForg"/>
+      </resultingData>
+      <initialCharacteristics xsi:type="characteristics:EnumCharacteristic" id="_KLhbN6WsEeqbD7MI1AForg" characteristicType="_Uf_vsJn7EeqbD7MI1AForg" literals="_YaJ4IJn7EeqbD7MI1AForg"/>
+    </operations>
+    <operations xsi:type="processing:CreateDataOperation" id="_2MdhyJnkEeqbD7MI1AForg" entityName="PushingSensor.execute.createData.sensorid">
+      <resultingData xsi:type="data:OriginalData" id="_7GP7MJnkEeqbD7MI1AForg" entityName="PushingSensor.execute.createData.sensorid">
+        <originalType xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+      </resultingData>
+    </operations>
+    <operations xsi:type="processing:PerformDataTransmissionOperation" id="_wA4wU5nkEeqbD7MI1AForg" entityName="PushingSensor.execute.transmit">
+      <inputMappings id="_yjiTQJnkEeqbD7MI1AForg" from="_umIpkJnkEeqbD7MI1AForg" to="_7yGxEJnjEeqbD7MI1AForg"/>
+      <inputMappings id="_8tQ8UJnkEeqbD7MI1AForg" from="_7GP7MJnkEeqbD7MI1AForg" to="_5piiEJnjEeqbD7MI1AForg"/>
+    </operations>
+  </dataProcessingContainers>
+  <dataProcessingContainers id="_EFxJAJnnEeqbD7MI1AForg" entityName="PullingSensor.pullData">
+    <operations xsi:type="processing:CreateDataOperation" id="_H7A8QJnnEeqbD7MI1AForg" entityName="PullingSensor.pullData.createData">
+      <resultingData xsi:type="data:OriginalData" id="_J97PMJnnEeqbD7MI1AForg" entityName="PullingSensor.pullData.createData.data">
+        <originalType xsi:type="repository:CollectionDataType" href="newRepository.repository#_0hC44JnQEeqbD7MI1AForg"/>
+      </resultingData>
+      <initialCharacteristics xsi:type="characteristics:EnumCharacteristic" id="_O7iNl6WsEeqbD7MI1AForg" characteristicType="_Uf_vsJn7EeqbD7MI1AForg" literals="_YaJ4IJn7EeqbD7MI1AForg"/>
+    </operations>
+    <operations xsi:type="processing:ReturnDataOperation" id="_LcmztZnnEeqbD7MI1AForg" entityName="PullingSensor.pullData.returnData" consumedData="_J97PMJnnEeqbD7MI1AForg" returnDestination="_pR2h8pnjEeqbD7MI1AForg"/>
+  </dataProcessingContainers>
+  <dataProcessingContainers id="_QGizQJnnEeqbD7MI1AForg" entityName="EnerChartLogic.receiveReading">
+    <operations xsi:type="processing:PerformDataTransmissionOperation" id="_VBJFA5nnEeqbD7MI1AForg" entityName="EnerChartLogic.receiveReading.transmit">
+      <inputMappings id="_X61O8JnnEeqbD7MI1AForg" from="_7yGxEJnjEeqbD7MI1AForg" to="_CwTkMJniEeqbD7MI1AForg"/>
+    </operations>
+  </dataProcessingContainers>
+  <dataProcessingContainers id="_bYj6IJnnEeqbD7MI1AForg" entityName="EnerChartLogic.execute.getData">
+    <operations xsi:type="processing:PerformDataTransmissionOperation" id="_j6xLs5nnEeqbD7MI1AForg" entityName="EnerChartLogic.execute.getData.transmit">
+      <outputMappings id="_q_5bUZnnEeqbD7MI1AForg" from="_pR2h8pnjEeqbD7MI1AForg" to="_mGNvkpnnEeqbD7MI1AForg"/>
+      <outputData id="_mGNvkpnnEeqbD7MI1AForg" entityName="EnerChartLogic.execute.getData.transmit.readData">
+        <operation href="newRepository.repository#_w_AVgJnQEeqbD7MI1AForg"/>
+      </outputData>
+    </operations>
+  </dataProcessingContainers>
+  <dataProcessingContainers id="_ucDZMJnnEeqbD7MI1AForg" entityName="EnerChartLogic.execute.storeData">
+    <operations xsi:type="processing:PerformDataTransmissionOperation" id="_Pk0Jw5noEeqbD7MI1AForg" entityName="EnerChartLogic.execute.storeData.transmit">
+      <inputMappings id="_gdA18JnoEeqbD7MI1AForg" from="_mGNvkpnnEeqbD7MI1AForg" to="_CwTkMJniEeqbD7MI1AForg"/>
+    </operations>
+  </dataProcessingContainers>
+  <dataProcessingContainers id="_v-kU0JnnEeqbD7MI1AForg" entityName="EnerChartLogic.execute.readData">
+    <operations xsi:type="processing:PerformDataTransmissionOperation" id="_h53Oc5noEeqbD7MI1AForg" entityName="EnerChartLogic.execute.readData.transmit">
+      <outputMappings id="_jQKTAZnoEeqbD7MI1AForg" from="_EkgFspniEeqbD7MI1AForg" to="_kCUvwpnoEeqbD7MI1AForg"/>
+      <outputData id="_kCUvwpnoEeqbD7MI1AForg" entityName="EnerChartLogic.execute.readData.transmit.data">
+        <operation href="newRepository.repository#_kpzPMJnXEeqbD7MI1AForg"/>
+      </outputData>
+    </operations>
+  </dataProcessingContainers>
+  <dataProcessingContainers id="_x1DVUJnnEeqbD7MI1AForg" entityName="EnerChartLogic.execute.sendData">
+    <operations xsi:type="processing:PerformDataTransmissionOperation" id="_mjzOA5noEeqbD7MI1AForg" entityName="EnerChartLogic.execute.sendData.transmit">
+      <inputMappings id="_oHX5kJnoEeqbD7MI1AForg" from="_kCUvwpnoEeqbD7MI1AForg" to="_GVvH4JnkEeqbD7MI1AForg"/>
+    </operations>
+  </dataProcessingContainers>
+  <dataProcessingContainers id="_GIu2kJn4EeqbD7MI1AForg" entityName="OPCUAServer.receiveData.storeData">
+    <operations xsi:type="processing:PerformDataTransmissionOperation" id="_OFvJY5n4EeqbD7MI1AForg" entityName="OPCUAServer.receiveData.storeData.transmit">
+      <inputMappings id="_QLO2QJn4EeqbD7MI1AForg" from="_GVvH4JnkEeqbD7MI1AForg" to="_CwTkMJniEeqbD7MI1AForg"/>
+    </operations>
+  </dataProcessingContainers>
+  <dataProcessingContainers id="_eJW-EJn4EeqbD7MI1AForg" entityName="OPCUAServer.sendData.readAndReturn">
+    <operations xsi:type="processing:PerformDataTransmissionOperation" id="_l0D_45n4EeqbD7MI1AForg" entityName="OPCUAServer.sendData.readAndReturn.callDB">
+      <outputMappings id="__jM3kZn4EeqbD7MI1AForg" from="_EkgFspniEeqbD7MI1AForg" to="_nsnc8Jn4EeqbD7MI1AForg"/>
+      <outputData id="_nsnc8Jn4EeqbD7MI1AForg" entityName="OPCUAServer.sendData.readAndReturn.callDB.data">
+        <operation href="newRepository.repository#_kpzPMJnXEeqbD7MI1AForg"/>
+      </outputData>
+    </operations>
+    <operations xsi:type="processing:ReturnDataOperation" id="_CMTAxZn5EeqbD7MI1AForg" entityName="OPCUAServer.sendData.readAndReturn.return" consumedData="_nsnc8Jn4EeqbD7MI1AForg" returnDestination="_SqKG4pnkEeqbD7MI1AForg"/>
+  </dataProcessingContainers>
+  <dataProcessingContainers id="_YIgZYJn5EeqbD7MI1AForg" entityName="Trust40.execute.getData">
+    <operations xsi:type="processing:PerformDataTransmissionOperation" id="_hgBiY5n5EeqbD7MI1AForg" entityName="Trust40.execute.getData.readOPCUA">
+      <outputMappings id="_lFS_8Zn5EeqbD7MI1AForg" from="_SqKG4pnkEeqbD7MI1AForg" to="_jgQUwpn5EeqbD7MI1AForg"/>
+      <outputData id="_jgQUwpn5EeqbD7MI1AForg" entityName="Trust40.execute.getData.readOPCUA.data">
+        <operation href="newRepository.repository#_b4I-kJnSEeqbD7MI1AForg"/>
+      </outputData>
+    </operations>
+  </dataProcessingContainers>
+  <dataProcessingContainers id="_aBxoMJn5EeqbD7MI1AForg" entityName="Trust40.execute.storeData">
+    <operations xsi:type="processing:PerformDataTransmissionOperation" id="_nw31Y5n5EeqbD7MI1AForg" entityName="Trust40.execute.storeData.storeDB">
+      <inputMappings id="_qNELAJn5EeqbD7MI1AForg" from="_jgQUwpn5EeqbD7MI1AForg" to="_CwTkMJniEeqbD7MI1AForg"/>
+    </operations>
+  </dataProcessingContainers>
+  <dataProcessingContainers id="_wWtp0Jn5EeqbD7MI1AForg" entityName="Trust40.getFineGrainedData">
+    <operations xsi:type="processing:PerformDataTransmissionOperation" id="_3ua3M5n5EeqbD7MI1AForg" entityName="Trust40.getFineGrainedData.readDB">
+      <outputMappings id="_7mptAZn5EeqbD7MI1AForg" from="_EkgFspniEeqbD7MI1AForg" to="_6Cfyopn5EeqbD7MI1AForg"/>
+      <outputData id="_6Cfyopn5EeqbD7MI1AForg" entityName="Trust40.getFineGrainedData.readDB.data">
+        <operation href="newRepository.repository#_kpzPMJnXEeqbD7MI1AForg"/>
+      </outputData>
+    </operations>
+    <operations xsi:type="processing:ReturnDataOperation" id="_9aCWNZn5EeqbD7MI1AForg" entityName="Trust40.getFineGrainedData.return" consumedData="_6Cfyopn5EeqbD7MI1AForg" returnDestination="_eIJ0MpnkEeqbD7MI1AForg"/>
+  </dataProcessingContainers>
+  <dataProcessingContainers id="_aDoM0Jn6EeqbD7MI1AForg" entityName="Trust40.getMonthlyData.readDB">
+    <operations xsi:type="processing:PerformDataTransmissionOperation" id="_dHCTc5n6EeqbD7MI1AForg" entityName="Trust40.getMonthlyData.readDB.transmit">
+      <outputMappings id="_k1jeUZn6EeqbD7MI1AForg" from="_EkgFspniEeqbD7MI1AForg" to="_fSqdgpn6EeqbD7MI1AForg"/>
+      <outputData id="_fSqdgpn6EeqbD7MI1AForg" entityName="Trust40.getMonthlyData.readDB.transmit.data">
+        <operation href="newRepository.repository#_kpzPMJnXEeqbD7MI1AForg"/>
+      </outputData>
+    </operations>
+  </dataProcessingContainers>
+  <dataProcessingContainers id="_pngxgJn6EeqbD7MI1AForg" entityName="Trust40.getMonthlyData.aggregate">
+    <operations xsi:type="processing:EffectSpecifyingTransformDataOperation" id="_sWJh_Zn6EeqbD7MI1AForg" entityName="Trust40.getMonthlyData.aggregate.aggregateMonthly" input="_fSqdgpn6EeqbD7MI1AForg" processingEffectOperationType="_FXxzYJn7EeqbD7MI1AForg">
+      <output xsi:type="data:DerivedData" id="_-Y9nI5n6EeqbD7MI1AForg" entityName="Trust40.getMonthlyData.aggregate.aggregateMonthly.result" sources="_fSqdgpn6EeqbD7MI1AForg">
+        <resultingDataType xsi:type="repository:CollectionDataType" href="newRepository.repository#_0hC44JnQEeqbD7MI1AForg"/>
+      </output>
+    </operations>
+    <operations xsi:type="processing:ReturnDataOperation" id="_wYlnNZn7EeqbD7MI1AForg" entityName="Trust40.getMonthlyData.aggregate.return" consumedData="_-Y9nI5n6EeqbD7MI1AForg" returnDestination="_hu6fgpnkEeqbD7MI1AForg"/>
+  </dataProcessingContainers>
+  <dataProcessingContainers id="_6MsV0KZBEeqY44iaA32xXw" entityName="Energiebeauftragter.getFineGrainedData">
+    <operations xsi:type="processing:PerformDataTransmissionOperation" id="_tNJj86ZGEeqY44iaA32xXw" entityName="Energiebeauftragter.getFineGrainedData.transmit">
+      <outputMappings id="_t0LuwaZGEeqY44iaA32xXw" from="_eIJ0MpnkEeqbD7MI1AForg" to="_IRlaoqZHEeqY44iaA32xXw"/>
+      <outputData id="_IRlaoqZHEeqY44iaA32xXw" entityName="Energiebeauftragter.getFineGrainedData.data">
+        <operation href="newRepository.repository#__kH54JnSEeqbD7MI1AForg"/>
+      </outputData>
+    </operations>
+    <operations xsi:type="processing:UserReadData" id="_5ZUQxqZEEeqY44iaA32xXw" entityName="Energiebeauftragter.getFineGrainedData.read" consumedData="_IRlaoqZHEeqY44iaA32xXw"/>
+  </dataProcessingContainers>
+  <dataProcessingContainers id="_P_IHcKZCEeqY44iaA32xXw" entityName="Wartungstechniker.getFineGrainedData">
+    <operations xsi:type="processing:PerformDataTransmissionOperation" id="_xKUHo6ZHEeqY44iaA32xXw" entityName="Wartungstechniker.getFineGrainedData.transmit">
+      <outputMappings id="_0feFkaZHEeqY44iaA32xXw" from="_eIJ0MpnkEeqbD7MI1AForg" to="_y7OroqZHEeqY44iaA32xXw"/>
+      <outputData id="_y7OroqZHEeqY44iaA32xXw" entityName="Wartungstechniker.getFineGrainedData.data">
+        <operation href="newRepository.repository#__kH54JnSEeqbD7MI1AForg"/>
+      </outputData>
+    </operations>
+    <operations xsi:type="processing:UserReadData" id="_JwfThqZFEeqY44iaA32xXw" entityName="Wartungstechniker.getFineGrainedData.read" consumedData="_y7OroqZHEeqY44iaA32xXw"/>
+  </dataProcessingContainers>
+  <dataProcessingContainers id="_Y455kKZEEeqY44iaA32xXw" entityName="InterneAbrechnung.getMonthlyData">
+    <operations xsi:type="processing:PerformDataTransmissionOperation" id="_57XGg6ZHEeqY44iaA32xXw" entityName="InterneAbrechnung.getMonthlyData.transmit">
+      <outputMappings id="__5FCIaZHEeqY44iaA32xXw" from="_hu6fgpnkEeqbD7MI1AForg" to="_-pIdMKZHEeqY44iaA32xXw"/>
+      <outputData id="_-pIdMKZHEeqY44iaA32xXw" entityName="InterneAbrechnung.getMonthlyData.data">
+        <operation href="newRepository.repository#_Gx3S8JnTEeqbD7MI1AForg"/>
+      </outputData>
+    </operations>
+    <operations xsi:type="processing:UserReadData" id="_PHP81qZFEeqY44iaA32xXw" entityName="InterneAbrechnung.getMonthlyData.read" consumedData="_-pIdMKZHEeqY44iaA32xXw"/>
+  </dataProcessingContainers>
+  <characteristicTypeContainers id="_TsxjAZn7EeqbD7MI1AForg">
+    <characteristicTypes xsi:type="characteristics:EnumCharacteristicType" id="_Uf_vsJn7EeqbD7MI1AForg" entityName="AggregationInterval" enum="_WmdF4Zn7EeqbD7MI1AForg"/>
+    <characteristicTypes xsi:type="characteristics:EnumCharacteristicType" id="_TyEfcKZAEeqY44iaA32xXw" entityName="Roles" enum="_VL7OUaZAEeqY44iaA32xXw"/>
+    <enumerations id="_WmdF4Zn7EeqbD7MI1AForg" entityName="TimeIntervals">
+      <literals id="_5SzwMJn7EeqbD7MI1AForg" entityName="YEAR"/>
+      <literals id="_1bgugJn7EeqbD7MI1AForg" entityName="QUARTER"/>
+      <literals id="_cxqq8Jn7EeqbD7MI1AForg" entityName="MONTH"/>
+      <literals id="_b58YwJn7EeqbD7MI1AForg" entityName="WEEK"/>
+      <literals id="_bGPD4Jn7EeqbD7MI1AForg" entityName="DAY"/>
+      <literals id="_Zx4gEJn7EeqbD7MI1AForg" entityName="HOUR"/>
+      <literals id="_YaJ4IJn7EeqbD7MI1AForg" entityName="MINUTE"/>
+    </enumerations>
+    <enumerations id="_VL7OUaZAEeqY44iaA32xXw" entityName="Roles">
+      <literals id="_WCwIoKZAEeqY44iaA32xXw" entityName="Wartungstechniker"/>
+      <literals id="_ZuBggKZAEeqY44iaA32xXw" entityName="Energiebeauftragter"/>
+      <literals id="_c8C7sKZAEeqY44iaA32xXw" entityName="Interne Abrechnung"/>
+      <literals id="_tpiXQKZBEeqY44iaA32xXw" entityName="System"/>
+    </enumerations>
+  </characteristicTypeContainers>
+  <storeContainers id="_6950UpngEeqbD7MI1AForg" entityName="TimeSeriesDB">
+    <stores id="_8zigQJngEeqbD7MI1AForg" entityName="TimeSeriesDB.TimeSeries">
+      <dataType xsi:type="repository:CollectionDataType" href="newRepository.repository#_0hC44JnQEeqbD7MI1AForg"/>
+    </stores>
+  </storeContainers>
+  <characteristicContainer id="_wP3806ZAEeqY44iaA32xXw" entityName="PeriodicSensorPushing">
+    <ownedCharacteristics xsi:type="characteristics:EnumCharacteristic" id="_HDthAKZBEeqY44iaA32xXw" characteristicType="_TyEfcKZAEeqY44iaA32xXw" literals="_tpiXQKZBEeqY44iaA32xXw"/>
+  </characteristicContainer>
+  <characteristicContainer id="_yhNGRKZAEeqY44iaA32xXw" entityName="PeriodicEnerchart">
+    <ownedCharacteristics xsi:type="characteristics:EnumCharacteristic" id="_vP0YkKZBEeqY44iaA32xXw" characteristicType="_TyEfcKZAEeqY44iaA32xXw" literals="_tpiXQKZBEeqY44iaA32xXw"/>
+  </characteristicContainer>
+  <characteristicContainer id="_2UCetKZAEeqY44iaA32xXw" entityName="PeriodicTrust40">
+    <ownedCharacteristics xsi:type="characteristics:EnumCharacteristic" id="_wkBycKZBEeqY44iaA32xXw" characteristicType="_TyEfcKZAEeqY44iaA32xXw" literals="_tpiXQKZBEeqY44iaA32xXw"/>
+  </characteristicContainer>
+  <characteristicContainer id="_8ssp5KZAEeqY44iaA32xXw" entityName="Energiebeauftragter">
+    <ownedCharacteristics xsi:type="characteristics:EnumCharacteristic" id="_yfGYAKZBEeqY44iaA32xXw" characteristicType="_TyEfcKZAEeqY44iaA32xXw" literals="_ZuBggKZAEeqY44iaA32xXw"/>
+  </characteristicContainer>
+  <characteristicContainer id="_AHQsRKZBEeqY44iaA32xXw" entityName="Interne Abrechnung">
+    <ownedCharacteristics xsi:type="characteristics:EnumCharacteristic" id="_z1EFYKZBEeqY44iaA32xXw" characteristicType="_TyEfcKZAEeqY44iaA32xXw" literals="_c8C7sKZAEeqY44iaA32xXw"/>
+  </characteristicContainer>
+  <characteristicContainer id="_DuDz1KZBEeqY44iaA32xXw" entityName="Wartungstechniker">
+    <ownedCharacteristics xsi:type="characteristics:EnumCharacteristic" id="_1I9WMKZBEeqY44iaA32xXw" characteristicType="_TyEfcKZAEeqY44iaA32xXw" literals="_WCwIoKZAEeqY44iaA32xXw"/>
+  </characteristicContainer>
+  <operationSignatureDataRefinement id="_xW2lFpnhEeqbD7MI1AForg" entityName="TimeSeriesDB.store">
+    <parameterRefinements id="_CwTkMJniEeqbD7MI1AForg" entityName="TimeSeriesDB.store.record">
+      <parameter href="newRepository.repository#/0/@interfaces__Repository.5/@signatures__OperationInterface.0/@parameters__OperationSignature.0"/>
+    </parameterRefinements>
+  </operationSignatureDataRefinement>
+  <operationSignatureDataRefinement id="_AErrepniEeqbD7MI1AForg" entityName="TimeSeriesDB.read">
+    <resultRefinements id="_EkgFspniEeqbD7MI1AForg" entityName="TimeSeriesDB.read.result">
+      <operation href="newRepository.repository#_kpzPMJnXEeqbD7MI1AForg"/>
+    </resultRefinements>
+  </operationSignatureDataRefinement>
+  <operationSignatureDataRefinement id="_jksx5ZnjEeqbD7MI1AForg" entityName="PullableSensor.pullData">
+    <resultRefinements id="_pR2h8pnjEeqbD7MI1AForg" entityName="PullableSensor.pullData.result">
+      <operation href="newRepository.repository#_w_AVgJnQEeqbD7MI1AForg"/>
+    </resultRefinements>
+  </operationSignatureDataRefinement>
+  <operationSignatureDataRefinement id="_1R_6GpnjEeqbD7MI1AForg" entityName="SensorReadingReceiver.receiveReading">
+    <parameterRefinements id="_5piiEJnjEeqbD7MI1AForg" entityName="SensorReadingReceiver.receiveReading.sensorId">
+      <parameter href="newRepository.repository#/0/@interfaces__Repository.1/@signatures__OperationInterface.0/@parameters__OperationSignature.1"/>
+    </parameterRefinements>
+    <parameterRefinements id="_7yGxEJnjEeqbD7MI1AForg" entityName="SensorReadingReceiver.receiveReading.readings">
+      <parameter href="newRepository.repository#/0/@interfaces__Repository.1/@signatures__OperationInterface.0/@parameters__OperationSignature.0"/>
+    </parameterRefinements>
+  </operationSignatureDataRefinement>
+  <operationSignatureDataRefinement id="_CsqIapnkEeqbD7MI1AForg" entityName="OPCUA.receiveData">
+    <parameterRefinements id="_GVvH4JnkEeqbD7MI1AForg" entityName="OPCUA.receiveData.data">
+      <parameter href="newRepository.repository#/0/@interfaces__Repository.3/@signatures__OperationInterface.0/@parameters__OperationSignature.0"/>
+    </parameterRefinements>
+  </operationSignatureDataRefinement>
+  <operationSignatureDataRefinement id="_PhvkepnkEeqbD7MI1AForg" entityName="OPCUA.sendData">
+    <resultRefinements id="_SqKG4pnkEeqbD7MI1AForg" entityName="OPCUA.sendData.result">
+      <operation href="newRepository.repository#_b4I-kJnSEeqbD7MI1AForg"/>
+    </resultRefinements>
+  </operationSignatureDataRefinement>
+  <operationSignatureDataRefinement id="_WQIvGpnkEeqbD7MI1AForg" entityName="Trust40DataAccess.getFineGrainedData">
+    <resultRefinements id="_eIJ0MpnkEeqbD7MI1AForg" entityName="Trust40DataAccess.getFineGrainedData.result">
+      <operation href="newRepository.repository#__kH54JnSEeqbD7MI1AForg"/>
+    </resultRefinements>
+  </operationSignatureDataRefinement>
+  <operationSignatureDataRefinement id="_Xt01GpnkEeqbD7MI1AForg" entityName="Trust40DataAccess.getMonthlyData">
+    <resultRefinements id="_hu6fgpnkEeqbD7MI1AForg" entityName="Trust40DataAccess.getMonthlyData.result">
+      <operation href="newRepository.repository#_Gx3S8JnTEeqbD7MI1AForg"/>
+    </resultRefinements>
+  </operationSignatureDataRefinement>
+  <operationSignatureDataRefinement id="_MsG-ppnlEeqbD7MI1AForg" entityName="PeriodicExecutor.execute"/>
+  <storeCharacteristicContainers id="_E59Zh5n8EeqbD7MI1AForg" entityName="OPCUAStore">
+    <characteristics id="_IxivEJn8EeqbD7MI1AForg" entityName="OPCUAStore.timeseries" store="_8zigQJngEeqbD7MI1AForg">
+      <ownedCharacteristics xsi:type="characteristics:EnumCharacteristic" id="_K1hZAJn8EeqbD7MI1AForg" characteristicType="_Uf_vsJn7EeqbD7MI1AForg" literals="_YaJ4IJn7EeqbD7MI1AForg"/>
+    </characteristics>
+  </storeCharacteristicContainers>
+  <storeCharacteristicContainers id="_UoIimJn8EeqbD7MI1AForg" entityName="Trust40Store">
+    <characteristics id="_gfBRAJn8EeqbD7MI1AForg" entityName="Trust40Store.timeseries" store="_8zigQJngEeqbD7MI1AForg">
+      <ownedCharacteristics xsi:type="characteristics:EnumCharacteristic" id="_jQSewJn8EeqbD7MI1AForg" characteristicType="_Uf_vsJn7EeqbD7MI1AForg" literals="_YaJ4IJn7EeqbD7MI1AForg"/>
+    </characteristics>
+  </storeCharacteristicContainers>
+  <storeCharacteristicContainers id="_dVsvp5n8EeqbD7MI1AForg" entityName="EnerChartStore">
+    <characteristics id="_lFRDYJn8EeqbD7MI1AForg" entityName="EnerChartStore.timeseries" store="_8zigQJngEeqbD7MI1AForg">
+      <ownedCharacteristics xsi:type="characteristics:EnumCharacteristic" id="_oJr2oJn8EeqbD7MI1AForg" characteristicType="_Uf_vsJn7EeqbD7MI1AForg" literals="_YaJ4IJn7EeqbD7MI1AForg"/>
+    </characteristics>
+  </storeCharacteristicContainers>
+  <extensions xsi:type="effectspecification:ProcessingEffectSpecification" id="_EIA0qJn7EeqbD7MI1AForg">
+    <operationTypes id="_FXxzYJn7EeqbD7MI1AForg" entityName="MonthlyAggregator"/>
+    <processingEffects xsi:type="effectspecification:OperationTypeDataProcessingEffect" id="_LEKucZn7EeqbD7MI1AForg" entityName="MonthlyAggregationEffect" relevantOperationTypes="_FXxzYJn7EeqbD7MI1AForg">
+      <characteristicChanges id="_PRBJYJn7EeqbD7MI1AForg" entityName="replaceAggregationLevel" changeOperation="REPLACE">
+        <characteristicSpecifications xsi:type="effectspecification:MinStaticCharacteristic" id="_ecYgUZn7EeqbD7MI1AForg" entityName="setToMonthyOrMoreCoarseGrained">
+          <staticMinValue xsi:type="characteristics:EnumCharacteristic" id="_jTqYUJn7EeqbD7MI1AForg" characteristicType="_Uf_vsJn7EeqbD7MI1AForg" literals="_cxqq8Jn7EeqbD7MI1AForg"/>
+        </characteristicSpecifications>
+      </characteristicChanges>
+    </processingEffects>
+  </extensions>
+</dataprocessing:DataSpecification>

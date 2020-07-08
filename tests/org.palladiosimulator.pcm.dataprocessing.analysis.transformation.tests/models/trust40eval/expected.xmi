@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prologmodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prologmodel="http://www.palladiosimulator.org/pcm/dataprocessing/prolog/0.1/" name="New System">
+  <attributes type="//@types.0" name="EnumCharacteristicType AggregationInterval (_Uf_vsJn7EeqbD7MI1AForg)"/>
+  <attributes type="//@types.1" name="EnumCharacteristicType Roles (_TyEfcKZAEeqY44iaA32xXw)"/>
+  <datatypes attributes="//@attributes.0 //@attributes.1" name="CollectionDataType TimeSeries (_0hC44JnQEeqbD7MI1AForg)"/>
+  <datatypes attributes="//@attributes.0 //@attributes.1" name="org.palladiosimulator.pcm.repository.PrimitiveDataType INT"/>
+  <operations name="CreateDataOperation PullingSensor.pullData.createData (_H7A8QJnnEeqbD7MI1AForg) - AC _ktGFsJnVEeqbD7MI1AForg">
+    <returnValues datatype="//@datatypes.0" name="PullingSensor.pullData.createData.data_RETURN_dc974076"/>
+    <returnValueAssignments variable="//@operations.0/@returnValues.0">
+      <term xsi:type="prologmodel:False"/>
+    </returnValueAssignments>
+    <returnValueAssignments variable="//@operations.0/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.6">
+      <term xsi:type="prologmodel:True"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="ReturnDataOperation PullingSensor.pullData.returnData (_LcmztZnnEeqbD7MI1AForg) - AC _ktGFsJnVEeqbD7MI1AForg">
+    <calls callee="//@operations.0" name="opCall_16af4b84"/>
+    <returnValues datatype="//@datatypes.0" name="PullingSensor.pullData.createData.data_RETURN_7b21419f"/>
+    <returnValueAssignments variable="//@operations.1/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.0/@returnValues.0" call="//@operations.1/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="ResourceDemandingSEFF (_9UTeQJnQEeqbD7MI1AForg) - AC _ktGFsJnVEeqbD7MI1AForg">
+    <calls callee="//@operations.1" name="opCall_f37d3f34"/>
+    <returnValues datatype="//@datatypes.0" name="PullableSensor.pullData.result_RETURN_b9bb32ed"/>
+    <returnValueAssignments variable="//@operations.2/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.1/@returnValues.0" call="//@operations.2/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="CreateDataOperation PushingSensor.execute.createData.timeseries (_p72rwJnkEeqbD7MI1AForg) - AC _nZ8GcJnVEeqbD7MI1AForg">
+    <returnValues datatype="//@datatypes.0" name="PushingSensor.execute.createData.timeseries_RETURN_939f47e9"/>
+    <returnValueAssignments variable="//@operations.3/@returnValues.0">
+      <term xsi:type="prologmodel:False"/>
+    </returnValueAssignments>
+    <returnValueAssignments variable="//@operations.3/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.6">
+      <term xsi:type="prologmodel:True"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="CreateDataOperation PushingSensor.execute.createData.sensorid (_2MdhyJnkEeqbD7MI1AForg) - AC _nZ8GcJnVEeqbD7MI1AForg">
+    <returnValues datatype="//@datatypes.1" name="PushingSensor.execute.createData.sensorid_RETURN_51c84591"/>
+    <returnValueAssignments variable="//@operations.4/@returnValues.0">
+      <term xsi:type="prologmodel:False"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="PerformDataTransmissionOperation PushingSensor.execute.transmit (_wA4wU5nkEeqbD7MI1AForg) - AC _nZ8GcJnVEeqbD7MI1AForg">
+    <calls callee="//@operations.4" name="opCall_50d152e8"/>
+    <calls callee="//@operations.3" name="opCall_31653b9"/>
+    <calls callee="//@operations.9" name="opCall_c217428f">
+      <preCallStateDefinitions variable="//@operations.9/@stateVariables.1">
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.3/@returnValues.0" call="//@operations.5/@calls.1"/>
+      </preCallStateDefinitions>
+      <preCallStateDefinitions variable="//@operations.9/@stateVariables.0">
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.4/@returnValues.0" call="//@operations.5/@calls.0"/>
+      </preCallStateDefinitions>
+    </calls>
+  </operations>
+  <operations name="PerformDataTransmissionOperation EnerChartLogic.receiveReading.transmit (_VBJFA5nnEeqbD7MI1AForg) - AC _BMW6YJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.19" name="opCall_b5fa44d2">
+      <preCallStateDefinitions variable="//@operations.19/@stateVariables.0">
+        <term xsi:type="prologmodel:StateRef" stateVariable="//@operations.9/@stateVariables.1"/>
+      </preCallStateDefinitions>
+    </calls>
+  </operations>
+  <operations name="StoreDataOperation TimeSeriesDB.store.store (_tWZnZJnhEeqbD7MI1AForg) - AC _CBw4YJqAEeqbD7MI1AForg"/>
+  <operations name="ResourceDemandingSEFF (_wt6JAJnREeqbD7MI1AForg) - AC _nZ8GcJnVEeqbD7MI1AForg">
+    <calls callee="//@operations.5" name="opCall_ae8542e1"/>
+  </operations>
+  <operations name="ResourceDemandingSEFF (_k_W3MJnREeqbD7MI1AForg) - AC _BMW6YJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.6" name="opCall_91f244b8"/>
+    <stateVariables datatype="//@datatypes.1" name="SensorReadingReceiver.receiveReading.sensorId_STATE_8075396b"/>
+    <stateVariables datatype="//@datatypes.0" name="SensorReadingReceiver.receiveReading.readings_STATE_7fed3969"/>
+    <defaultStateDefinitions variable="//@operations.9/@stateVariables.0">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
+    <defaultStateDefinitions variable="//@operations.9/@stateVariables.1">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
+  </operations>
+  <operations name="PerformDataTransmissionOperation EnerChartLogic.execute.getData.transmit (_j6xLs5nnEeqbD7MI1AForg) - AC _BMW6YJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.2" name="opCall_2ada45d6"/>
+    <returnValues datatype="//@datatypes.0" name="EnerChartLogic.execute.getData.transmit.readData_RETURN_c2be4dd5"/>
+    <returnValueAssignments variable="//@operations.10/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.2/@returnValues.0" call="//@operations.10/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="PerformDataTransmissionOperation EnerChartLogic.execute.storeData.transmit (_Pk0Jw5noEeqbD7MI1AForg) - AC _BMW6YJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.10" name="opCall_fbf15ab4"/>
+    <calls callee="//@operations.19" name="opCall_c69c4641">
+      <preCallStateDefinitions variable="//@operations.19/@stateVariables.0">
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.10/@returnValues.0" call="//@operations.11/@calls.0"/>
+      </preCallStateDefinitions>
+    </calls>
+  </operations>
+  <operations name="PerformDataTransmissionOperation EnerChartLogic.execute.readData.transmit (_h53Oc5noEeqbD7MI1AForg) - AC _BMW6YJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.20" name="opCall_540245c3"/>
+    <returnValues datatype="//@datatypes.0" name="EnerChartLogic.execute.readData.transmit.data_RETURN_f9ce4ccb"/>
+    <returnValueAssignments variable="//@operations.12/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.20/@returnValues.0" call="//@operations.12/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="PerformDataTransmissionOperation EnerChartLogic.execute.sendData.transmit (_mjzOA5noEeqbD7MI1AForg) - AC _BMW6YJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.12" name="opCall_f2355a6e"/>
+    <calls callee="//@operations.25" name="opCall_87cd4650">
+      <preCallStateDefinitions variable="//@operations.25/@stateVariables.0">
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.12/@returnValues.0" call="//@operations.13/@calls.0"/>
+      </preCallStateDefinitions>
+    </calls>
+  </operations>
+  <operations name="LoadAllDataOperation TimeSeriesDB.read.loadAllData (_OL6E0pniEeqbD7MI1AForg) - AC _CBw4YJqAEeqbD7MI1AForg">
+    <returnValues datatype="//@datatypes.0" name="TimeSeriesDB.read.loadAllData.data_RETURN_64c63c6a"/>
+    <returnValueAssignments variable="//@operations.14/@returnValues.0">
+      <term xsi:type="prologmodel:False"/>
+    </returnValueAssignments>
+    <returnValueAssignments variable="//@operations.14/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.6">
+      <term xsi:type="prologmodel:True"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="ReturnDataOperation TimeSeriesDB.read.returnData (_hjs_9ZniEeqbD7MI1AForg) - AC _CBw4YJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.14" name="opCall_a8b3464a"/>
+    <returnValues datatype="//@datatypes.0" name="TimeSeriesDB.read.loadAllData.data_RETURN_73a33cb9"/>
+    <returnValueAssignments variable="//@operations.15/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.14/@returnValues.0" call="//@operations.15/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="PerformDataTransmissionOperation OPCUAServer.receiveData.storeData.transmit (_OFvJY5n4EeqbD7MI1AForg) - AC _TDwZwJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.21" name="opCall_d913466a">
+      <preCallStateDefinitions variable="//@operations.21/@stateVariables.0">
+        <term xsi:type="prologmodel:StateRef" stateVariable="//@operations.25/@stateVariables.0"/>
+      </preCallStateDefinitions>
+    </calls>
+  </operations>
+  <operations name="StoreDataOperation TimeSeriesDB.store.store (_tWZnZJnhEeqbD7MI1AForg) - AC _RiL5UJqAEeqbD7MI1AForg"/>
+  <operations name="ResourceDemandingSEFF (_yW78UJnREeqbD7MI1AForg) - AC _BMW6YJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.11" name="opCall_75c9461a"/>
+    <calls callee="//@operations.13" name="opCall_2d4545cc"/>
+  </operations>
+  <operations name="ResourceDemandingSEFF (_n2BTkJnXEeqbD7MI1AForg) - AC _CBw4YJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.7" name="opCall_13563a02"/>
+    <stateVariables datatype="//@datatypes.0" name="TimeSeriesDB.store.record_STATE_23b3316d"/>
+    <defaultStateDefinitions variable="//@operations.19/@stateVariables.0">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
+  </operations>
+  <operations name="ResourceDemandingSEFF (_n2vsUJnXEeqbD7MI1AForg) - AC _CBw4YJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.15" name="opCall_6f1f3c0f"/>
+    <returnValues datatype="//@datatypes.0" name="TimeSeriesDB.read.result_RETURN_75fc3047"/>
+    <returnValueAssignments variable="//@operations.20/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.15/@returnValues.0" call="//@operations.20/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="ResourceDemandingSEFF (_n2BTkJnXEeqbD7MI1AForg) - AC _RiL5UJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.17" name="opCall_183e3a12"/>
+    <stateVariables datatype="//@datatypes.0" name="TimeSeriesDB.store.record_STATE_26cf3175"/>
+    <defaultStateDefinitions variable="//@operations.21/@stateVariables.0">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
+  </operations>
+  <operations name="LoadAllDataOperation TimeSeriesDB.read.loadAllData (_OL6E0pniEeqbD7MI1AForg) - AC _RiL5UJqAEeqbD7MI1AForg">
+    <returnValues datatype="//@datatypes.0" name="TimeSeriesDB.read.loadAllData.data_RETURN_67fa3c72"/>
+    <returnValueAssignments variable="//@operations.22/@returnValues.0">
+      <term xsi:type="prologmodel:False"/>
+    </returnValueAssignments>
+    <returnValueAssignments variable="//@operations.22/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.6">
+      <term xsi:type="prologmodel:True"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="ReturnDataOperation TimeSeriesDB.read.returnData (_hjs_9ZniEeqbD7MI1AForg) - AC _RiL5UJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.22" name="opCall_add3465a"/>
+    <returnValues datatype="//@datatypes.0" name="TimeSeriesDB.read.loadAllData.data_RETURN_76d73cc1"/>
+    <returnValueAssignments variable="//@operations.23/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.22/@returnValues.0" call="//@operations.23/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="ResourceDemandingSEFF (_n2vsUJnXEeqbD7MI1AForg) - AC _RiL5UJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.23" name="opCall_742f3c1f"/>
+    <returnValues datatype="//@datatypes.0" name="TimeSeriesDB.read.result_RETURN_78f8304f"/>
+    <returnValueAssignments variable="//@operations.24/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.23/@returnValues.0" call="//@operations.24/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="ResourceDemandingSEFF (_fzNF8JnSEeqbD7MI1AForg) - AC _TDwZwJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.16" name="opCall_e60b46bf"/>
+    <stateVariables datatype="//@datatypes.0" name="OPCUA.receiveData.data_STATE_8f412fd8"/>
+    <defaultStateDefinitions variable="//@operations.25/@stateVariables.0">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
+  </operations>
+  <operations name="PerformDataTransmissionOperation OPCUAServer.sendData.readAndReturn.callDB (_l0D_45n4EeqbD7MI1AForg) - AC _TDwZwJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.24" name="opCall_22dc456b"/>
+    <returnValues datatype="//@datatypes.0" name="OPCUAServer.sendData.readAndReturn.callDB.data_RETURN_de5c4b83"/>
+    <returnValueAssignments variable="//@operations.26/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.24/@returnValues.0" call="//@operations.26/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="ReturnDataOperation OPCUAServer.sendData.readAndReturn.return (_CMTAxZn5EeqbD7MI1AForg) - AC _TDwZwJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.26" name="opCall_bcc054aa"/>
+    <returnValues datatype="//@datatypes.0" name="OPCUAServer.sendData.readAndReturn.callDB.data_RETURN_e11046ec"/>
+    <returnValueAssignments variable="//@operations.27/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.26/@returnValues.0" call="//@operations.27/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="ResourceDemandingSEFF (_fzh2EJnSEeqbD7MI1AForg) - AC _TDwZwJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.27" name="opCall_c83940ff"/>
+    <returnValues datatype="//@datatypes.0" name="OPCUA.sendData.result_RETURN_d8262eb6"/>
+    <returnValueAssignments variable="//@operations.28/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.27/@returnValues.0" call="//@operations.28/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="PerformDataTransmissionOperation Trust40.execute.getData.readOPCUA (_hgBiY5n5EeqbD7MI1AForg) - AC _bnVkYJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.28" name="opCall_ec5442e4"/>
+    <returnValues datatype="//@datatypes.0" name="Trust40.execute.getData.readOPCUA.data_RETURN_42e545df"/>
+    <returnValueAssignments variable="//@operations.29/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.28/@returnValues.0" call="//@operations.29/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="PerformDataTransmissionOperation Trust40.execute.storeData.storeDB (_nw31Y5n5EeqbD7MI1AForg) - AC _bnVkYJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.29" name="opCall_3db75438"/>
+    <calls callee="//@operations.42" name="opCall_18bd42fd">
+      <preCallStateDefinitions variable="//@operations.42/@stateVariables.0">
+        <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.29/@returnValues.0" call="//@operations.30/@calls.0"/>
+      </preCallStateDefinitions>
+    </calls>
+  </operations>
+  <operations name="StoreDataOperation TimeSeriesDB.store.store (_tWZnZJnhEeqbD7MI1AForg) - AC _okCEUJqAEeqbD7MI1AForg"/>
+  <operations name="ResourceDemandingSEFF (_B37lAJnSEeqbD7MI1AForg) - AC _bnVkYJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.30" name="opCall_1ffe42e3"/>
+  </operations>
+  <operations name="PerformDataTransmissionOperation Trust40.getFineGrainedData.readDB (_3ua3M5n5EeqbD7MI1AForg) - AC _bnVkYJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.43" name="opCall_e06a42be"/>
+    <returnValues datatype="//@datatypes.0" name="Trust40.getFineGrainedData.readDB.data_RETURN_338045c0"/>
+    <returnValueAssignments variable="//@operations.33/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.43/@returnValues.0" call="//@operations.33/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="ReturnDataOperation Trust40.getFineGrainedData.return (_9aCWNZn5EeqbD7MI1AForg) - AC _bnVkYJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.33" name="opCall_52f64ed2"/>
+    <returnValues datatype="//@datatypes.0" name="Trust40.getFineGrainedData.readDB.data_RETURN_6cfc40f7"/>
+    <returnValueAssignments variable="//@operations.34/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.33/@returnValues.0" call="//@operations.34/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="LoadAllDataOperation TimeSeriesDB.read.loadAllData (_OL6E0pniEeqbD7MI1AForg) - AC _okCEUJqAEeqbD7MI1AForg">
+    <returnValues datatype="//@datatypes.0" name="TimeSeriesDB.read.loadAllData.data_RETURN_75f43c98"/>
+    <returnValueAssignments variable="//@operations.35/@returnValues.0">
+      <term xsi:type="prologmodel:False"/>
+    </returnValueAssignments>
+    <returnValueAssignments variable="//@operations.35/@returnValues.0" attribute="//@attributes.0" value="//@types.0/@values.6">
+      <term xsi:type="prologmodel:True"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="ReturnDataOperation TimeSeriesDB.read.returnData (_hjs_9ZniEeqbD7MI1AForg) - AC _okCEUJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.35" name="opCall_c3b146a6"/>
+    <returnValues datatype="//@datatypes.0" name="TimeSeriesDB.read.loadAllData.data_RETURN_84d13ce7"/>
+    <returnValueAssignments variable="//@operations.36/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.35/@returnValues.0" call="//@operations.36/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="ResourceDemandingSEFF (_3MDw0JnUEeqbD7MI1AForg) - AC _bnVkYJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.34" name="opCall_857b3db2"/>
+    <returnValues datatype="//@datatypes.0" name="Trust40DataAccess.getFineGrainedData.result_RETURN_4a173705"/>
+    <returnValueAssignments variable="//@operations.37/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.34/@returnValues.0" call="//@operations.37/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="PerformDataTransmissionOperation Trust40.getMonthlyData.readDB.transmit (_dHCTc5n6EeqbD7MI1AForg) - AC _bnVkYJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.43" name="opCall_a4cc452b"/>
+    <returnValues datatype="//@datatypes.0" name="Trust40.getMonthlyData.readDB.transmit.data_RETURN_8ddb4aab"/>
+    <returnValueAssignments variable="//@operations.38/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.43/@returnValues.0" call="//@operations.38/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="EffectSpecifyingTransformDataOperation Trust40.getMonthlyData.aggregate.aggregateMonthly (_sWJh_Zn6EeqbD7MI1AForg) - AC _bnVkYJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.38" name="opCall_1b585fa9"/>
+    <returnValues datatype="//@datatypes.0" name="Trust40.getMonthlyData.aggregate.aggregateMonthly.result_RETURN_8d735534"/>
+    <returnValueAssignments variable="//@operations.39/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.38/@returnValues.0" call="//@operations.39/@calls.0"/>
+    </returnValueAssignments>
+    <returnValueAssignments variable="//@operations.39/@returnValues.0" attribute="//@attributes.0">
+      <term xsi:type="prologmodel:MinStatic" value="//@types.0/@values.2">
+        <operands xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.38/@returnValues.0" attribute="//@attributes.0" call="//@operations.39/@calls.0"/>
+      </term>
+    </returnValueAssignments>
+  </operations>
+  <operations name="ReturnDataOperation Trust40.getMonthlyData.aggregate.return (_wYlnNZn7EeqbD7MI1AForg) - AC _bnVkYJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.39" name="opCall_f6c65b6f"/>
+    <returnValues datatype="//@datatypes.0" name="Trust40.getMonthlyData.aggregate.aggregateMonthly.result_RETURN_977b49c6"/>
+    <returnValueAssignments variable="//@operations.40/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.39/@returnValues.0" call="//@operations.40/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="ResourceDemandingSEFF (_3MX54JnUEeqbD7MI1AForg) - AC _bnVkYJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.40" name="opCall_26454084"/>
+    <returnValues datatype="//@datatypes.0" name="Trust40DataAccess.getMonthlyData.result_RETURN_657a35f5"/>
+    <returnValueAssignments variable="//@operations.41/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.40/@returnValues.0" call="//@operations.41/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="ResourceDemandingSEFF (_n2BTkJnXEeqbD7MI1AForg) - AC _okCEUJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.31" name="opCall_2d123a5e"/>
+    <stateVariables datatype="//@datatypes.0" name="TimeSeriesDB.store.record_STATE_3457319b"/>
+    <defaultStateDefinitions variable="//@operations.42/@stateVariables.0">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
+  </operations>
+  <operations name="ResourceDemandingSEFF (_n2vsUJnXEeqbD7MI1AForg) - AC _okCEUJqAEeqbD7MI1AForg">
+    <calls callee="//@operations.36" name="opCall_89c13c6b"/>
+    <returnValues datatype="//@datatypes.0" name="TimeSeriesDB.read.result_RETURN_85e83075"/>
+    <returnValueAssignments variable="//@operations.43/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.36/@returnValues.0" call="//@operations.43/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="ScenarioBehaviour ScenarioBehaviour (_pylmkJnaEeqbD7MI1AForg)_dataOp">
+    <calls callee="//@operations.8" name="opCall_d52731ec"/>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.1/@values.3"/>
+  </operations>
+  <operations name="ScenarioBehaviour ScenarioBehaviour (_0OBDoJnaEeqbD7MI1AForg)_dataOp">
+    <calls callee="//@operations.18" name="opCall_7f2830d4"/>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.1/@values.3"/>
+  </operations>
+  <operations name="ScenarioBehaviour ScenarioBehaviour (_76UoAJnaEeqbD7MI1AForg)_dataOp">
+    <calls callee="//@operations.32" name="opCall_7bd7310d"/>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.1/@values.3"/>
+  </operations>
+  <operations name="PerformDataTransmissionOperation Energiebeauftragter.getFineGrainedData.transmit (_tNJj86ZGEeqY44iaA32xXw) - AC n/a">
+    <calls callee="//@operations.37" name="opCall_4ad84254"/>
+    <returnValues datatype="//@datatypes.0" name="Energiebeauftragter.getFineGrainedData.data_RETURN_50c34893"/>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.1/@values.1"/>
+    <returnValueAssignments variable="//@operations.47/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.37/@returnValues.0" call="//@operations.47/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="UserReadData Energiebeauftragter.getFineGrainedData.read (_5ZUQxqZEEeqY44iaA32xXw) - AC n/a">
+    <calls callee="//@operations.47" name="opCall_4e4e4934"/>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.1/@values.1"/>
+  </operations>
+  <operations name="ScenarioBehaviour ScenarioBehaviour (_mgsikJnbEeqbD7MI1AForg)_dataOp">
+    <calls callee="//@operations.48" name="opCall_723c38ab"/>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.1/@values.1"/>
+  </operations>
+  <operations name="PerformDataTransmissionOperation InterneAbrechnung.getMonthlyData.transmit (_57XGg6ZHEeqY44iaA32xXw) - AC n/a">
+    <calls callee="//@operations.41" name="opCall_7ad43fb5"/>
+    <returnValues datatype="//@datatypes.0" name="InterneAbrechnung.getMonthlyData.data_RETURN_c264437e"/>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.1/@values.2"/>
+    <returnValueAssignments variable="//@operations.50/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.41/@returnValues.0" call="//@operations.50/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="UserReadData InterneAbrechnung.getMonthlyData.read (_PHP81qZFEeqY44iaA32xXw) - AC n/a">
+    <calls callee="//@operations.50" name="opCall_9698442a"/>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.1/@values.2"/>
+  </operations>
+  <operations name="ScenarioBehaviour ScenarioBehaviour (_9qKGkJndEeqbD7MI1AForg)_dataOp">
+    <calls callee="//@operations.51" name="opCall_d54d35a4"/>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.1/@values.2"/>
+  </operations>
+  <operations name="PerformDataTransmissionOperation Wartungstechniker.getFineGrainedData.transmit (_xKUHo6ZHEeqY44iaA32xXw) - AC n/a">
+    <calls callee="//@operations.37" name="opCall_d9a841d3"/>
+    <returnValues datatype="//@datatypes.0" name="Wartungstechniker.getFineGrainedData.data_RETURN_51e34778"/>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.1/@values.0"/>
+    <returnValueAssignments variable="//@operations.53/@returnValues.0">
+      <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.37/@returnValues.0" call="//@operations.53/@calls.0"/>
+    </returnValueAssignments>
+  </operations>
+  <operations name="UserReadData Wartungstechniker.getFineGrainedData.read (_JwfThqZFEeqY44iaA32xXw) - AC n/a">
+    <calls callee="//@operations.53" name="opCall_60724847"/>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.1/@values.0"/>
+  </operations>
+  <operations name="ScenarioBehaviour ScenarioBehaviour (_E7YRcJneEeqbD7MI1AForg)_dataOp">
+    <calls callee="//@operations.54" name="opCall_ca7337b1"/>
+    <propertyDefinitions property="//@properties.1" presentValues="//@types.1/@values.0"/>
+  </operations>
+  <properties type="//@types.0" name="EnumCharacteristicType AggregationInterval (_Uf_vsJn7EeqbD7MI1AForg)"/>
+  <properties type="//@types.1" name="EnumCharacteristicType Roles (_TyEfcKZAEeqY44iaA32xXw)"/>
+  <types name="Enumeration TimeIntervals (_WmdF4Zn7EeqbD7MI1AForg)">
+    <values name="EnumCharacteristicLiteral YEAR (_5SzwMJn7EeqbD7MI1AForg)"/>
+    <values name="EnumCharacteristicLiteral QUARTER (_1bgugJn7EeqbD7MI1AForg)"/>
+    <values name="EnumCharacteristicLiteral MONTH (_cxqq8Jn7EeqbD7MI1AForg)"/>
+    <values name="EnumCharacteristicLiteral WEEK (_b58YwJn7EeqbD7MI1AForg)"/>
+    <values name="EnumCharacteristicLiteral DAY (_bGPD4Jn7EeqbD7MI1AForg)"/>
+    <values name="EnumCharacteristicLiteral HOUR (_Zx4gEJn7EeqbD7MI1AForg)"/>
+    <values name="EnumCharacteristicLiteral MINUTE (_YaJ4IJn7EeqbD7MI1AForg)"/>
+  </types>
+  <types name="Enumeration Roles (_VL7OUaZAEeqY44iaA32xXw)">
+    <values name="EnumCharacteristicLiteral Wartungstechniker (_WCwIoKZAEeqY44iaA32xXw)"/>
+    <values name="EnumCharacteristicLiteral Energiebeauftragter (_ZuBggKZAEeqY44iaA32xXw)"/>
+    <values name="EnumCharacteristicLiteral Interne Abrechnung (_c8C7sKZAEeqY44iaA32xXw)"/>
+    <values name="EnumCharacteristicLiteral System (_tpiXQKZBEeqY44iaA32xXw)"/>
+  </types>
+  <systemusages name="ScenarioBehaviour ScenarioBehaviour (_pylmkJnaEeqbD7MI1AForg)">
+    <calls callee="//@operations.44" name="opCall_475a2fa5"/>
+  </systemusages>
+  <systemusages name="ScenarioBehaviour ScenarioBehaviour (_0OBDoJnaEeqbD7MI1AForg)">
+    <calls callee="//@operations.45" name="opCall_f1ac2e33"/>
+  </systemusages>
+  <systemusages name="ScenarioBehaviour ScenarioBehaviour (_76UoAJnaEeqbD7MI1AForg)">
+    <calls callee="//@operations.46" name="opCall_f10e2e2f"/>
+  </systemusages>
+  <systemusages name="ScenarioBehaviour ScenarioBehaviour (_mgsikJnbEeqbD7MI1AForg)">
+    <calls callee="//@operations.49" name="opCall_3f632f83"/>
+  </systemusages>
+  <systemusages name="ScenarioBehaviour ScenarioBehaviour (_9qKGkJndEeqbD7MI1AForg)">
+    <calls callee="//@operations.52" name="opCall_abd2e9f"/>
+  </systemusages>
+  <systemusages name="ScenarioBehaviour ScenarioBehaviour (_E7YRcJneEeqbD7MI1AForg)">
+    <calls callee="//@operations.55" name="opCall_fd9e2e67"/>
+  </systemusages>
+</prologmodel:System>

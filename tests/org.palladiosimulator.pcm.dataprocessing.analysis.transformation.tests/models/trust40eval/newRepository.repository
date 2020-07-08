@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataProcessingProfile="http://www.palladiosimulator.org/pcm/dataprocessing/profile/0.1/" xmlns:emfprofileapplication="http://www.modelversioning.org/emfprofile/application/1.1" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2">
+  <repository:Repository id="_-5AnsJnPEeqbD7MI1AForg" entityName="New Repository">
+    <components__Repository xsi:type="repository:BasicComponent" id="_RF-ucJnQEeqbD7MI1AForg" entityName="PushingSensor">
+      <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_wt3FsJnREeqbD7MI1AForg" entityName="PushingSensor.provided.PeriodicExecutor" providedInterface__OperationProvidedRole="_tO3PQJnREeqbD7MI1AForg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_ot3wUJnREeqbD7MI1AForg" entityName="PushingSensor.required.SensorReadingReceiver" requiredInterface__OperationRequiredRole="_aFRvQJnREeqbD7MI1AForg"/>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_wt6JAJnREeqbD7MI1AForg" describedService__SEFF="_vdtFYJnREeqbD7MI1AForg">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_wt6wEJnREeqbD7MI1AForg" successor_AbstractAction="_LW4f0JnfEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_wt7XIJnREeqbD7MI1AForg" predecessor_AbstractAction="_LW4f0JnfEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_LW4f0JnfEeqbD7MI1AForg" entityName="send data" predecessor_AbstractAction="_wt6wEJnREeqbD7MI1AForg" successor_AbstractAction="_wt7XIJnREeqbD7MI1AForg" calledService_ExternalService="_cTIt8JnREeqbD7MI1AForg" role_ExternalService="_ot3wUJnREeqbD7MI1AForg"/>
+      </serviceEffectSpecifications__BasicComponent>
+    </components__Repository>
+    <components__Repository xsi:type="repository:BasicComponent" id="_7QFjwJnQEeqbD7MI1AForg" entityName="PullingSensor">
+      <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_9UENsJnQEeqbD7MI1AForg" entityName="PullingSensor.provided" providedInterface__OperationProvidedRole="_voU2cJnQEeqbD7MI1AForg"/>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_9UTeQJnQEeqbD7MI1AForg" describedService__SEFF="_w_AVgJnQEeqbD7MI1AForg">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_9UbaEJnQEeqbD7MI1AForg" successor_AbstractAction="_GLO6UJnfEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_9UcBIJnQEeqbD7MI1AForg" predecessor_AbstractAction="_GLO6UJnfEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:InternalAction" id="_GLO6UJnfEeqbD7MI1AForg" entityName="return data" predecessor_AbstractAction="_9UbaEJnQEeqbD7MI1AForg" successor_AbstractAction="_9UcBIJnQEeqbD7MI1AForg"/>
+      </serviceEffectSpecifications__BasicComponent>
+    </components__Repository>
+    <components__Repository xsi:type="repository:BasicComponent" id="_DBqpsJnREeqbD7MI1AForg" entityName="EnerChartLogic">
+      <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_k_VpEJnREeqbD7MI1AForg" entityName="EnerChart.provided.SensorReadingReceiver" providedInterface__OperationProvidedRole="_aFRvQJnREeqbD7MI1AForg"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_yW7VQJnREeqbD7MI1AForg" entityName="EnerChart.provided.PeriodicExecutor" providedInterface__OperationProvidedRole="_tO3PQJnREeqbD7MI1AForg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_i9hiUJnREeqbD7MI1AForg" entityName="EnerChart.required.PullableSensor" requiredInterface__OperationRequiredRole="_voU2cJnQEeqbD7MI1AForg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_gU0lQJnSEeqbD7MI1AForg" entityName="EnerChart.required.OPCUA" requiredInterface__OperationRequiredRole="_YYJpoJnSEeqbD7MI1AForg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_q2ASwJnXEeqbD7MI1AForg" entityName="EnerChartLogic.required.TimeSeriesDB" requiredInterface__OperationRequiredRole="_h12g4JnXEeqbD7MI1AForg"/>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_k_W3MJnREeqbD7MI1AForg" describedService__SEFF="_cTIt8JnREeqbD7MI1AForg">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_k_XeQJnREeqbD7MI1AForg" successor_AbstractAction="_saBwoJnfEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_k_XeQZnREeqbD7MI1AForg" predecessor_AbstractAction="_saBwoJnfEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_saBwoJnfEeqbD7MI1AForg" entityName="store data" predecessor_AbstractAction="_k_XeQJnREeqbD7MI1AForg" successor_AbstractAction="_k_XeQZnREeqbD7MI1AForg" calledService_ExternalService="_kIAwwJnXEeqbD7MI1AForg" role_ExternalService="_q2ASwJnXEeqbD7MI1AForg"/>
+      </serviceEffectSpecifications__BasicComponent>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_yW78UJnREeqbD7MI1AForg" describedService__SEFF="_vdtFYJnREeqbD7MI1AForg">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_yW8jYJnREeqbD7MI1AForg" successor_AbstractAction="_SlL5kJnfEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_yW8jYZnREeqbD7MI1AForg" predecessor_AbstractAction="_77_CoJnfEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_SlL5kJnfEeqbD7MI1AForg" entityName="get data" predecessor_AbstractAction="_yW8jYJnREeqbD7MI1AForg" successor_AbstractAction="_vO5E8JnfEeqbD7MI1AForg" calledService_ExternalService="_w_AVgJnQEeqbD7MI1AForg" role_ExternalService="_i9hiUJnREeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_vO5E8JnfEeqbD7MI1AForg" entityName="store data" predecessor_AbstractAction="_SlL5kJnfEeqbD7MI1AForg" successor_AbstractAction="_6ebfgJnfEeqbD7MI1AForg" calledService_ExternalService="_kIAwwJnXEeqbD7MI1AForg" role_ExternalService="_q2ASwJnXEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_6ebfgJnfEeqbD7MI1AForg" entityName="read data" predecessor_AbstractAction="_vO5E8JnfEeqbD7MI1AForg" successor_AbstractAction="_77_CoJnfEeqbD7MI1AForg" calledService_ExternalService="_kpzPMJnXEeqbD7MI1AForg" role_ExternalService="_q2ASwJnXEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_77_CoJnfEeqbD7MI1AForg" entityName="send data" predecessor_AbstractAction="_6ebfgJnfEeqbD7MI1AForg" successor_AbstractAction="_yW8jYZnREeqbD7MI1AForg" calledService_ExternalService="_Z1OEkJnSEeqbD7MI1AForg" role_ExternalService="_gU0lQJnSEeqbD7MI1AForg"/>
+      </serviceEffectSpecifications__BasicComponent>
+    </components__Repository>
+    <components__Repository xsi:type="repository:BasicComponent" id="_dECxAJnSEeqbD7MI1AForg" entityName="OPCUAServer">
+      <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_fzMe4JnSEeqbD7MI1AForg" entityName="OPCUAServer.provided.OPCUA" providedInterface__OperationProvidedRole="_YYJpoJnSEeqbD7MI1AForg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_tQuBsJnXEeqbD7MI1AForg" entityName="OPCUAServer.required.TimeSeriesDB" requiredInterface__OperationRequiredRole="_h12g4JnXEeqbD7MI1AForg"/>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_fzNF8JnSEeqbD7MI1AForg" describedService__SEFF="_Z1OEkJnSEeqbD7MI1AForg">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_fzNF8ZnSEeqbD7MI1AForg" successor_AbstractAction="_x61GwJnfEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_fzNtAJnSEeqbD7MI1AForg" predecessor_AbstractAction="_x61GwJnfEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_x61GwJnfEeqbD7MI1AForg" entityName="store data" predecessor_AbstractAction="_fzNF8ZnSEeqbD7MI1AForg" successor_AbstractAction="_fzNtAJnSEeqbD7MI1AForg" calledService_ExternalService="_kIAwwJnXEeqbD7MI1AForg" role_ExternalService="_tQuBsJnXEeqbD7MI1AForg"/>
+      </serviceEffectSpecifications__BasicComponent>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_fzh2EJnSEeqbD7MI1AForg" describedService__SEFF="_b4I-kJnSEeqbD7MI1AForg">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_fzh2EZnSEeqbD7MI1AForg" successor_AbstractAction="_Cc7nIJngEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_fzh2EpnSEeqbD7MI1AForg" predecessor_AbstractAction="_Cc7nIJngEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_Cc7nIJngEeqbD7MI1AForg" entityName="read and return data" predecessor_AbstractAction="_fzh2EZnSEeqbD7MI1AForg" successor_AbstractAction="_fzh2EpnSEeqbD7MI1AForg" calledService_ExternalService="_kpzPMJnXEeqbD7MI1AForg" role_ExternalService="_tQuBsJnXEeqbD7MI1AForg"/>
+      </serviceEffectSpecifications__BasicComponent>
+    </components__Repository>
+    <components__Repository xsi:type="repository:BasicComponent" id="_AWPIwJnSEeqbD7MI1AForg" entityName="Trust40">
+      <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_B36W4JnSEeqbD7MI1AForg" entityName="Trust40.provided.PeriodicExecutor" providedInterface__OperationProvidedRole="_tO3PQJnREeqbD7MI1AForg"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_3MBUkJnUEeqbD7MI1AForg" entityName="Trust40.provided.Trust40DataAccess" providedInterface__OperationProvidedRole="_8WFQkJnSEeqbD7MI1AForg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_h6_44JnSEeqbD7MI1AForg" entityName="Trust40.required.OPCUA" requiredInterface__OperationRequiredRole="_YYJpoJnSEeqbD7MI1AForg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_vPUcYJnXEeqbD7MI1AForg" entityName="Trust40.required.TimeSeriesDB" requiredInterface__OperationRequiredRole="_h12g4JnXEeqbD7MI1AForg"/>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_B37lAJnSEeqbD7MI1AForg" describedService__SEFF="_vdtFYJnREeqbD7MI1AForg">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_B38MEJnSEeqbD7MI1AForg" successor_AbstractAction="_lB00AJnfEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_B38MEZnSEeqbD7MI1AForg" predecessor_AbstractAction="_oYX5EJnfEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_lB00AJnfEeqbD7MI1AForg" entityName="get data" predecessor_AbstractAction="_B38MEJnSEeqbD7MI1AForg" successor_AbstractAction="_oYX5EJnfEeqbD7MI1AForg" calledService_ExternalService="_b4I-kJnSEeqbD7MI1AForg" role_ExternalService="_h6_44JnSEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_oYX5EJnfEeqbD7MI1AForg" entityName="store data" predecessor_AbstractAction="_lB00AJnfEeqbD7MI1AForg" successor_AbstractAction="_B38MEZnSEeqbD7MI1AForg" calledService_ExternalService="_kIAwwJnXEeqbD7MI1AForg" role_ExternalService="_vPUcYJnXEeqbD7MI1AForg"/>
+      </serviceEffectSpecifications__BasicComponent>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_3MDw0JnUEeqbD7MI1AForg" describedService__SEFF="__kH54JnSEeqbD7MI1AForg">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_3MEX4JnUEeqbD7MI1AForg" successor_AbstractAction="_H1tpsJngEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_3ME-8JnUEeqbD7MI1AForg" predecessor_AbstractAction="_H1tpsJngEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_H1tpsJngEeqbD7MI1AForg" entityName="read and return data" predecessor_AbstractAction="_3MEX4JnUEeqbD7MI1AForg" successor_AbstractAction="_3ME-8JnUEeqbD7MI1AForg" calledService_ExternalService="_kpzPMJnXEeqbD7MI1AForg" role_ExternalService="_vPUcYJnXEeqbD7MI1AForg"/>
+      </serviceEffectSpecifications__BasicComponent>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_3MX54JnUEeqbD7MI1AForg" describedService__SEFF="_Gx3S8JnTEeqbD7MI1AForg">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_3MX54ZnUEeqbD7MI1AForg" successor_AbstractAction="_LYDIAJngEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_3MX54pnUEeqbD7MI1AForg" predecessor_AbstractAction="_MbAZ0JngEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_LYDIAJngEeqbD7MI1AForg" entityName="read data" predecessor_AbstractAction="_3MX54ZnUEeqbD7MI1AForg" successor_AbstractAction="_MbAZ0JngEeqbD7MI1AForg" calledService_ExternalService="_kpzPMJnXEeqbD7MI1AForg" role_ExternalService="_vPUcYJnXEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:InternalAction" id="_MbAZ0JngEeqbD7MI1AForg" entityName="aggregate and return data" predecessor_AbstractAction="_LYDIAJngEeqbD7MI1AForg" successor_AbstractAction="_3MX54pnUEeqbD7MI1AForg"/>
+      </serviceEffectSpecifications__BasicComponent>
+    </components__Repository>
+    <components__Repository xsi:type="repository:BasicComponent" id="_gxLX0JnXEeqbD7MI1AForg" entityName="TimeSeriesDB">
+      <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_n11GUJnXEeqbD7MI1AForg" entityName="TimeSeriesDB.provided" providedInterface__OperationProvidedRole="_h12g4JnXEeqbD7MI1AForg"/>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_n2BTkJnXEeqbD7MI1AForg" describedService__SEFF="_kIAwwJnXEeqbD7MI1AForg">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_n2BTkZnXEeqbD7MI1AForg" successor_AbstractAction="_ffhpEJnfEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_n2B6oJnXEeqbD7MI1AForg" predecessor_AbstractAction="_ffhpEJnfEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:InternalAction" id="_ffhpEJnfEeqbD7MI1AForg" entityName="store data" predecessor_AbstractAction="_n2BTkZnXEeqbD7MI1AForg" successor_AbstractAction="_n2B6oJnXEeqbD7MI1AForg"/>
+      </serviceEffectSpecifications__BasicComponent>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_n2vsUJnXEeqbD7MI1AForg" describedService__SEFF="_kpzPMJnXEeqbD7MI1AForg">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_n2vsUZnXEeqbD7MI1AForg" successor_AbstractAction="_hxiH8JnfEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_n2vsUpnXEeqbD7MI1AForg" predecessor_AbstractAction="_hxiH8JnfEeqbD7MI1AForg"/>
+        <steps_Behaviour xsi:type="seff:InternalAction" id="_hxiH8JnfEeqbD7MI1AForg" entityName="return data" predecessor_AbstractAction="_n2vsUZnXEeqbD7MI1AForg" successor_AbstractAction="_n2vsUpnXEeqbD7MI1AForg"/>
+      </serviceEffectSpecifications__BasicComponent>
+    </components__Repository>
+    <interfaces__Repository xsi:type="repository:OperationInterface" id="_voU2cJnQEeqbD7MI1AForg" entityName="PullableSensor">
+      <signatures__OperationInterface id="_w_AVgJnQEeqbD7MI1AForg" entityName="pullData" returnType__OperationSignature="_0hC44JnQEeqbD7MI1AForg"/>
+    </interfaces__Repository>
+    <interfaces__Repository xsi:type="repository:OperationInterface" id="_aFRvQJnREeqbD7MI1AForg" entityName="SensorReadingReceiver">
+      <signatures__OperationInterface id="_cTIt8JnREeqbD7MI1AForg" entityName="receiveReading">
+        <parameters__OperationSignature dataType__Parameter="_0hC44JnQEeqbD7MI1AForg" parameterName="readings"/>
+        <parameters__OperationSignature parameterName="sensorId">
+          <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+        </parameters__OperationSignature>
+      </signatures__OperationInterface>
+    </interfaces__Repository>
+    <interfaces__Repository xsi:type="repository:OperationInterface" id="_tO3PQJnREeqbD7MI1AForg" entityName="PeriodicExecutor">
+      <signatures__OperationInterface id="_vdtFYJnREeqbD7MI1AForg" entityName="execute"/>
+    </interfaces__Repository>
+    <interfaces__Repository xsi:type="repository:OperationInterface" id="_YYJpoJnSEeqbD7MI1AForg" entityName="OPCUA">
+      <signatures__OperationInterface id="_Z1OEkJnSEeqbD7MI1AForg" entityName="receiveData">
+        <parameters__OperationSignature dataType__Parameter="_0hC44JnQEeqbD7MI1AForg" parameterName="data"/>
+      </signatures__OperationInterface>
+      <signatures__OperationInterface id="_b4I-kJnSEeqbD7MI1AForg" entityName="sendData" returnType__OperationSignature="_0hC44JnQEeqbD7MI1AForg"/>
+    </interfaces__Repository>
+    <interfaces__Repository xsi:type="repository:OperationInterface" id="_8WFQkJnSEeqbD7MI1AForg" entityName="Trust40DataAccess">
+      <signatures__OperationInterface id="__kH54JnSEeqbD7MI1AForg" entityName="getFineGrainedData" returnType__OperationSignature="_0hC44JnQEeqbD7MI1AForg"/>
+      <signatures__OperationInterface id="_Gx3S8JnTEeqbD7MI1AForg" entityName="getMonthlyData" returnType__OperationSignature="_0hC44JnQEeqbD7MI1AForg"/>
+    </interfaces__Repository>
+    <interfaces__Repository xsi:type="repository:OperationInterface" id="_h12g4JnXEeqbD7MI1AForg" entityName="TimeSeriesDB">
+      <signatures__OperationInterface id="_kIAwwJnXEeqbD7MI1AForg" entityName="store">
+        <parameters__OperationSignature dataType__Parameter="_0hC44JnQEeqbD7MI1AForg" parameterName="record"/>
+      </signatures__OperationInterface>
+      <signatures__OperationInterface id="_kpzPMJnXEeqbD7MI1AForg" entityName="read" returnType__OperationSignature="_0hC44JnQEeqbD7MI1AForg"/>
+    </interfaces__Repository>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_yT32sJnQEeqbD7MI1AForg" entityName="SensorData"/>
+    <dataTypes__Repository xsi:type="repository:CollectionDataType" id="_0hC44JnQEeqbD7MI1AForg" entityName="TimeSeries" innerType_CollectionDataType="_yT32sJnQEeqbD7MI1AForg"/>
+  </repository:Repository>
+  <emfprofileapplication:ProfileApplication>
+    <stereotypeApplications xsi:type="dataProcessingProfile:StoreHaving" appliedTo="_gxLX0JnXEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_pFHmQFqjEeiW1d-qz7Oqsw"/>
+      <storeContainer href="DataSpecification.xmi#_6950UpngEeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_ffhpEJnfEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YGiQIFqhEeiGTpqaWj7bwA"/>
+      <dataProcessingContainer href="DataSpecification.xmi#_VrcVUJneEeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:OperationSignatureDataRefinement" appliedTo="_kIAwwJnXEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_u8vnsLydEeiT-9xxrec-9Q"/>
+      <operationSignatureDataRefinement href="DataSpecification.xmi#_xW2lFpnhEeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:OperationSignatureDataRefinement" appliedTo="_kpzPMJnXEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_u8vnsLydEeiT-9xxrec-9Q"/>
+      <operationSignatureDataRefinement href="DataSpecification.xmi#_AErrepniEeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_hxiH8JnfEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YGiQIFqhEeiGTpqaWj7bwA"/>
+      <dataProcessingContainer href="DataSpecification.xmi#_JYOTYJniEeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:OperationSignatureDataRefinement" appliedTo="_w_AVgJnQEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_u8vnsLydEeiT-9xxrec-9Q"/>
+      <operationSignatureDataRefinement href="DataSpecification.xmi#_jksx5ZnjEeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:OperationSignatureDataRefinement" appliedTo="_cTIt8JnREeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_u8vnsLydEeiT-9xxrec-9Q"/>
+      <operationSignatureDataRefinement href="DataSpecification.xmi#_1R_6GpnjEeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:OperationSignatureDataRefinement" appliedTo="_Z1OEkJnSEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_u8vnsLydEeiT-9xxrec-9Q"/>
+      <operationSignatureDataRefinement href="DataSpecification.xmi#_CsqIapnkEeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:OperationSignatureDataRefinement" appliedTo="_b4I-kJnSEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_u8vnsLydEeiT-9xxrec-9Q"/>
+      <operationSignatureDataRefinement href="DataSpecification.xmi#_PhvkepnkEeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:OperationSignatureDataRefinement" appliedTo="__kH54JnSEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_u8vnsLydEeiT-9xxrec-9Q"/>
+      <operationSignatureDataRefinement href="DataSpecification.xmi#_WQIvGpnkEeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:OperationSignatureDataRefinement" appliedTo="_Gx3S8JnTEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_u8vnsLydEeiT-9xxrec-9Q"/>
+      <operationSignatureDataRefinement href="DataSpecification.xmi#_Xt01GpnkEeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_LW4f0JnfEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YpnIAFqhEeiGTpqaWj7bwA"/>
+      <dataProcessingContainer href="DataSpecification.xmi#_l6RssJnkEeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:OperationSignatureDataRefinement" appliedTo="_vdtFYJnREeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_u8vnsLydEeiT-9xxrec-9Q"/>
+      <operationSignatureDataRefinement href="DataSpecification.xmi#_MsG-ppnlEeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_GLO6UJnfEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YGiQIFqhEeiGTpqaWj7bwA"/>
+      <dataProcessingContainer href="DataSpecification.xmi#_EFxJAJnnEeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_saBwoJnfEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YpnIAFqhEeiGTpqaWj7bwA"/>
+      <dataProcessingContainer href="DataSpecification.xmi#_QGizQJnnEeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_SlL5kJnfEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YpnIAFqhEeiGTpqaWj7bwA"/>
+      <dataProcessingContainer href="DataSpecification.xmi#_bYj6IJnnEeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_vO5E8JnfEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YpnIAFqhEeiGTpqaWj7bwA"/>
+      <dataProcessingContainer href="DataSpecification.xmi#_ucDZMJnnEeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_6ebfgJnfEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YpnIAFqhEeiGTpqaWj7bwA"/>
+      <dataProcessingContainer href="DataSpecification.xmi#_v-kU0JnnEeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_77_CoJnfEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YpnIAFqhEeiGTpqaWj7bwA"/>
+      <dataProcessingContainer href="DataSpecification.xmi#_x1DVUJnnEeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_x61GwJnfEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YpnIAFqhEeiGTpqaWj7bwA"/>
+      <dataProcessingContainer href="DataSpecification.xmi#_GIu2kJn4EeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_Cc7nIJngEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YpnIAFqhEeiGTpqaWj7bwA"/>
+      <dataProcessingContainer href="DataSpecification.xmi#_eJW-EJn4EeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_lB00AJnfEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YpnIAFqhEeiGTpqaWj7bwA"/>
+      <dataProcessingContainer href="DataSpecification.xmi#_YIgZYJn5EeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_oYX5EJnfEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YpnIAFqhEeiGTpqaWj7bwA"/>
+      <dataProcessingContainer href="DataSpecification.xmi#_aBxoMJn5EeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_H1tpsJngEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YpnIAFqhEeiGTpqaWj7bwA"/>
+      <dataProcessingContainer href="DataSpecification.xmi#_wWtp0Jn5EeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_LYDIAJngEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YpnIAFqhEeiGTpqaWj7bwA"/>
+      <dataProcessingContainer href="DataSpecification.xmi#_aDoM0Jn6EeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="dataProcessingProfile:DataProcessingSpecification" appliedTo="_MbAZ0JngEeqbD7MI1AForg">
+      <extension href="../../plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram#_YGiQIFqhEeiGTpqaWj7bwA"/>
+      <dataProcessingContainer href="DataSpecification.xmi#_pngxgJn6EeqbD7MI1AForg"/>
+    </stereotypeApplications>
+    <importedProfiles nsURI="http://www.palladiosimulator.org/pcm/dataprocessing/profile/0.1/" location="platform:/plugin/org.palladiosimulator.pcm.dataprocessing.profile/profile.emfprofile_diagram"/>
+  </emfprofileapplication:ProfileApplication>
+</xmi:XMI>

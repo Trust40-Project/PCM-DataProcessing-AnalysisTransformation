@@ -13,4 +13,5 @@ public class IdentifierAssemblyContextInstance<ENTITY_TYPE extends Identifier> e
 	public AssemblyContext getAc() {
 		return getIdentifier().get();
 	}
+
 }

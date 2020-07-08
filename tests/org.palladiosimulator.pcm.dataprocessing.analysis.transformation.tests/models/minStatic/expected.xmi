@@ -27,6 +27,9 @@
       <term xsi:type="prologmodel:ReturnValueRef" returnValue="//@operations.1/@returnValues.0" call="//@operations.2/@calls.0"/>
     </returnValueAssignments>
     <stateVariables datatype="//@datatypes.0" name="PrivacyChangingEchoService.echo.input_STATE_e3f63687"/>
+    <defaultStateDefinitions variable="//@operations.2/@stateVariables.0">
+      <term xsi:type="prologmodel:False"/>
+    </defaultStateDefinitions>
   </operations>
   <operations name="CreateDataOperation User.sendData.createData (_euZzAC_EEeq0E8o4OEZsfw) - AC n/a">
     <returnValues datatype="//@datatypes.0" name="User.sendData.createData.data_RETURN_50732de"/>

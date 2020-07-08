@@ -139,7 +139,7 @@ public class TransformationTest extends TransformationTestBase {
 		assertThat(toString(validationResult), validationResult.getSeverity(), is(Diagnostic.OK));
 		
 		Resource expectedResource = rs.getResource(createRelativeURI("models/minimalSameSignature/expected.xmi"), true);
-		
+
 		IComparisonScope scope = new DefaultComparisonScope(expectedResource.getContents().get(0), dataFlowSystemModel, null);
 		Comparison comparison = EMFCompare.builder().build().compare(scope);
 
@@ -167,7 +167,7 @@ public class TransformationTest extends TransformationTestBase {
 		assertThat(toString(validationResult), validationResult.getSeverity(), is(Diagnostic.OK));
 		
 		Resource expectedResource = rs.getResource(createRelativeURI("models/minStatic/expected.xmi"), true);
-		
+
 		IComparisonScope scope = new DefaultComparisonScope(expectedResource.getContents().get(0), dataFlowSystemModel, null);
 		Comparison comparison = EMFCompare.builder().build().compare(scope);
 
@@ -201,4 +201,41 @@ public class TransformationTest extends TransformationTestBase {
 
 		assertThat(toString(comparison), comparison.getDifferences(), is(empty()));
 	}
+	
+	@Test
+	public void testTrust40Eval() throws IOException {
+        ResourceSet rs = new ResourceSetImpl();
+        UsageModel usageModel = (UsageModel) rs
+            .getResource(createRelativeURI("models/trust40eval/newUsageModel.usagemodel"), true)
+            .getContents()
+            .get(0);
+        Allocation allocationModel = (Allocation) rs
+            .getResource(createRelativeURI("models/trust40eval/newAllocation.allocation"), true)
+            .getContents()
+            .get(0);
+        DataSpecification dataSpec = (DataSpecification) rs
+            .getResource(createRelativeURI("models/trust40eval/DataSpecification.xmi"), true)
+            .getContents()
+            .get(0);
+        CharacteristicTypeContainer characteristics = dataSpec.getCharacteristicTypeContainers()
+            .get(0);
+        EcoreUtil.resolveAll(rs);
+
+        org.palladiosimulator.pcm.dataprocessing.prolog.prologmodel.System dataFlowSystemModel = getSubject()
+            .transform(usageModel, allocationModel, characteristics);
+
+        Diagnostic validationResult = Diagnostician.INSTANCE.validate(dataFlowSystemModel);
+        assertThat(toString(validationResult), validationResult.getSeverity(), is(Diagnostic.OK));
+
+        Resource expectedResource = rs.getResource(createRelativeURI("models/trust40eval/expected.xmi"), true);
+
+        IComparisonScope scope = new DefaultComparisonScope(expectedResource.getContents()
+            .get(0), dataFlowSystemModel, null);
+        Comparison comparison = EMFCompare.builder()
+            .build()
+            .compare(scope);
+
+        assertThat(toString(comparison), comparison.getDifferences(), is(empty()));
+	}
+	
 }

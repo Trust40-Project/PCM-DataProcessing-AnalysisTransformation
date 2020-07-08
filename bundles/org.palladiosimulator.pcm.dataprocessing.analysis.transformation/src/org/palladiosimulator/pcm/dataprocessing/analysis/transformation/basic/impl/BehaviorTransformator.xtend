@@ -58,6 +58,7 @@ abstract class BehaviorTransformator {
 		val selfAssemblyContext = selfInstance.identifier.orElse(null)
 		val selfPropertySource = selfInstance.propertySource
 		val dataOps = selfInstance.entity.findAllDataOps
+		
 
 		// create called operations
 		val ops = dataOps.map[op | selfAssemblyContext.createInstance(op)].map[getOperation(selfPropertySource)]
@@ -69,7 +70,20 @@ abstract class BehaviorTransformator {
 		// create return and state variables for behaviour operation
 		behaviorOperation.returnValues += selfInstance.createReturnVariables
 		behaviorOperation.stateVariables += selfInstance.createStateVariables
+		for (stateVariable : behaviorOperation.stateVariables) {
+			val defaultAssignment = factory.createVariableAssignment
+			defaultAssignment.variable = stateVariable
+			defaultAssignment.term = factory.createFalse
+			behaviorOperation.defaultStateDefinitions += defaultAssignment
+		}
 		
+		/*
+		 * There might be calls to services that do not transmit data. However,
+		 * the called services might contain data flows. Therefore, we have to
+		 * add these calls even if not data is transferred.
+		 */
+		val Iterable<SEFFInstance> calledSeffs = selfInstance.getCalledSeffsWithoutDataTransfers()
+		behaviorOperation.calls += calledSeffs.map[seff | seff.SEFFOperation].map[op | behaviorOperation.getOperationCall(op)]
 		
 		/* transformation pattern for data operations
 		 * 
@@ -175,7 +189,13 @@ abstract class BehaviorTransformator {
 		for (inputMapping : callerDataOperation.inputMappings) {
 			val targetParameterData = inputMapping.to
 			val targetStateVariable = targetParameterData.getStateVariable(targetSEFF)
-			targetDataOperation.stateVariables += targetStateVariable //TODO put in SEFF construction
+			if (!targetDataOperation.stateVariables.contains(targetStateVariable)) {
+				targetDataOperation.stateVariables += targetStateVariable //TODO put in SEFF construction
+				val defaultAssignment = factory.createVariableAssignment
+				defaultAssignment.variable = targetStateVariable
+				defaultAssignment.term = factory.createFalse
+				targetDataOperation.defaultStateDefinitions += defaultAssignment
+			}			
 			val sourceData = inputMapping.from
 			
 			// copy assignments from sourceReturnVariable to targetStateVariable
@@ -209,7 +229,10 @@ abstract class BehaviorTransformator {
 	
 	protected abstract def Iterable<Variable> createReturnVariables(IdentifierAssemblyContextInstance<?> behaviorIdentifier)
 	protected abstract def Iterable<Variable> createStateVariables(IdentifierAssemblyContextInstance<?> behaviorIdentifier)
-	protected abstract def SEFFInstance determineCalledSEFF(Iterable<Entity> callAction, IdentifierInstance<? extends Entity, AssemblyContext> callerInstance)
+	protected abstract def SEFFInstance determineCalledSEFF(Iterable<Entity> callAction, IdentifierInstance<?, AssemblyContext> callerInstance)
+	protected def SEFFInstance determineCalledSEFF(Entity callAction, IdentifierInstance<?, AssemblyContext> callerInstance) {
+		#[callAction].determineCalledSEFF(callerInstance)
+	}
 	
 	protected def createDataOpGraph(Iterable<DataOperation> dataOps) {
  		val factory = new DataOperationGraphFactory(SEFF_DUMMY_OPERATION)
@@ -239,17 +262,19 @@ abstract class BehaviorTransformator {
 		//FIXME this does not consider nested actions
 		var ops = new ArrayList<DataOperation>();
 		for (var action = seff.steps_Behaviour.findFirst[a | a instanceof StartAction]; action !== null; action = action.successor_AbstractAction) {
-			ops += action.findAllDataOperationsOfStereotpyedEObject
+			ops += action.findAllDataOperationsOfStereotypedEObject
 		}
 		ops
 	}
 	
-	protected def findAllDataOperationsOfStereotpyedEObject(EObject action) {
+	protected def findAllDataOperationsOfStereotypedEObject(EObject action) {
 		if (!hasAppliedStereotype(#{action}, ProfileConstants.STEREOTYPE_NAME_DATA_PROCESSING)) {
 			return #[]
 		}
 		val dataProcessingContainer = getTaggedValue(action, ProfileConstants.TAGGED_VALUE_NAME_DATA_PROCESSING_CONTAINER, ProfileConstants.STEREOTYPE_NAME_DATA_PROCESSING) as DataProcessingContainer
 		dataProcessingContainer.operations
 	}
+	
+	protected abstract def Iterable<SEFFInstance> getCalledSeffsWithoutDataTransfers(IdentifierAssemblyContextInstance<?> selfInstance)
 	
 }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ASCII"?>
+<allocation:Allocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:allocation="http://palladiosimulator.org/PalladioComponentModel/Allocation/5.2" id="__h-RoJp-EeqbD7MI1AForg" entityName="New Allocation">
+  <targetResourceEnvironment_Allocation href="newResourceEnvironment.resourceenvironment#/"/>
+  <system_Allocation href="newSystem.system#_SNdhoJnVEeqbD7MI1AForg"/>
+  <allocationContexts_Allocation id="_Es0l4Jp_EeqbD7MI1AForg" entityName="Allocation_Assembly_PushingSensor">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_0zVksJp-EeqbD7MI1AForg"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_nZ8GcJnVEeqbD7MI1AForg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_HbVakJp_EeqbD7MI1AForg" entityName="Allocation_Assembly_PullingSensor">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_0zVksJp-EeqbD7MI1AForg"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_ktGFsJnVEeqbD7MI1AForg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_73G3gJqAEeqbD7MI1AForg" entityName="Allocation_Assembly_TimeSeriesDB_Trust40">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_6K104Jp-EeqbD7MI1AForg"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_okCEUJqAEeqbD7MI1AForg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_8cA7YJqAEeqbD7MI1AForg" entityName="Allocation_Assembly_Trust40">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_6K104Jp-EeqbD7MI1AForg"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_bnVkYJqAEeqbD7MI1AForg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_9ZaXwJqAEeqbD7MI1AForg" entityName="Allocation_Assembly_EnerChartLogic">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_44SA0Jp-EeqbD7MI1AForg"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_BMW6YJqAEeqbD7MI1AForg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_-E8oEJqAEeqbD7MI1AForg" entityName="Allocation_Assembly_TimeSeriesDB_Enerchart">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_44SA0Jp-EeqbD7MI1AForg"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_CBw4YJqAEeqbD7MI1AForg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_-OKOcJqAEeqbD7MI1AForg" entityName="Allocation_Assembly_OPCUAServer">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_44SA0Jp-EeqbD7MI1AForg"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_TDwZwJqAEeqbD7MI1AForg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_-WrRQJqAEeqbD7MI1AForg" entityName="Allocation_Assembly_TimeSeriesDB_OPCUA">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_44SA0Jp-EeqbD7MI1AForg"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_RiL5UJqAEeqbD7MI1AForg"/>
+  </allocationContexts_Allocation>
+</allocation:Allocation>
