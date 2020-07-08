@@ -19,6 +19,14 @@
         <steps_Behaviour xsi:type="seff:StopAction" id="_MC3BEdxBEeiXzNImH0otAg" predecessor_AbstractAction="_TYZZUNxDEeiXzNImH0otAg"/>
         <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_TYZZUNxDEeiXzNImH0otAg" entityName="callTrackingService" predecessor_AbstractAction="_MC3BENxBEeiXzNImH0otAg" successor_AbstractAction="_MC3BEdxBEeiXzNImH0otAg" calledService_ExternalService="_iYC1ANwuEeiXzNImH0otAg" role_ExternalService="_4gKisNwuEeiXzNImH0otAg"/>
       </serviceEffectSpecifications__BasicComponent>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_vUIal8FNEeqH1pxtuH05Qw" describedService__SEFF="_Krx-kNwvEeiXzNImH0otAg">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_wjnFcsFNEeqH1pxtuH05Qw" entityName="startTrackingStartAction" successor_AbstractAction="_w_Jx8MFNEeqH1pxtuH05Qw"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_w_Jx8MFNEeqH1pxtuH05Qw" entityName="startTrackingStopAction" predecessor_AbstractAction="_wjnFcsFNEeqH1pxtuH05Qw"/>
+      </serviceEffectSpecifications__BasicComponent>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1ooeh8FNEeqH1pxtuH05Qw" describedService__SEFF="_L8Yq0NwvEeiXzNImH0otAg">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_4lfRMsFNEeqH1pxtuH05Qw" entityName="stopTrackingStartAction" successor_AbstractAction="_48-kIMFNEeqH1pxtuH05Qw"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_48-kIMFNEeqH1pxtuH05Qw" entityName="stopTrackingStopAction" predecessor_AbstractAction="_4lfRMsFNEeqH1pxtuH05Qw"/>
+      </serviceEffectSpecifications__BasicComponent>
     </components__Repository>
     <components__Repository xsi:type="repository:BasicComponent" id="_8wwqoNwtEeiXzNImH0otAg" entityName="TrackerService">
       <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_3MzdYNwuEeiXzNImH0otAg" entityName="TrackerService.DistanceRecorder.provided" providedInterface__OperationProvidedRole="_BnX0QNwuEeiXzNImH0otAg"/>
