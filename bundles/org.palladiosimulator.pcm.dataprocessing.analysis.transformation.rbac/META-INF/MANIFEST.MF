@@ -2,10 +2,10 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: DataFlow Analysis Transformation - RBAC
 Bundle-SymbolicName: org.palladiosimulator.pcm.dataprocessing.analysis.transformation.rbac
-Bundle-Version: 0.1.0.qualifier
+Bundle-Version: 1.0.0.qualifier
 Automatic-Module-Name: org.palladiosimulator.pcm.dataprocessing.analysis.transformation.rbac
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Require-Bundle: org.palladiosimulator.pcm.dataprocessing.analysis.transformation;bundle-version="0.1.0",
+Require-Bundle: org.palladiosimulator.pcm.dataprocessing.analysis.transformation;bundle-version="1.0.0",
  org.palladiosimulator.pcm.dataprocessing,
  com.google.guava,
  org.eclipse.xtext.xbase.lib,

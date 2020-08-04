@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.palladiosimulator.pcm.dataprocessing.analysis.transformation.feature_0.1.0.qualifier.jar" id="org.palladiosimulator.pcm.dataprocessing.analysis.transformation.feature" version="0.1.0.qualifier">
+   <feature url="features/org.palladiosimulator.pcm.dataprocessing.analysis.transformation.feature_1.0.0.qualifier.jar" id="org.palladiosimulator.pcm.dataprocessing.analysis.transformation.feature" version="1.0.0.qualifier">
       <category name="org.palladiosimulator.addons.category"/>
    </feature>
-   <feature url="features/org.palladiosimulator.pcm.dataprocessing.analysis.transformation.rbac.feature_0.1.0.qualifier.jar" id="org.palladiosimulator.pcm.dataprocessing.analysis.transformation.rbac.feature" version="0.1.0.qualifier">
+   <feature url="features/org.palladiosimulator.pcm.dataprocessing.analysis.transformation.rbac.feature_1.0.0.qualifier.jar" id="org.palladiosimulator.pcm.dataprocessing.analysis.transformation.rbac.feature" version="1.0.0.qualifier">
       <category name="org.palladiosimulator.addons.category"/>
    </feature>
-   <feature url="features/org.palladiosimulator.pcm.dataprocessing.analysis.transformation.feature.source_0.1.0.qualifier.jar" id="org.palladiosimulator.pcm.dataprocessing.analysis.transformation.feature.source" version="0.1.0.qualifier">
+   <feature url="features/org.palladiosimulator.pcm.dataprocessing.analysis.transformation.feature.source_1.0.0.qualifier.jar" id="org.palladiosimulator.pcm.dataprocessing.analysis.transformation.feature.source" version="1.0.0.qualifier">
       <category name="org.palladiosimulator.addons.source.category"/>
    </feature>
-   <feature url="features/org.palladiosimulator.pcm.dataprocessing.analysis.transformation.rbac.feature.source_0.1.0.qualifier.jar" id="org.palladiosimulator.pcm.dataprocessing.analysis.transformation.rbac.feature.source" version="0.1.0.qualifier">
+   <feature url="features/org.palladiosimulator.pcm.dataprocessing.analysis.transformation.rbac.feature.source_1.0.0.qualifier.jar" id="org.palladiosimulator.pcm.dataprocessing.analysis.transformation.rbac.feature.source" version="1.0.0.qualifier">
       <category name="org.palladiosimulator.addons.source.category"/>
    </feature>
    <category-def name="org.palladiosimulator.addons.category" label="Palladio Bench Addons">
